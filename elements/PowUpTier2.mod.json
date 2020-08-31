@@ -1,0 +1,12 @@
+{
+  "_fv": 11,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "SPACE",
+    "keyBindingName": "Rocket Start Tier2",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "PowUponkeypress"
+    }
+  }
+}

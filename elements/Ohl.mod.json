@@ -1,0 +1,19 @@
+{
+  "_fv": 11,
+  "_type": "fluid",
+  "definition": {
+    "name": "Ohl",
+    "textureStill": "ohl",
+    "textureFlowing": "ohlflow",
+    "luminosity": 0,
+    "density": 500,
+    "viscosity": 500,
+    "isGas": false,
+    "type": "WATER",
+    "generateBucket": false,
+    "creativeTab": {
+      "value": "CUSTOM:BossTools"
+    },
+    "spawnWorldTypes": []
+  }
+}

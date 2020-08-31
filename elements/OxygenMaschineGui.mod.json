@@ -1,0 +1,151 @@
+{
+  "_fv": 11,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Oxygen Loader",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "Oxygen Loader",
+          "x": 130,
+          "y": 41
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 177,
+          "y": 54
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "FE",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "FE",
+          "x": 286,
+          "y": 49
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "feslot.png",
+          "use1Xscale": false,
+          "name": "feslot.png",
+          "x": 254,
+          "y": 42
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<energy>",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "<energy>",
+          "x": 256,
+          "y": 49
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Inventory",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "Inventory",
+          "x": 132,
+          "y": 111
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "recpiegui.png",
+          "use1Xscale": false,
+          "name": "recpiegui.png",
+          "x": 195,
+          "y": 96
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 177,
+          "y": 93
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:integer:fuelRemaining>",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:integer:fuelRemaining>",
+          "x": 197,
+          "y": 99
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "arrowup.png",
+          "use1Xscale": false,
+          "name": "arrowup.png",
+          "x": 175,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "%",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "%",
+          "x": 212,
+          "y": 98
+        }
+      }
+    ]
+  }
+}

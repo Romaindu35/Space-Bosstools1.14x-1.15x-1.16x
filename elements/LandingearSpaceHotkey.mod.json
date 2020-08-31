@@ -1,0 +1,12 @@
+{
+  "_fv": 11,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "SPACE",
+    "keyBindingName": "Landing Gear",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "LandingGearSpace"
+    }
+  }
+}

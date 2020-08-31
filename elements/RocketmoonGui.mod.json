@@ -1,0 +1,87 @@
+{
+  "_fv": 11,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 255,
+    "height": 170,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "guirockettier1newguinew.png",
+          "use1Xscale": false,
+          "name": "guirockettier1newguinew.png",
+          "x": 86,
+          "y": 36
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Moon",
+          "onClick": {
+            "name": "RocketTier1moonTp"
+          },
+          "width": 99,
+          "height": 20,
+          "name": "Moon",
+          "x": 172,
+          "y": 113
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Overworld",
+          "onClick": {
+            "name": "RocketTier1Overworldtp"
+          },
+          "width": 100,
+          "height": 20,
+          "name": "Overworld",
+          "x": 171,
+          "y": 78
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "orbit",
+          "onClick": {
+            "name": "RocketTier1overworldOrbit"
+          },
+          "width": 37,
+          "height": 20,
+          "name": "orbit",
+          "x": 274,
+          "y": 77
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "moonbild.png",
+          "use1Xscale": false,
+          "name": "moonbild.png",
+          "x": 133,
+          "y": 108
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "overworldbild.png",
+          "use1Xscale": false,
+          "name": "overworldbild.png",
+          "x": 134,
+          "y": 73
+        }
+      }
+    ]
+  }
+}

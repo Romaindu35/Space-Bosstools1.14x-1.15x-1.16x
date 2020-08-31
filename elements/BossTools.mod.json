@@ -1,0 +1,11 @@
+{
+  "_fv": 11,
+  "_type": "tab",
+  "definition": {
+    "name": "Boss Tools",
+    "icon": {
+      "value": "CUSTOM:RocketItemtir2"
+    },
+    "showSearch": false
+  }
+}

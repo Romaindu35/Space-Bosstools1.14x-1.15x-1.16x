@@ -1,0 +1,24 @@
+package net.mcreator.boss_tools.procedures;
+
+import net.minecraft.item.ItemStack;
+
+import net.mcreator.boss_tools.BossToolsModElements;
+
+import java.util.Map;
+
+@BossToolsModElements.ModElement.Tag
+public class OxygenArmorBodyTickEventProcedure extends BossToolsModElements.ModElement {
+	public OxygenArmorBodyTickEventProcedure(BossToolsModElements instance) {
+		super(instance, 181);
+	}
+
+	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("itemstack") == null) {
+			if (!dependencies.containsKey("itemstack"))
+				System.err.println("Failed to load dependency itemstack for procedure OxygenArmorBodyTickEvent!");
+			return;
+		}
+		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+		((itemstack)).setDamage((int) 1);
+	}
+}

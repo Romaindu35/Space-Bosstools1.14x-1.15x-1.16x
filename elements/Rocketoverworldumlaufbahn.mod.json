@@ -1,0 +1,7 @@
+{
+  "_fv": 11,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"168\" y=\"87\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"execute_command\"><value name=\"command\"><block type=\"text\"><field name=\"TEXT\">/effect clear @p</field></block></value><value name=\"x\"><block type=\"coord_x\"/></value><value name=\"y\"><block type=\"coord_y\"/></value><value name=\"z\"><block type=\"coord_z\"/></value><next><block type=\"execute_command\"><value name=\"command\"><block type=\"text\"><field name=\"TEXT\">/give @p boss_tools:rocket_itemtir_2</field></block></value><value name=\"x\"><block type=\"coord_x\"/></value><value name=\"y\"><block type=\"coord_y\"/></value><value name=\"z\"><block type=\"coord_z\"/></value><next><block type=\"execute_command\"><value name=\"command\"><block type=\"text\"><field name=\"TEXT\">/execute in boss_tools:umlaufbahnerde run teleport @p ~ 220 ~</field></block></value><value name=\"x\"><block type=\"coord_x\"/></value><value name=\"y\"><block type=\"coord_y\"/></value><value name=\"z\"><block type=\"coord_z\"/></value><next><block type=\"entity_close_gui\"><value name=\"entity\"><block type=\"entity_from_deps\"/></value></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

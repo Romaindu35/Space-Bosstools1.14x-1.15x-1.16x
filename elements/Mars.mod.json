@@ -1,0 +1,59 @@
+{
+  "_fv": 11,
+  "_type": "dimension",
+  "definition": {
+    "portalFrame": {
+      "value": "CUSTOM:MoonPortalblock"
+    },
+    "portalParticles": {
+      "value": "PORTAL"
+    },
+    "portalLuminance": 0.0,
+    "portalSound": {
+      "value": ""
+    },
+    "igniterName": "Admin Feuerzeug",
+    "igniterTab": {
+      "value": "TOOLS"
+    },
+    "texture": "adminstaff",
+    "portalTexture": "portalframe1",
+    "enablePortal": false,
+    "biomesInDimension": [
+      {
+        "value": "CUSTOM:MarsBiom"
+      }
+    ],
+    "worldGenType": "Normal world gen",
+    "mainFillerBlock": {
+      "value": "CUSTOM:MarsStone"
+    },
+    "fluidBlock": {
+      "value": "Blocks.AIR"
+    },
+    "airColor": {
+      "value": -26368,
+      "falpha": 0.0
+    },
+    "canRespawnHere": false,
+    "hasFog": false,
+    "hasWeather": false,
+    "isDark": false,
+    "doesWaterVaporize": false,
+    "sleepResult": "DENY",
+    "hasSkyLight": false,
+    "imitateOverworldBehaviour": false,
+    "whenPortaTriggerlUsed": {
+      "name": "MoonPortalTriggerUsed2"
+    },
+    "onPortalTickUpdate": {
+      "name": "MoonOnPortalTickUpdate1"
+    },
+    "onPlayerEntersDimension": {
+      "name": "MoonPlayerEntersDimension"
+    },
+    "onPlayerLeavesDimension": {
+      "name": "MoonPlayerLeavesDimension"
+    }
+  }
+}

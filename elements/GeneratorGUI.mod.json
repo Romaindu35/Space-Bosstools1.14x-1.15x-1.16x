@@ -1,0 +1,147 @@
+{
+  "_fv": 11,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Coal Generator",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "Coal Generator",
+          "x": 180,
+          "y": 44
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 169,
+          "y": 58
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "pfeilright7.png",
+          "use1Xscale": false,
+          "name": "pfeilright7.png",
+          "x": 182,
+          "y": 52
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "feslot.png",
+          "use1Xscale": false,
+          "name": "feslot.png",
+          "x": 216,
+          "y": 57
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<energy>",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "<energy>",
+          "x": 219,
+          "y": 64
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "FE",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "FE",
+          "x": 249,
+          "y": 64
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "kleincherpfeilnachutenm.png",
+          "use1Xscale": false,
+          "name": "kleincherpfeilnachutenm.png",
+          "x": 162,
+          "y": 78
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "recpiegui.png",
+          "use1Xscale": false,
+          "name": "recpiegui.png",
+          "x": 169,
+          "y": 95
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:integer:fuelRemaining>",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:integer:fuelRemaining>",
+          "x": 171,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "%",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "%",
+          "x": 187,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Inventory",
+          "color": {
+            "value": -13421773,
+            "falpha": 0.0
+          },
+          "name": "Inventory",
+          "x": 132,
+          "y": 110
+        }
+      }
+    ]
+  }
+}

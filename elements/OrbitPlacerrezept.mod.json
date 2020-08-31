@@ -1,0 +1,46 @@
+{
+  "_fv": 11,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Steahl"
+      },
+      {
+        "value": "CUSTOM:Generator"
+      },
+      {
+        "value": "CUSTOM:Steahl"
+      },
+      {
+        "value": "Blocks.QUARTZ_BLOCK#3"
+      },
+      {
+        "value": "CUSTOM:OxygenGenerator"
+      },
+      {
+        "value": "Blocks.QUARTZ_BLOCK#3"
+      },
+      {
+        "value": "CUSTOM:Steahl"
+      },
+      {
+        "value": "CUSTOM:OxygenTank"
+      },
+      {
+        "value": "CUSTOM:Steahl"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:OrbitPlacer"
+    },
+    "name": "orbit_placerrezept",
+    "namespace": "mod"
+  }
+}
