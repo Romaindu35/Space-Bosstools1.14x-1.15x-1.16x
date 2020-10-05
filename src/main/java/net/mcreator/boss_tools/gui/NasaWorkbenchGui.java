@@ -119,11 +119,11 @@ public class NasaWorkbenchGui extends BossToolsModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 38, -27) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 38, -28) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 30, -10) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 30, -11) {
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 47, -10) {
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 47, -11) {
 			}));
 			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 30, 6) {
 			}));
@@ -347,11 +347,11 @@ public class NasaWorkbenchGui extends BossToolsModElements.ModElement {
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkbenchtopnew.png"));
 			this.blit(this.guiLeft + 0, this.guiTop + -42, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkslot.png"));
-			this.blit(this.guiLeft + 37, this.guiTop + -28, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 37, this.guiTop + -29, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkslot2.png"));
-			this.blit(this.guiLeft + 29, this.guiTop + -11, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 29, this.guiTop + -12, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkslot3.png"));
-			this.blit(this.guiLeft + 46, this.guiTop + -11, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 46, this.guiTop + -12, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkslot4.png"));
 			this.blit(this.guiLeft + 29, this.guiTop + 5, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/nasaworkslot5.png"));

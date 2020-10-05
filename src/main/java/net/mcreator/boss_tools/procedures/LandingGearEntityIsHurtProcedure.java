@@ -3,11 +3,15 @@ package net.mcreator.boss_tools.procedures;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import net.minecraft.world.IWorld;
+import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.boss_tools.item.FuelBucketBigItem;
+import net.mcreator.boss_tools.item.FuelBuckedItem;
+import net.mcreator.boss_tools.item.BucketBigItem;
 import net.mcreator.boss_tools.block.RocketItemtir2Block;
 import net.mcreator.boss_tools.block.RocketItemBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -85,6 +89,78 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 							.clearMatchingItems(p -> new ItemStack(RocketItemtir2Block.block, (int) (1)).getItem() == p.getItem(), (int) 1);
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemtir2Block.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(Items.BUCKET, (int) (1)).getItem())) {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(Items.BUCKET, (int) (1)).getItem() == p.getItem(),
+							(int) 1);
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Items.BUCKET, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBuckedItem.block, (int) (1)).getItem())) {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(FuelBuckedItem.block, (int) (1)).getItem() == p.getItem(),
+							(int) 1);
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBuckedItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(BucketBigItem.block, (int) (1)).getItem() == p.getItem(),
+							(int) 1);
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).inventory
+							.clearMatchingItems(p -> new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
 					entityToSpawn.setPickupDelay(10);
 					world.addEntity(entityToSpawn);
 				}

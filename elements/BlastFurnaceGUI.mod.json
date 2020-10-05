@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -71,7 +71,7 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 221,
+          "x": 228,
           "y": 71
         }
       },
@@ -522,6 +522,16 @@
           "name": "fire_off14.png",
           "x": 178,
           "y": 73
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "outputslot.png",
+          "use1Xscale": false,
+          "name": "outputslot.png",
+          "x": 224,
+          "y": 67
         }
       }
     ]

@@ -10,13 +10,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:IronStick"
+        "value": "CUSTOM:Ironplate"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:IronStick"
+        "value": "CUSTOM:Ironplate"
       },
       {
         "value": "Items.IRON_INGOT"

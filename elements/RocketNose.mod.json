@@ -1,11 +1,12 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "rocketnose",
     "customModelName": "Normal",
     "name": "Nose Cone",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

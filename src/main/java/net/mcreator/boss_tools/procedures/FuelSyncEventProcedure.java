@@ -27,12 +27,13 @@ public class FuelSyncEventProcedure extends BossToolsModElements.ModElement {
     public static void executeProcedure(Map<String, Object> dependencies) {
     }
 
-
+	//fuel System
     @SubscribeEvent
     public void clickSync(PlayerInteractEvent.EntityInteract event) {
         event.getPlayer().getPersistentData().putDouble("fuel", event.getTarget().getPersistentData().getDouble("fuel"));
         event.getPlayer().getPersistentData().putInt("connectedfueledentityid", event.getTarget().getEntityId());
     }
+    //Fuel system
     @SubscribeEvent
     public void playerTraceCheckSync(TickEvent.PlayerTickEvent event) {
         PlayerEntity playerEntity = event.player;

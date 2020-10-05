@@ -51,11 +51,11 @@
     "baseHeight": 0.0,
     "heightVariation": 0.0,
     "spawnBiome": false,
-    "biomeWeight": 10,
+    "biomeWeight": 0,
     "biomeType": "ICY",
     "biomeCategory": "NONE",
     "parent": {
-      "value": "No parent"
+      "value": "void"
     },
     "biomeDictionaryTypes": [],
     "spawnEntries": []

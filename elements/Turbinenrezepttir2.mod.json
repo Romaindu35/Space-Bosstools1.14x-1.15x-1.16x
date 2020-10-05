@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -16,7 +16,7 @@
         "value": "CUSTOM:Battery"
       },
       {
-        "value": "CUSTOM:Steahlblock"
+        "value": "CUSTOM:Steahl"
       },
       {
         "value": "CUSTOM:Ironplate"

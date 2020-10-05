@@ -1,11 +1,12 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "enginetexture",
     "customModelName": "Normal",
     "name": "Tier 2 Engine",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

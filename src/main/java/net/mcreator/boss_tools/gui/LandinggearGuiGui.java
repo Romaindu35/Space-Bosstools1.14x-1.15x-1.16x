@@ -82,7 +82,7 @@ public class LandinggearGuiGui extends BossToolsModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(1);
+			this.internal = new ItemStackHandler(2);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -126,6 +126,12 @@ public class LandinggearGuiGui extends BossToolsModElements.ModElement {
 					return (new ItemStack(Blocks.AIR, (int) (1)).getItem() == stack.getItem());
 				}
 			}));
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 28, 29) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return false;
+				}
+			}));
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
@@ -151,18 +157,18 @@ public class LandinggearGuiGui extends BossToolsModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 1) {
-					if (!this.mergeItemStack(itemstack1, 1, this.inventorySlots.size(), true)) {
+				if (index < 2) {
+					if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
-					if (index < 1 + 27) {
-						if (!this.mergeItemStack(itemstack1, 1 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
+					if (index < 2 + 27) {
+						if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 1, 1 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}

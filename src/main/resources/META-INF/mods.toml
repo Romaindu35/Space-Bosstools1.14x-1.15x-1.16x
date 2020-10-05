@@ -23,4 +23,9 @@ authors="MrScautHD"
     mandatory=false
     ordering="NONE"
     side="BOTH"
+[[dependencies.boss_tools]]
+    modId="geckolib"
+    mandatory=false
+    ordering="NONE"
+    side="BOTH"
 

@@ -106,6 +106,7 @@ public class PurpleFlagBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

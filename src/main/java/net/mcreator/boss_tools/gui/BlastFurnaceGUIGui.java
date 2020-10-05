@@ -158,7 +158,7 @@ public class BlastFurnaceGUIGui extends BossToolsModElements.ModElement {
 			}));
 			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 53, 19) {
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 97, 38) {
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 104, 38) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -491,6 +491,8 @@ public class BlastFurnaceGUIGui extends BossToolsModElements.ModElement {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/fire_off14.png"));
 				this.blit(this.guiLeft + 53, this.guiTop + 39, 0, 0, 15, 14, 15, 14);
 			}
+			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/outputslot.png"));
+			this.blit(this.guiLeft + 99, this.guiTop + 33, 0, 0, 26, 26, 26, 26);
 		}
 
 		@Override

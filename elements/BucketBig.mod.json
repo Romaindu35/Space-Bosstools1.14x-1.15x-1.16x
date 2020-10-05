@@ -1,11 +1,12 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "bigbucket",
     "customModelName": "Normal",
     "name": "Big Bucket",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

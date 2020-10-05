@@ -748,27 +748,37 @@ public class OxygentickProcedure extends BossToolsModElements.ModElement {
 						return ItemStack.EMPTY;
 					}
 				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getOrCreateTag().getDouble("Energy")) <= 23999)) {
-					{
-						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
-						int _amount = (int) 1;
-						if (_ent != null)
-							_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.extractEnergy(_amount, false));
+					if (((new Object() {
+						public int getEnergyStored(BlockPos pos) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null)
+								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
+							return _retval.get();
+						}
+					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 5)) {
+						{
+							TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+							int _amount = (int) 1;
+							if (_ent != null)
+								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> capability.extractEnergy(_amount, false));
+						}
+						(new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								TileEntity inv = world.getTileEntity(pos);
+								if (inv instanceof LockableLootTileEntity)
+									return ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								return ItemStack.EMPTY;
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getOrCreateTag().putDouble("Energy", (((new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								TileEntity inv = world.getTileEntity(pos);
+								if (inv instanceof LockableLootTileEntity)
+									return ((LockableLootTileEntity) inv).getStackInSlot(sltid);
+								return ItemStack.EMPTY;
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getOrCreateTag().getDouble("Energy")) + 1));
 					}
-					(new Object() {
-						public ItemStack getItemStack(BlockPos pos, int sltid) {
-							TileEntity inv = world.getTileEntity(pos);
-							if (inv instanceof LockableLootTileEntity)
-								return ((LockableLootTileEntity) inv).getStackInSlot(sltid);
-							return ItemStack.EMPTY;
-						}
-					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getOrCreateTag().putDouble("Energy", (((new Object() {
-						public ItemStack getItemStack(BlockPos pos, int sltid) {
-							TileEntity inv = world.getTileEntity(pos);
-							if (inv instanceof LockableLootTileEntity)
-								return ((LockableLootTileEntity) inv).getStackInSlot(sltid);
-							return ItemStack.EMPTY;
-						}
-					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getOrCreateTag().getDouble("Energy")) + 1));
 				}
 			}
 		}
@@ -792,6 +802,37 @@ public class OxygentickProcedure extends BossToolsModElements.ModElement {
 						return -1;
 					}
 				}.getValue(new BlockPos((int) x, (int) y, (int) z), "maxFuel"))) * 100));
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+		}
+		if (!world.getWorld().isRemote) {
+			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+			TileEntity _tileEntity = world.getTileEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_tileEntity != null)
+				_tileEntity.getTileData().putDouble("EnergyGui", (new Object() {
+					public int getEnergyStored(BlockPos pos) {
+						AtomicInteger _retval = new AtomicInteger(0);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null)
+							_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
+						return _retval.get();
+					}
+				}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))));
+			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+		}
+		if (!world.getWorld().isRemote) {
+			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+			TileEntity _tileEntity = world.getTileEntity(_bp);
+			BlockState _bs = world.getBlockState(_bp);
+			if (_tileEntity != null)
+				_tileEntity.getTileData().putDouble("fire", (new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel")));
 			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}

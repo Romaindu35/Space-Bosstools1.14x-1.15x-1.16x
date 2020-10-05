@@ -64,7 +64,7 @@ import net.minecraft.block.Block;
 import net.mcreator.boss_tools.procedures.OxygentickProcedure;
 import net.mcreator.boss_tools.procedures.OxygenDisplayProcedure;
 import net.mcreator.boss_tools.itemgroup.BossToolsItemGroup;
-import net.mcreator.boss_tools.gui.OxygenMaschineGuiGui;
+import net.mcreator.boss_tools.gui.OxygenLoaderGuiGui;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import javax.annotation.Nullable;
@@ -204,7 +204,7 @@ public class OxygenMachineBlock extends BossToolsModElements.ModElement {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new OxygenMaschineGuiGui.GuiContainerMod(id, inventory,
+						return new OxygenLoaderGuiGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -329,7 +329,7 @@ public class OxygenMachineBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new OxygenMaschineGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new OxygenLoaderGuiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
@@ -349,8 +349,6 @@ public class OxygenMachineBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			if (index == 2)
-				return false;
 			return true;
 		}
 

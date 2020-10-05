@@ -10,14 +10,13 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
-import net.minecraft.block.Blocks;
 
 import net.mcreator.boss_tools.potion.RocketpotionPotion;
+import net.mcreator.boss_tools.potion.FuelSyncSystemPotion;
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -81,7 +80,7 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 					world.getWorld().getServer().getCommandManager().handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/effect give @p minecraft:levitation 9999");
+							"/effect give @p minecraft:levitation 999999 1 true");
 				}
 				if (!entity.world.isRemote)
 					entity.remove();
@@ -146,16 +145,16 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 							world.getWorld().getServer(), null).withFeedbackDisabled(),
 					"/team join SpaceBossToolsRo @e[type=boss_tools:rocket_tier_2,]");
 		}
-		if (((entity.getPersistentData().getDouble("fuel")) == 0)) {
-			if (((new Object() {
-				public ItemStack getItemStack(int sltid, Entity entity) {
-					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-						_retval.set(capability.getStackInSlot(sltid).copy());
-					});
-					return _retval.get();
-				}
-			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
+		if (((new Object() {
+			public ItemStack getItemStack(int sltid, Entity entity) {
+				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					_retval.set(capability.getStackInSlot(sltid).copy());
+				});
+				return _retval.get();
+			}
+		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
+			if (((entity.getPersistentData().getDouble("Rocketfuel")) == 0)) {
 				{
 					final ItemStack _setstack = new ItemStack(BucketBigItem.block, (int) (1));
 					final int _sltid = (int) (0);
@@ -166,62 +165,41 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 						}
 					});
 				}
-				entity.getPersistentData().putDouble("fuel", 100);
+				entity.getPersistentData().putDouble("Rocketfuel", 1);
 			}
 		}
-		if (((new Object() {
-			public ItemStack getItemStack(int sltid, Entity entity) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					_retval.set(capability.getStackInSlot(sltid).copy());
-				});
-				return _retval.get();
+		if (((entity.getPersistentData().getDouble("Rocketfuel")) == 1)) {
+			if (((entity.getPersistentData().getDouble("fuel")) <= 399)) {
+				entity.getPersistentData().putDouble("fuel", ((entity.getPersistentData().getDouble("fuel")) + 1));
 			}
-		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
-			if (((entity.getPersistentData().getDouble("fuel")) == 100)) {
-				{
-					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
-					final int _sltid = (int) (0);
-					_setstack.setCount((int) 1);
-					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable) {
-							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-						}
-					});
+			if (((entity.getPersistentData().getDouble("loading")) <= 399)) {
+				if (((entity.getPersistentData().getDouble("loadingArrow")) <= 399)) {
+					entity.getPersistentData().putDouble("loading", ((entity.getPersistentData().getDouble("loading")) + 1));
 				}
-				if (!world.getWorld().isRemote) {
-					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
-					world.addEntity(entityToSpawn);
-				}
+			}
+			if (((entity.getPersistentData().getDouble("loading")) == 400)) {
+				entity.getPersistentData().putDouble("loadingArrow", 500);
+				entity.getPersistentData().putDouble("loading", 0);
+			}
+			if (((entity.getPersistentData().getDouble("fuel")) == 400)) {
+				if (entity instanceof LivingEntity)
+					((LivingEntity) entity)
+							.addPotionEffect(new EffectInstance(FuelSyncSystemPotion.potion, (int) 99999999, (int) 1, (false), (false)));
 			}
 		}
-		if (((new Object() {
-			public ItemStack getItemStack(int sltid, Entity entity) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					_retval.set(capability.getStackInSlot(sltid).copy());
-				});
-				return _retval.get();
-			}
-		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
-			if (((entity.getPersistentData().getDouble("fuel")) == 100)) {
-				{
-					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
-					final int _sltid = (int) (0);
-					_setstack.setCount((int) 1);
-					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-						if (capability instanceof IItemHandlerModifiable) {
-							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-						}
-					});
+		if ((new Object() {
+			boolean check(LivingEntity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == FuelSyncSystemPotion.potion)
+							return true;
+					}
 				}
-				if (!world.getWorld().isRemote) {
-					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
-					world.addEntity(entityToSpawn);
-				}
+				return false;
 			}
+		}.check((LivingEntity) entity))) {
+			entity.getPersistentData().putDouble("fuel", 400);
 		}
 	}
 }

@@ -46,6 +46,6 @@ public class BlastFurnaceGuiArrowProcedure extends BossToolsModElements.ModEleme
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "loading")) >= 5);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "loading")) >= 10);
 	}
 }

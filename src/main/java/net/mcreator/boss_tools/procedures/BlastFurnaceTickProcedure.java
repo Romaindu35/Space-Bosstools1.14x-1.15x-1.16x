@@ -155,7 +155,7 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "timer")) >= 100)) {
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "timer")) >= 200)) {
 				if (((new Object() {
 					public double getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
@@ -335,7 +335,7 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									BlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)
-										_tileEntity.getTileData().putDouble("fuel", 200);
+										_tileEntity.getTileData().putDouble("fuel", 660);
 									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 								}
 								if (!world.getWorld().isRemote) {
@@ -343,7 +343,7 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									BlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)
-										_tileEntity.getTileData().putDouble("maxFuel", 200);
+										_tileEntity.getTileData().putDouble("maxFuel", 660);
 									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 								}
 							} else if (((new Object() {
@@ -378,7 +378,7 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									BlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)
-										_tileEntity.getTileData().putDouble("fuel", 300);
+										_tileEntity.getTileData().putDouble("fuel", 960);
 									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 								}
 								if (!world.getWorld().isRemote) {
@@ -386,7 +386,7 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 									TileEntity _tileEntity = world.getTileEntity(_bp);
 									BlockState _bs = world.getBlockState(_bp);
 									if (_tileEntity != null)
-										_tileEntity.getTileData().putDouble("maxFuel", 300);
+										_tileEntity.getTileData().putDouble("maxFuel", 960);
 									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 								}
 							}
@@ -465,20 +465,33 @@ public class BlastFurnaceTickProcedure extends BossToolsModElements.ModElement {
 					return -1;
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "recipe")) >= 0)) {
-				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().putDouble("timer", ((new Object() {
-							public double getValue(BlockPos pos, String tag) {
-								TileEntity tileEntity = world.getTileEntity(pos);
-								if (tileEntity != null)
-									return tileEntity.getTileData().getDouble(tag);
-								return -1;
-							}
-						}.getValue(new BlockPos((int) x, (int) y, (int) z), "timer")) + 1));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				if (((new Object() {
+					public int getAmount(BlockPos pos, int sltid) {
+						AtomicInteger _retval = new AtomicInteger(0);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).getCount());
+							});
+						}
+						return _retval.get();
+					}
+				}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) <= 63)) {
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putDouble("timer", ((new Object() {
+								public double getValue(BlockPos pos, String tag) {
+									TileEntity tileEntity = world.getTileEntity(pos);
+									if (tileEntity != null)
+										return tileEntity.getTileData().getDouble(tag);
+									return -1;
+								}
+							}.getValue(new BlockPos((int) x, (int) y, (int) z), "timer")) + 1));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
 				}
 			}
 		}

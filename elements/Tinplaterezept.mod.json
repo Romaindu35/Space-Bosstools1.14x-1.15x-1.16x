@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -19,13 +19,13 @@
         "value": ""
       },
       {
-        "value": ""
+        "value": "CUSTOM:Hammer"
       },
       {
         "value": "CUSTOM:MoonCopperingot"
       },
       {
-        "value": "CUSTOM:Hammer"
+        "value": ""
       },
       {
         "value": ""

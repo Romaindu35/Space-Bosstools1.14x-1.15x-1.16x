@@ -18,3 +18,13 @@ dependencies {
   runtimeOnly fg.deobf("mezz.jei:jei-1.15.2:6.0.2.12")
 }
 
+repositories {
+  maven { 
+      url = 'https://repo.repsy.io/mvn/gandiber/geckolib' 
+  }
+}
+
+dependencies {
+  implementation fg.deobf('software.bernie.geckolib:forge-1.15.2-geckolib:2.0.0')
+}
+

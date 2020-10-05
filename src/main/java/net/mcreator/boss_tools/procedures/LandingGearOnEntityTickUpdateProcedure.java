@@ -75,9 +75,9 @@ public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements
 					"/team join SpaceBossToolsRo @e[type=boss_tools:landing_gear,]");
 		}
 		if ((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == LandinggearPotion1Potion.potion)
 							return true;
@@ -85,7 +85,7 @@ public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements
 				}
 				return false;
 			}
-		}.check((LivingEntity) entity))) {
+		}.check(entity))) {
 			if (((entity.isBeingRidden()) == (true))) {
 				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 					world.getWorld().getServer().getCommandManager().handleCommand(
@@ -96,9 +96,9 @@ public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements
 			}
 		}
 		if ((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == LandinggearPotion1Potion.potion)
 							return true;
@@ -106,7 +106,7 @@ public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements
 				}
 				return false;
 			}
-		}.check((LivingEntity) entity))) {
+		}.check(entity))) {
 			if (((entity.isBeingRidden()) == (false))) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).clearActivePotions();

@@ -14,6 +14,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.boss_tools.item.FuelBucketBigItem;
+import net.mcreator.boss_tools.item.BucketBigItem;
 import net.mcreator.boss_tools.entity.LandingGearEntity;
 import net.mcreator.boss_tools.block.RocketItemtir2Block;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -67,6 +69,32 @@ public class RocketmarsworldtpProcedure extends BossToolsModElements.ModElement 
 					.handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 20 60 5");
+		}
+		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+			world.getWorld().getServer().getCommandManager().handleCommand(
+					new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""),
+							world.getWorld().getServer(), null).withFeedbackDisabled(),
+					"/title @p title {\"text\":\"Press\",\"color\":\"red\",\"bold\":\"false\"}");
+		}
+		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+			world.getWorld().getServer().getCommandManager()
+					.handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p subtitle {\"text\":\"Space\",\"color\":\"blue\"}");
+		}
+		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A77Press \u00A7cSPACE\u00A77."), (false));
+		}
+		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A77Press \u00A7cSPACE\u00A77."), (true));
+		}
+		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+			world.getWorld().getServer().getCommandManager()
+					.handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 							"/execute in boss_tools:mars run teleport @p ~ 500 ~");
 		}
 		if (((world.getWorld().isRemote) == (false))) {
@@ -86,24 +114,33 @@ public class RocketmarsworldtpProcedure extends BossToolsModElements.ModElement 
 					});
 				}
 			}
-			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-				world.getWorld().getServer().getCommandManager()
-						.handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-								"/title @p times 20 6 10");
+			if (((entity.getRidingEntity()) instanceof LandingGearEntity.CustomEntity)) {
+				if (((entity.getPersistentData().getDouble("Bucket")) == 1)) {
+					{
+						final ItemStack _setstack = new ItemStack(BucketBigItem.block, (int) (1));
+						final int _sltid = (int) (1);
+						_setstack.setCount((int) 1);
+						(entity.getRidingEntity()).getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable) {
+								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+							}
+						});
+					}
+				}
 			}
-			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-				world.getWorld().getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-						"/title @p title {\"text\":\"Press\",\"color\":\"red\",\"bold\":\"false\"}");
-			}
-			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-				world.getWorld().getServer().getCommandManager().handleCommand(
-						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-						"/title @p subtitle {\"text\":\"Space\",\"color\":\"blue\"}");
+			if (((entity.getRidingEntity()) instanceof LandingGearEntity.CustomEntity)) {
+				if (((entity.getPersistentData().getDouble("Bucket")) == 2)) {
+					{
+						final ItemStack _setstack = new ItemStack(FuelBucketBigItem.block, (int) (1));
+						final int _sltid = (int) (1);
+						_setstack.setCount((int) 1);
+						(entity.getRidingEntity()).getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							if (capability instanceof IItemHandlerModifiable) {
+								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+							}
+						});
+					}
+				}
 			}
 		}
 		if (entity instanceof PlayerEntity)

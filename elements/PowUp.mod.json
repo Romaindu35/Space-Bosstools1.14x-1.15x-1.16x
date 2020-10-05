@@ -4,7 +4,7 @@
   "definition": {
     "triggerKey": "SPACE",
     "keyBindingName": "Rocket Start Tier1",
-    "keyBindingCategoryKey": "gameplay",
+    "keyBindingCategoryKey": "spacebosstools",
     "onKeyPressed": {
       "name": "PowUpOnKeyReleased"
     }

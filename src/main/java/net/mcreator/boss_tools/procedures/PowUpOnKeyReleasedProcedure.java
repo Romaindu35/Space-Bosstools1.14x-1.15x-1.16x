@@ -75,7 +75,7 @@ public class PowUpOnKeyReleasedProcedure extends BossToolsModElements.ModElement
 			}
 		}.check((LivingEntity) (entity.getRidingEntity()))) == (false))) {
 			if (((entity.getRidingEntity()) instanceof RocketEntity.CustomEntity)) {
-				if ((((entity.getRidingEntity()).getPersistentData().getDouble("fuel")) == 100)) {
+				if ((((entity.getRidingEntity()).getPersistentData().getDouble("fuel")) == 400)) {
 					if ((entity.getRidingEntity()) instanceof LivingEntity)
 						((LivingEntity) (entity.getRidingEntity()))
 								.addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 99999, (int) 13, (false), (false)));

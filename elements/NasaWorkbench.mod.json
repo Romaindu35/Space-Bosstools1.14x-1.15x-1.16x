@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 12,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -44,7 +44,7 @@
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
           "x": 163,
-          "y": 8
+          "y": 7
         }
       },
       {
@@ -54,7 +54,7 @@
           "use1Xscale": false,
           "name": "nasaworkslot.png",
           "x": 163,
-          "y": 8
+          "y": 7
         }
       },
       {
@@ -68,7 +68,7 @@
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
           "x": 155,
-          "y": 25
+          "y": 24
         }
       },
       {
@@ -82,7 +82,7 @@
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
           "x": 172,
-          "y": 25
+          "y": 24
         }
       },
       {
@@ -92,7 +92,7 @@
           "use1Xscale": false,
           "name": "nasaworkslot2.png",
           "x": 155,
-          "y": 25
+          "y": 24
         }
       },
       {
@@ -102,7 +102,7 @@
           "use1Xscale": false,
           "name": "nasaworkslot3.png",
           "x": 172,
-          "y": 25
+          "y": 24
         }
       },
       {

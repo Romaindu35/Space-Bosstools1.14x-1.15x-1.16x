@@ -33,7 +33,8 @@ public class OrbitOverworldBiomBiome extends BossToolsModElements.ModElement {
 	static class CustomBiome extends Biome {
 		public CustomBiome() {
 			super(new Biome.Builder().downfall(0f).depth(0f).scale(0f).temperature(0f).precipitation(Biome.RainType.NONE)
-					.category(Biome.Category.NONE).waterColor(-16750900).waterFogColor(-16750900).surfaceBuilder(SurfaceBuilder.DEFAULT,
+					.category(Biome.Category.NONE).waterColor(-16750900).waterFogColor(-16750900).parent("the_void")
+					.surfaceBuilder(SurfaceBuilder.DEFAULT,
 							new SurfaceBuilderConfig(Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState())));
 			setRegistryName("orbit_overworld_biom");
 			DefaultBiomeFeatures.addCarvers(this);

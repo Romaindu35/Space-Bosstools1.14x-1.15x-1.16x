@@ -4,7 +4,7 @@
   "definition": {
     "triggerKey": "SPACE",
     "keyBindingName": "Landing Gear",
-    "keyBindingCategoryKey": "gameplay",
+    "keyBindingCategoryKey": "spacebosstools",
     "onKeyPressed": {
       "name": "LandingGearSpace"
     }

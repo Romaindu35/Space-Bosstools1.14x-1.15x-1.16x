@@ -1,15 +1,20 @@
 package net.mcreator.boss_tools.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
+
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec2f;
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.boss_tools.item.FuelBuckedItem;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.Map;
@@ -62,6 +67,20 @@ public class RocketTier1overworldOrbitProcedure extends BossToolsModElements.Mod
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 							"/give @p boss_tools:rocket_item");
+		}
+		if (((entity.getPersistentData().getDouble("Bucket")) == 1)) {
+			if (entity instanceof PlayerEntity) {
+				ItemStack _setstack = new ItemStack(Items.BUCKET, (int) (1));
+				_setstack.setCount((int) 1);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			}
+		}
+		if (((entity.getPersistentData().getDouble("Bucket")) == 2)) {
+			if (entity instanceof PlayerEntity) {
+				ItemStack _setstack = new ItemStack(FuelBuckedItem.block, (int) (1));
+				_setstack.setCount((int) 1);
+				ItemHandlerHelper.giveItemToPlayer(((PlayerEntity) entity), _setstack);
+			}
 		}
 		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 			world.getWorld().getServer().getCommandManager().handleCommand(

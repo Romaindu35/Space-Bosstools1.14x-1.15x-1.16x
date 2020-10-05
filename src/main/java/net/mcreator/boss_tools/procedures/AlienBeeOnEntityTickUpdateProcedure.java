@@ -74,9 +74,9 @@ public class AlienBeeOnEntityTickUpdateProcedure extends BossToolsModElements.Mo
 				((LivingEntity) entity).addPotionEffect(new EffectInstance(BeePotionPotion.potion, (int) 1, (int) 1, (false), (false)));
 		}
 		if (((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == BeePotionPotion.potion)
 							return true;
@@ -84,7 +84,7 @@ public class AlienBeeOnEntityTickUpdateProcedure extends BossToolsModElements.Mo
 				}
 				return false;
 			}
-		}.check((LivingEntity) entity)) == (false))) {
+		}.check(entity)) == (false))) {
 			if (!entity.world.isRemote)
 				entity.remove();
 			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
