@@ -1,5 +1,5 @@
 {
-  "_fv": 12,
+  "_fv": 11,
   "_type": "recipe",
   "definition": {
     "recipeType": "Crafting",
@@ -10,13 +10,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       },
       {
         "value": "CUSTOM:Ironplate"
       },
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       },
       {
         "value": "CUSTOM:Ironplate"
@@ -28,13 +28,13 @@
         "value": "CUSTOM:Ironplate"
       },
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       },
       {
-        "value": "Items.WATER_BUCKET"
+        "value": "CUSTOM:OxygenTank"
       },
       {
-        "value": ""
+        "value": "Items.IRON_INGOT"
       }
     ],
     "recipeReturnStack": {

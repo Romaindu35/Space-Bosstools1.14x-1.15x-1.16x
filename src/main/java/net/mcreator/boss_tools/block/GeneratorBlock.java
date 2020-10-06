@@ -86,7 +86,7 @@ public class GeneratorBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:generator")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public GeneratorBlock(BossToolsModElements instance) {
-		super(instance, 50);
+		super(instance, 51);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -136,7 +136,6 @@ public class GeneratorBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

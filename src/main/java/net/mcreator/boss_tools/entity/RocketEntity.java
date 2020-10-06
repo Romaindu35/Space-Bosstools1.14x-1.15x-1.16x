@@ -73,7 +73,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 public class RocketEntity extends BossToolsModElements.ModElement {
 	public static EntityType entity = null;
 	public RocketEntity(BossToolsModElements instance) {
-		super(instance, 59);
+		super(instance, 60);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

@@ -1,12 +1,11 @@
 {
-  "_fv": 12,
+  "_fv": 11,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "fuelbucket",
     "customModelName": "Normal",
     "name": "Fuel Bucket",
-    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

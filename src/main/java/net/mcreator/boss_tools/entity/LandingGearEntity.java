@@ -73,7 +73,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 public class LandingGearEntity extends BossToolsModElements.ModElement {
 	public static EntityType entity = null;
 	public LandingGearEntity(BossToolsModElements instance) {
-		super(instance, 224);
+		super(instance, 61);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

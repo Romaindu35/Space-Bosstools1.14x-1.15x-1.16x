@@ -28,7 +28,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygentickProcedure extends BossToolsModElements.ModElement {
 	public OxygentickProcedure(BossToolsModElements instance) {
-		super(instance, 183);
+		super(instance, 179);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -292,7 +292,7 @@ public class OxygentickProcedure extends BossToolsModElements.ModElement {
 								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 							return _retval.get();
 						}
-					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 5)) {
+					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 1)) {
 						if (((new Object() {
 							public ItemStack getItemStack(BlockPos pos, int sltid) {
 								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -756,7 +756,7 @@ public class OxygentickProcedure extends BossToolsModElements.ModElement {
 								_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
 							return _retval.get();
 						}
-					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 5)) {
+					}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 1)) {
 						{
 							TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 							int _amount = (int) 1;

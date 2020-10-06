@@ -1,12 +1,11 @@
 {
-  "_fv": 12,
+  "_fv": 11,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "orbitplacer",
     "customModelName": "Normal",
     "name": "Space Station",
-    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

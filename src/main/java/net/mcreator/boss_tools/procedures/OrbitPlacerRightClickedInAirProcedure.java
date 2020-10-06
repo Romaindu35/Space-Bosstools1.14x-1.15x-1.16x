@@ -23,7 +23,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.ModElement {
 	public OrbitPlacerRightClickedInAirProcedure(BossToolsModElements instance) {
-		super(instance, 158);
+		super(instance, 155);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

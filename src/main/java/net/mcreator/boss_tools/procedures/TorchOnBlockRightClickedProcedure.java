@@ -22,7 +22,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class TorchOnBlockRightClickedProcedure extends BossToolsModElements.ModElement {
 	public TorchOnBlockRightClickedProcedure(BossToolsModElements instance) {
-		super(instance, 192);
+		super(instance, 188);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -57,9 +57,9 @@ public class TorchOnBlockRightClickedProcedure extends BossToolsModElements.ModE
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((new Object() {
-			boolean check(Entity _entity) {
+			boolean check(LivingEntity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == DamagePotionPotion.potion)
 							return true;
@@ -67,7 +67,7 @@ public class TorchOnBlockRightClickedProcedure extends BossToolsModElements.ModE
 				}
 				return false;
 			}
-		}.check(entity)) == (false))) {
+		}.check((LivingEntity) entity)) == (false))) {
 			if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 					.getItem() == new ItemStack(Items.FLINT_AND_STEEL, (int) (1)).getItem())) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.TORCH.getDefaultState(), 3);

@@ -41,7 +41,7 @@ public class WhiteFlagBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:white_flag")
 	public static final Block block = null;
 	public WhiteFlagBlock(BossToolsModElements instance) {
-		super(instance, 53);
+		super(instance, 54);
 	}
 
 	@Override
@@ -106,7 +106,6 @@ public class WhiteFlagBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

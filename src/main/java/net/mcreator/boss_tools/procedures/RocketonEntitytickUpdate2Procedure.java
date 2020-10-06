@@ -25,7 +25,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RocketonEntitytickUpdate2Procedure extends BossToolsModElements.ModElement {
 	public RocketonEntitytickUpdate2Procedure(BossToolsModElements instance) {
-		super(instance, 130);
+		super(instance, 129);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

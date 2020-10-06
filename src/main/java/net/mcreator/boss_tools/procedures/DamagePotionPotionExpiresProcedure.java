@@ -7,7 +7,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class DamagePotionPotionExpiresProcedure extends BossToolsModElements.ModElement {
 	public DamagePotionPotionExpiresProcedure(BossToolsModElements instance) {
-		super(instance, 166);
+		super(instance, 163);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

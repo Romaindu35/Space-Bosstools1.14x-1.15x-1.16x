@@ -22,9 +22,9 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Oxygen Bullet Generator | 3x3",
+    "name": "Oxygen Bullet Generator | 3x6",
     "specialInfo": [
-      "§7Make a Oxygen Bullet §c3x3"
+      "§7Make a Oxygen Bullet §c3x6"
     ],
     "hardness": 1.0,
     "resistance": 10.0,
@@ -75,7 +75,7 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "OxygenGeneartorGuy",
+    "guiBoundTo": "OxygenBulletGeneratorGUI",
     "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
@@ -85,9 +85,9 @@
       2
     ],
     "inventoryInSlotIDs": [],
-    "hasEnergyStorage": false,
+    "hasEnergyStorage": true,
     "energyInitial": 0,
-    "energyCapacity": 400000,
+    "energyCapacity": 9000,
     "energyMaxReceive": 200,
     "energyMaxExtract": 200,
     "isFluidTank": false,

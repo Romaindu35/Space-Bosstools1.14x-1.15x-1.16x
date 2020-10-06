@@ -79,7 +79,7 @@ public class BlastingFurnaceBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:blasting_furnace")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public BlastingFurnaceBlock(BossToolsModElements instance) {
-		super(instance, 51);
+		super(instance, 52);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -122,7 +122,6 @@ public class BlastingFurnaceBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

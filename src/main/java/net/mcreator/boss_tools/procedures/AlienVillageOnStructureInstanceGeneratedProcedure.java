@@ -7,7 +7,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class AlienVillageOnStructureInstanceGeneratedProcedure extends BossToolsModElements.ModElement {
 	public AlienVillageOnStructureInstanceGeneratedProcedure(BossToolsModElements instance) {
-		super(instance, 138);
+		super(instance, 137);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

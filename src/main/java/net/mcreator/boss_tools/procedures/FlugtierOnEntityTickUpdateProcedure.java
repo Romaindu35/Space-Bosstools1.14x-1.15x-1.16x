@@ -12,7 +12,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class FlugtierOnEntityTickUpdateProcedure extends BossToolsModElements.ModElement {
 	public FlugtierOnEntityTickUpdateProcedure(BossToolsModElements instance) {
-		super(instance, 68);
+		super(instance, 67);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

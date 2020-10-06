@@ -9,6 +9,8 @@ import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.energy.EnergyStorage;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.ToolType;
@@ -64,7 +66,7 @@ import net.minecraft.block.Block;
 import net.mcreator.boss_tools.procedures.OxygenGeneratortickProcedure;
 import net.mcreator.boss_tools.procedures.OxygenGeneratorBlockDestroyedByPlayerProcedure;
 import net.mcreator.boss_tools.itemgroup.BossToolsItemGroup;
-import net.mcreator.boss_tools.gui.OxygenGeneartorGuyGui;
+import net.mcreator.boss_tools.gui.OxygenBulletGeneratorGUIGui;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import javax.annotation.Nullable;
@@ -112,7 +114,7 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 		@OnlyIn(Dist.CLIENT)
 		public void addInformation(ItemStack itemstack, IBlockReader world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("\u00A77Make a Oxygen Bullet \u00A7c3x3"));
+			list.add(new StringTextComponent("\u00A77Make a Oxygen Bullet \u00A7c3x6"));
 		}
 
 		@Override
@@ -213,12 +215,12 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Oxygen Bullet Generator | 3x3");
+						return new StringTextComponent("Oxygen Bullet Generator | 3x6");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new OxygenGeneartorGuyGui.GuiContainerMod(id, inventory,
+						return new OxygenBulletGeneratorGUIGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -289,6 +291,8 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 				this.stacks = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
 			}
 			ItemStackHelper.loadAllItems(compound, this.stacks);
+			if (compound.get("energyStorage") != null)
+				CapabilityEnergy.ENERGY.readNBT(energyStorage, null, compound.get("energyStorage"));
 		}
 
 		@Override
@@ -297,6 +301,7 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 			if (!this.checkLootAndWrite(compound)) {
 				ItemStackHelper.saveAllItems(compound, this.stacks);
 			}
+			compound.put("energyStorage", CapabilityEnergy.ENERGY.writeNBT(energyStorage, null));
 			return compound;
 		}
 
@@ -340,12 +345,12 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new OxygenGeneartorGuyGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new OxygenBulletGeneratorGUIGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Oxygen Bullet Generator | 3x3");
+			return new StringTextComponent("Oxygen Bullet Generator | 3x6");
 		}
 
 		@Override
@@ -380,10 +385,33 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 			return true;
 		}
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+		private final EnergyStorage energyStorage = new EnergyStorage(9000, 200, 200, 0) {
+			@Override
+			public int receiveEnergy(int maxReceive, boolean simulate) {
+				int retval = super.receiveEnergy(maxReceive, simulate);
+				if (!simulate) {
+					markDirty();
+					world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 2);
+				}
+				return retval;
+			}
+
+			@Override
+			public int extractEnergy(int maxExtract, boolean simulate) {
+				int retval = super.extractEnergy(maxExtract, simulate);
+				if (!simulate) {
+					markDirty();
+					world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 2);
+				}
+				return retval;
+			}
+		};
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
 			if (!this.removed && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
 				return handlers[facing.ordinal()].cast();
+			if (!this.removed && capability == CapabilityEnergy.ENERGY)
+				return LazyOptional.of(() -> energyStorage).cast();
 			return super.getCapability(capability, facing);
 		}
 

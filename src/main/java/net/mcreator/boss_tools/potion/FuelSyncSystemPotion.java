@@ -25,7 +25,7 @@ public class FuelSyncSystemPotion extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:fuel_sync_system")
 	public static final Effect potion = null;
 	public FuelSyncSystemPotion(BossToolsModElements instance) {
-		super(instance, 340);
+		super(instance, 333);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

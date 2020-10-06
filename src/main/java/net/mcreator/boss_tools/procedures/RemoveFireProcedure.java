@@ -28,7 +28,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class RemoveFireProcedure extends BossToolsModElements.ModElement {
 	public RemoveFireProcedure(BossToolsModElements instance) {
-		super(instance, 187);
+		super(instance, 183);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

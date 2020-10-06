@@ -41,7 +41,7 @@ public class BlueFlagBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:blue_flag")
 	public static final Block block = null;
 	public BlueFlagBlock(BossToolsModElements instance) {
-		super(instance, 54);
+		super(instance, 55);
 	}
 
 	@Override
@@ -106,7 +106,6 @@ public class BlueFlagBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

@@ -41,7 +41,7 @@ public class YellowFlagBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:yellow_flag")
 	public static final Block block = null;
 	public YellowFlagBlock(BossToolsModElements instance) {
-		super(instance, 56);
+		super(instance, 57);
 	}
 
 	@Override
@@ -106,7 +106,6 @@ public class YellowFlagBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

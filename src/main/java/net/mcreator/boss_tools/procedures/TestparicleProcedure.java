@@ -15,7 +15,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class TestparicleProcedure extends BossToolsModElements.ModElement {
 	public TestparicleProcedure(BossToolsModElements instance) {
-		super(instance, 102);
+		super(instance, 101);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

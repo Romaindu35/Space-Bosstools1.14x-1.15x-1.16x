@@ -20,7 +20,7 @@ public class MarsBiomBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mars_biom")
 	public static final CustomBiome biome = null;
 	public MarsBiomBiome(BossToolsModElements instance) {
-		super(instance, 221);
+		super(instance, 215);
 	}
 
 	@Override

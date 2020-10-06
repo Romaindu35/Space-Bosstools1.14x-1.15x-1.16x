@@ -17,7 +17,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModElement {
 	public SpaceArmorBodyTickEventProcedure(BossToolsModElements instance) {
-		super(instance, 173);
+		super(instance, 170);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -34,9 +34,9 @@ public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModEl
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		if ((new Object() {
-			boolean check(Entity _entity) {
+			boolean check(LivingEntity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == DamagePotionPotion.potion)
 							return true;
@@ -44,7 +44,7 @@ public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModEl
 				}
 				return false;
 			}
-		}.check(entity))) {
+		}.check((LivingEntity) entity))) {
 			if ((((itemstack).getOrCreateTag().getDouble("Energy")) > 0)) {
 				(itemstack).getOrCreateTag().putDouble("Energy", (((itemstack).getOrCreateTag().getDouble("Energy")) - 1));
 				if (entity instanceof LivingEntity)

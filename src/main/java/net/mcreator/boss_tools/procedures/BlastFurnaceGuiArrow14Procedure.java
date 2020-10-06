@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class BlastFurnaceGuiArrow14Procedure extends BossToolsModElements.ModElement {
 	public BlastFurnaceGuiArrow14Procedure(BossToolsModElements instance) {
-		super(instance, 251);
+		super(instance, 244);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

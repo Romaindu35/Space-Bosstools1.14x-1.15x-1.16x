@@ -40,6 +40,8 @@ import net.mcreator.boss_tools.block.GeneratorBlock;
 import net.mcreator.boss_tools.block.OxygenGeneratorBlock;
 //old
 import net.mcreator.boss_tools.block.OxygenMachineBlock;
+//Compressor
+import net.mcreator.boss_tools.block.CompressorBlock;
 //Space Armor100item
 import net.mcreator.boss_tools.item.SpaceArmorItem;
 //Commpressedsteel
@@ -56,6 +58,8 @@ import net.mcreator.boss_tools.item.MotorTier2Item;
 import net.mcreator.boss_tools.block.BlastingFurnaceBlock;
 //steel
 import net.mcreator.boss_tools.item.SteahlItem;
+//Tin
+import net.mcreator.boss_tools.item.MoonCopperingotItem;
 //Turbineitem
 import net.mcreator.boss_tools.item.TurbineItem;
 //TurbineTier2 Item
@@ -114,9 +118,11 @@ public class JeiPlugin implements IModPlugin {
         //BlastFurnace
         registration.addRecipeCategories(new BlastingFurnaceJeiCategory(jeiHelper.getGuiHelper()));
         //RocketTier1Gui
-        registration.addRecipeCategories(new RocketItemBlockJeiCategory(jeiHelper.getGuiHelper()));
+        registration.addRecipeCategories(new RocketItemBlockJeiCategory(jeiHelper.getGuiHelper())); 
         //RocketTier2Gui
         registration.addRecipeCategories(new RocketItemtir2BlockJeiCategory(jeiHelper.getGuiHelper()));
+        //Compressor
+        registration.addRecipeCategories(new CompressorJeiCategory(jeiHelper.getGuiHelper()));
     }
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
@@ -135,6 +141,10 @@ public class JeiPlugin implements IModPlugin {
         registration.addRecipes(generateRocketItemBlockRecipes(), RocketItemBlockJeiCategory.Uid);
         //RocketTier2Gui
         registration.addRecipes(generateRocketItemtir2BlockRecipes(), RocketItemtir2BlockJeiCategory.Uid);
+        //Compressor
+        registration.addRecipes(generateCompressorRecipes(), CompressorJeiCategory.Uid);
+        //Compresor 2 Recpie
+        registration.addRecipes(generateCompressorRecipes2(), CompressorJeiCategory.Uid);
         // ...
     }
 
@@ -153,7 +163,6 @@ public class JeiPlugin implements IModPlugin {
         List<OxygenGeneratorJeiCategory.OxygenGeneratorRecipeWrapper> recipes = new ArrayList<>();
         ArrayList<ItemStack> inputs = new ArrayList<>();
         inputs.add(new ItemStack(Items.OAK_LEAVES));
-        inputs.add(new ItemStack(Items.COAL));
         // ...
         recipes.add(new OxygenGeneratorJeiCategory.OxygenGeneratorRecipeWrapper(inputs));
         return recipes;
@@ -224,7 +233,29 @@ public class JeiPlugin implements IModPlugin {
         inputs.add(new ItemStack(Items.IRON_INGOT));
         outputs.add(new ItemStack(SteahlItem.block));
         // ...
-        recipes.add(new BlastingFurnaceJeiCategory.BlastingFurnaceRecipeWrapper(inputs, outputs));
+        recipes.add(new BlastingFurnaceJeiCategory.BlastingFurnaceRecipeWrapper(inputs, outputs)); //Compressor
+        return recipes;
+    }
+            //Compressor
+        private List<CompressorJeiCategory.CompressorRecipeWrapper> generateCompressorRecipes() {
+        List<CompressorJeiCategory.CompressorRecipeWrapper> recipes = new ArrayList<>();
+        ArrayList<ItemStack> inputs = new ArrayList<>();
+        ArrayList<ItemStack> outputs = new ArrayList<>();
+		inputs.add(new ItemStack(SteahlItem.block));
+        outputs.add(new ItemStack(CompressesteelItem.block));
+        // ...
+        recipes.add(new CompressorJeiCategory.CompressorRecipeWrapper(inputs, outputs));
+        return recipes;
+    }
+          //Compressor 2 Recpie
+        private List<CompressorJeiCategory.CompressorRecipeWrapper> generateCompressorRecipes2() {
+        List<CompressorJeiCategory.CompressorRecipeWrapper> recipes = new ArrayList<>();
+        ArrayList<ItemStack> inputs = new ArrayList<>();
+        ArrayList<ItemStack> outputs = new ArrayList<>();
+		inputs.add(new ItemStack(MoonCopperingotItem.block));
+        outputs.add(new ItemStack(CompressedTinItem.block));
+        // ...
+        recipes.add(new CompressorJeiCategory.CompressorRecipeWrapper(inputs, outputs));
         return recipes;
     }
 		//Rockettier1Gui 
@@ -260,6 +291,8 @@ public class JeiPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(RocketItemBlock.block), RocketItemBlockJeiCategory.Uid);
         //RocketTier2Gui
         registration.addRecipeCatalyst(new ItemStack(RocketItemtir2Block.block), RocketItemtir2BlockJeiCategory.Uid);
+        //Compressor
+        registration.addRecipeCatalyst(new ItemStack(CompressorBlock.block), CompressorJeiCategory.Uid);
     }
 public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMachineJeiCategory.OxygenMachineRecipeWrapper> {
 		private static ResourceLocation Uid = new ResourceLocation("boss_tools", "oxygenmachinecategory");
@@ -338,8 +371,8 @@ public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMa
 		private final String title;
 		private final IDrawable background;
 		public OxygenGeneratorJeiCategory(IGuiHelper guiHelper) {
-			this.title = "Oxygen Bullet Generator | 3x3";
-			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/oxygen_geneartor_guy.png"), 0, 0, 175, 82);
+			this.title = "Oxygen Bullet Generator | 3x6";
+			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/oxygen_geneartor_gui.png"), 0, 0, 144, 84);
 		}
 
 		@Override
@@ -375,12 +408,10 @@ public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMa
         @Override
         public void setRecipe(IRecipeLayout iRecipeLayout, OxygenGeneratorRecipeWrapper recipeWrapper, IIngredients iIngredients) {
             IGuiItemStackGroup stacks = iRecipeLayout.getItemStacks();
-            stacks.init(input1, true, 79, 55);//Numern wie im GUI
-                        stacks.init(input2, true, 79, 10);//Nummern wie im GUI
+            stacks.init(input1, true, 38, 40);//Numern wie im GUI
             // ...
 
             stacks.set(input1, iIngredients.getInputs(VanillaTypes.ITEM).get(0));
-            stacks.set(input2, iIngredients.getInputs(VanillaTypes.ITEM).get(1));
             // ...
         }
 		public static class OxygenGeneratorRecipeWrapper {
@@ -777,6 +808,80 @@ public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMa
 
             public ArrayList getInput() {
                 return input;
+            }
+        }
+	}
+		//Compressor
+	public static class CompressorJeiCategory implements IRecipeCategory<CompressorJeiCategory.CompressorRecipeWrapper> {
+		private static ResourceLocation Uid = new ResourceLocation("boss_tools", "compressorcategory");
+		private static final int input1 = 0; // THE NUMBER = SLOTID
+		private static final int output1 = 2; // THE NUMBER = SLOTID
+		// ...
+		private final String title;
+		private final IDrawable background;
+		public CompressorJeiCategory(IGuiHelper guiHelper) {
+			this.title = "Blast Furnace";
+			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/compressor_gui_jei.png"), 0, 0, 144, 84);
+		}
+
+		@Override
+		public ResourceLocation getUid() {
+			return Uid;
+		}
+
+		@Override
+		public Class<? extends CompressorRecipeWrapper> getRecipeClass() {
+			return CompressorJeiCategory.CompressorRecipeWrapper.class;
+		}
+
+		@Override
+		public String getTitle() {
+			return title;
+		}
+
+		@Override
+		public IDrawable getBackground() {
+			return background;
+		}
+
+		@Override
+		public IDrawable getIcon() {
+			return null;
+		}
+
+		@Override
+		public void setIngredients(CompressorRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            iIngredients.setInputs(VanillaTypes.ITEM, recipeWrapper.getInput());
+            iIngredients.setOutputs(VanillaTypes.ITEM, recipeWrapper.getOutput());
+		}
+
+        @Override
+        public void setRecipe(IRecipeLayout iRecipeLayout, CompressorRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            IGuiItemStackGroup stacks = iRecipeLayout.getItemStacks();
+            stacks.init(input1, true, 14, 29);
+            stacks.init(output1, false, 69, 28);
+            // ...
+
+            stacks.set(input1, iIngredients.getInputs(VanillaTypes.ITEM).get(0));
+            stacks.set(output1, iIngredients.getOutputs(VanillaTypes.ITEM).get(0));
+            // ...
+        }
+		public static class CompressorRecipeWrapper {
+            private ArrayList input;
+            private ArrayList output;
+
+            public CompressorRecipeWrapper(ArrayList input, ArrayList output) {
+                this.input = input;
+                this.output = output;
+            }
+
+
+            public ArrayList getInput() {
+                return input;
+            }
+
+            public ArrayList getOutput() {
+                return output;
             }
         }
 	}

@@ -9,7 +9,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RocketGuiArrow11Procedure extends BossToolsModElements.ModElement {
 	public RocketGuiArrow11Procedure(BossToolsModElements instance) {
-		super(instance, 330);
+		super(instance, 323);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

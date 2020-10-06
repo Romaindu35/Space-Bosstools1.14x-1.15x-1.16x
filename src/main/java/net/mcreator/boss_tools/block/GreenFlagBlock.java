@@ -41,7 +41,7 @@ public class GreenFlagBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:green_flag")
 	public static final Block block = null;
 	public GreenFlagBlock(BossToolsModElements instance) {
-		super(instance, 55);
+		super(instance, 56);
 	}
 
 	@Override
@@ -106,7 +106,6 @@ public class GreenFlagBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public BlockState getStateForPlacement(BlockItemUseContext context) {
-			;
 			return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 		}
 

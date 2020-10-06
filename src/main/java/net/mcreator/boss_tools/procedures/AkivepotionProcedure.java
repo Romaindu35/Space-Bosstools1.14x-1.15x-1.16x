@@ -24,7 +24,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 	public AkivepotionProcedure(BossToolsModElements instance) {
-		super(instance, 167);
+		super(instance, 164);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -37,9 +37,9 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 		Entity entity = (Entity) dependencies.get("entity");
 		double Damage = 0;
 		if ((new Object() {
-			boolean check(Entity _entity) {
+			boolean check(LivingEntity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == DamagePotionPotion.potion)
 							return true;
@@ -47,11 +47,11 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 				}
 				return false;
 			}
-		}.check(entity))) {
+		}.check((LivingEntity) entity))) {
 			if (((new Object() {
-				boolean check(Entity _entity) {
+				boolean check(LivingEntity _entity) {
 					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 						for (EffectInstance effect : effects) {
 							if (effect.getPotion() == DamageRemovePotion.potion)
 								return true;
@@ -59,13 +59,13 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 					}
 					return false;
 				}
-			}.check(entity)) == (false))) {
+			}.check((LivingEntity) entity)) == (false))) {
 				entity.attackEntityFrom(DamageSource.WITHER, (float) 1);
 			}
 			if (((new Object() {
-				boolean check(Entity _entity) {
+				boolean check(LivingEntity _entity) {
 					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 						for (EffectInstance effect : effects) {
 							if (effect.getPotion() == DamageRemove2Potion.potion)
 								return true;
@@ -73,13 +73,13 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 					}
 					return false;
 				}
-			}.check(entity)) == (false))) {
+			}.check((LivingEntity) entity)) == (false))) {
 				entity.attackEntityFrom(DamageSource.WITHER, (float) 1);
 			}
 			if (((new Object() {
-				boolean check(Entity _entity) {
+				boolean check(LivingEntity _entity) {
 					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 						for (EffectInstance effect : effects) {
 							if (effect.getPotion() == DamageRemove3Potion.potion)
 								return true;
@@ -87,13 +87,13 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 					}
 					return false;
 				}
-			}.check(entity)) == (false))) {
+			}.check((LivingEntity) entity)) == (false))) {
 				entity.attackEntityFrom(DamageSource.WITHER, (float) 1);
 			}
 			if (((new Object() {
-				boolean check(Entity _entity) {
+				boolean check(LivingEntity _entity) {
 					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+						Collection<EffectInstance> effects = _entity.getActivePotionEffects();
 						for (EffectInstance effect : effects) {
 							if (effect.getPotion() == DamageRemove4Potion.potion)
 								return true;
@@ -101,7 +101,7 @@ public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 					}
 					return false;
 				}
-			}.check(entity)) == (false))) {
+			}.check((LivingEntity) entity)) == (false))) {
 				entity.attackEntityFrom(DamageSource.WITHER, (float) 1);
 			}
 		}
