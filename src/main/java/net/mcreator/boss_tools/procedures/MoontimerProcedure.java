@@ -16,7 +16,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class MoontimerProcedure extends BossToolsModElements.ModElement {
 	public MoontimerProcedure(BossToolsModElements instance) {
-		super(instance, 99);
+		super(instance, 112);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

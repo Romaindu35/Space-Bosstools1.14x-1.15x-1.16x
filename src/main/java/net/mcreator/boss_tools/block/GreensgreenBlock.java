@@ -24,7 +24,7 @@ public class GreensgreenBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:greensgreen")
 	public static final Block block = null;
 	public GreensgreenBlock(BossToolsModElements instance) {
-		super(instance, 26);
+		super(instance, 32);
 	}
 
 	@Override

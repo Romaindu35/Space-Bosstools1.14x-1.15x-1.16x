@@ -7,7 +7,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.world.RegisterDimensionsEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.common.MinecraftForge;
@@ -45,12 +44,9 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.boss_tools.procedures.MoonPlayerLeavesDimensionProcedure;
-import net.mcreator.boss_tools.procedures.MoonPlayerEntersDimensionProcedure;
 import net.mcreator.boss_tools.block.MoonStoneBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
 
@@ -58,9 +54,7 @@ import javax.annotation.Nullable;
 
 import java.util.function.LongFunction;
 import java.util.function.BiFunction;
-import java.util.Map;
 import java.util.HashSet;
-import java.util.HashMap;
 import java.util.Arrays;
 
 import com.google.common.collect.ImmutableSet;
@@ -72,7 +66,7 @@ public class MoonDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public MoonDimension(BossToolsModElements instance) {
-		super(instance, 62);
+		super(instance, 71);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
@@ -186,35 +180,7 @@ public class MoonDimension extends BossToolsModElements.ModElement {
 			return (float) (d0 * 2.0D + d1) / 3.0F;
 		}
 	}
-	@SubscribeEvent
-	public void onPlayerChangedDimensionEvent(PlayerEvent.PlayerChangedDimensionEvent event) {
-		Entity entity = event.getPlayer();
-		World world = entity.world;
-		double x = entity.getPosX();
-		double y = entity.getPosY();
-		double z = entity.getPosZ();
-		if (event.getFrom() == type) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				MoonPlayerLeavesDimensionProcedure.executeProcedure($_dependencies);
-			}
-		}
-		if (event.getTo() == type) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				MoonPlayerEntersDimensionProcedure.executeProcedure($_dependencies);
-			}
-		}
-	}
+
 	public static class ChunkProviderModded extends OverworldChunkGenerator {
 		public ChunkProviderModded(IWorld world, BiomeProvider provider) {
 			super(world, provider, new OverworldGenSettings() {

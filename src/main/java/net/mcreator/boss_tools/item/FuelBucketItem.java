@@ -15,7 +15,7 @@ public class FuelBucketItem extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:fuel_bucket")
 	public static final Item block = null;
 	public FuelBucketItem(BossToolsModElements instance) {
-		super(instance, 42);
+		super(instance, 50);
 	}
 
 	@Override

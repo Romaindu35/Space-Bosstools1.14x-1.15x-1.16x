@@ -81,7 +81,7 @@ public class BlastFurnaceGUIGui extends BossToolsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 	public BlastFurnaceGUIGui(BossToolsModElements instance) {
-		super(instance, 212);
+		super(instance, 225);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,

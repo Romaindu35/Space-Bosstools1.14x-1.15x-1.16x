@@ -16,7 +16,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class Timer3functionProcedure extends BossToolsModElements.ModElement {
 	public Timer3functionProcedure(BossToolsModElements instance) {
-		super(instance, 115);
+		super(instance, 128);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

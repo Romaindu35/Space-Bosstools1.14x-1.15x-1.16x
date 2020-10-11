@@ -42,18 +42,6 @@
     "doesWaterVaporize": false,
     "sleepResult": "DENY",
     "hasSkyLight": false,
-    "imitateOverworldBehaviour": false,
-    "whenPortaTriggerlUsed": {
-      "name": "MoonPortalTriggerUsed2"
-    },
-    "onPortalTickUpdate": {
-      "name": "MoonOnPortalTickUpdate1"
-    },
-    "onPlayerEntersDimension": {
-      "name": "MoonPlayerEntersDimension"
-    },
-    "onPlayerLeavesDimension": {
-      "name": "MoonPlayerLeavesDimension"
-    }
+    "imitateOverworldBehaviour": false
   }
 }

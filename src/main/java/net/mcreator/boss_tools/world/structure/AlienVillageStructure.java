@@ -32,7 +32,7 @@ import java.util.Random;
 @BossToolsModElements.ModElement.Tag
 public class AlienVillageStructure extends BossToolsModElements.ModElement {
 	public AlienVillageStructure(BossToolsModElements instance) {
-		super(instance, 83);
+		super(instance, 96);
 	}
 
 	@Override

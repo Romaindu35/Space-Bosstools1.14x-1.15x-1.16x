@@ -15,7 +15,7 @@ public class RocketfinsItem extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:rocketfins")
 	public static final Item block = null;
 	public RocketfinsItem(BossToolsModElements instance) {
-		super(instance, 34);
+		super(instance, 41);
 	}
 
 	@Override

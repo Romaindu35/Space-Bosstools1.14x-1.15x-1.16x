@@ -17,7 +17,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModElement {
 	public SpaceArmorBodyTickEventProcedure(BossToolsModElements instance) {
-		super(instance, 170);
+		super(instance, 183);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

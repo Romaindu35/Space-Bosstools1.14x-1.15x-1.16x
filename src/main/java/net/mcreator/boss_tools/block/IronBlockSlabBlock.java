@@ -26,7 +26,7 @@ public class IronBlockSlabBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:iron_block_slab")
 	public static final Block block = null;
 	public IronBlockSlabBlock(BossToolsModElements instance) {
-		super(instance, 6);
+		super(instance, 7);
 	}
 
 	@Override

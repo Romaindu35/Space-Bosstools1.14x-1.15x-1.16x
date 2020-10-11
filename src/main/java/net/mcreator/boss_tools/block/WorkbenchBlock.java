@@ -87,7 +87,7 @@ public class WorkbenchBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:workbench")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public WorkbenchBlock(BossToolsModElements instance) {
-		super(instance, 3);
+		super(instance, 4);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

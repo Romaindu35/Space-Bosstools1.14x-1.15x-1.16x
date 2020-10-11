@@ -24,7 +24,7 @@ public class SteahlblockBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:steahlblock")
 	public static final Block block = null;
 	public SteahlblockBlock(BossToolsModElements instance) {
-		super(instance, 10);
+		super(instance, 11);
 	}
 
 	@Override

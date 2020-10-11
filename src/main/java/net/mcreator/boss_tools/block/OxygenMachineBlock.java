@@ -61,7 +61,7 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.boss_tools.procedures.OxygentickProcedure;
+import net.mcreator.boss_tools.procedures.OxygenTickProcedure;
 import net.mcreator.boss_tools.procedures.OxygenDisplayProcedure;
 import net.mcreator.boss_tools.itemgroup.BossToolsItemGroup;
 import net.mcreator.boss_tools.gui.OxygenLoaderGuiGui;
@@ -85,7 +85,7 @@ public class OxygenMachineBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:oxygen_machine")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public OxygenMachineBlock(BossToolsModElements instance) {
-		super(instance, 48);
+		super(instance, 56);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -165,7 +165,7 @@ public class OxygenMachineBlock extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				OxygentickProcedure.executeProcedure($_dependencies);
+				OxygenTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}

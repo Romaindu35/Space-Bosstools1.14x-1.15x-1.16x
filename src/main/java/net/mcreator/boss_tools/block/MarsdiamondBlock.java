@@ -38,7 +38,7 @@ public class MarsdiamondBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:marsdiamond")
 	public static final Block block = null;
 	public MarsdiamondBlock(BossToolsModElements instance) {
-		super(instance, 146);
+		super(instance, 159);
 	}
 
 	@Override

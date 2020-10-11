@@ -32,6 +32,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.boss_tools.procedures.RocketTier1overworldOrbitProcedure;
 import net.mcreator.boss_tools.procedures.RocketTier1moonTpProcedure;
 import net.mcreator.boss_tools.procedures.RocketTier1OverworldtpProcedure;
+import net.mcreator.boss_tools.procedures.RocketTier1OrbitTpMoonProcedure;
 import net.mcreator.boss_tools.BossToolsModElements;
 import net.mcreator.boss_tools.BossToolsMod;
 
@@ -44,7 +45,7 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 	public RocketmoonGuiGui(BossToolsModElements instance) {
-		super(instance, 120);
+		super(instance, 133);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -169,9 +170,13 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 42, 37, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 43, 37, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 78, 37, 20, "orbit", e -> {
+				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
+				handleButtonAction(entity, 3, x, y, z);
 			}));
 		}
 	}
@@ -293,6 +298,17 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
 				RocketTier1overworldOrbitProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				RocketTier1OrbitTpMoonProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

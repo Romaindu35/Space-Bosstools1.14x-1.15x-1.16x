@@ -65,7 +65,7 @@ public class UmlaufbahnerdeDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public UmlaufbahnerdeDimension(BossToolsModElements instance) {
-		super(instance, 64);
+		super(instance, 73);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

@@ -31,7 +31,7 @@ import java.util.Random;
 @BossToolsModElements.ModElement.Tag
 public class MeteorStructure extends BossToolsModElements.ModElement {
 	public MeteorStructure(BossToolsModElements instance) {
-		super(instance, 125);
+		super(instance, 138);
 	}
 
 	@Override

@@ -51,7 +51,7 @@ public class GlowstoneTorchBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:glowstone_torch")
 	public static final Block block = null;
 	public GlowstoneTorchBlock(BossToolsModElements instance) {
-		super(instance, 39);
+		super(instance, 47);
 	}
 
 	@Override

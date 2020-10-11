@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class GeneratorEngery15Procedure extends BossToolsModElements.ModElement {
 	public GeneratorEngery15Procedure(BossToolsModElements instance) {
-		super(instance, 280);
+		super(instance, 293);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

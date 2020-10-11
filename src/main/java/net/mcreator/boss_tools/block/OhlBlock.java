@@ -33,7 +33,7 @@ public class OhlBlock extends BossToolsModElements.ModElement {
 	public static FlowingFluid still = null;
 	private ForgeFlowingFluid.Properties fluidproperties = null;
 	public OhlBlock(BossToolsModElements instance) {
-		super(instance, 41);
+		super(instance, 49);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

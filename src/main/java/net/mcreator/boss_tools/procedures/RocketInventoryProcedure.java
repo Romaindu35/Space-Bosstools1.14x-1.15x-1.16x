@@ -14,6 +14,7 @@ import net.minecraft.block.Blocks;
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
+import net.mcreator.boss_tools.entity.RocketTier3Entity;
 import net.mcreator.boss_tools.entity.RocketTier2Entity;
 import net.mcreator.boss_tools.entity.RocketEntity;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class RocketInventoryProcedure extends BossToolsModElements.ModElement {
 	public RocketInventoryProcedure(BossToolsModElements instance) {
-		super(instance, 265);
+		super(instance, 278);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -72,6 +73,41 @@ public class RocketInventoryProcedure extends BossToolsModElements.ModElement {
 			}
 		}
 		if (((entity.getRidingEntity()) instanceof RocketTier2Entity.CustomEntity)) {
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), (entity.getRidingEntity()))).getItem() == new ItemStack(Blocks.AIR, (int) (1)).getItem())) {
+				entity.getPersistentData().putDouble("Bucket", 0);
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), (entity.getRidingEntity()))).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
+				entity.getPersistentData().putDouble("Bucket", 1);
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), (entity.getRidingEntity()))).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
+				entity.getPersistentData().putDouble("Bucket", 2);
+			}
+		}
+		if (((entity.getRidingEntity()) instanceof RocketTier3Entity.CustomEntity)) {
 			if (((new Object() {
 				public ItemStack getItemStack(int sltid, Entity entity) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

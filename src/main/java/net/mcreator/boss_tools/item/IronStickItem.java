@@ -15,7 +15,7 @@ public class IronStickItem extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:iron_stick")
 	public static final Item block = null;
 	public IronStickItem(BossToolsModElements instance) {
-		super(instance, 28);
+		super(instance, 34);
 	}
 
 	@Override

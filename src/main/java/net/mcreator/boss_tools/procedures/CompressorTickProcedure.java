@@ -12,8 +12,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.boss_tools.item.SteahlItem;
+import net.mcreator.boss_tools.item.SiliconIngotItem;
 import net.mcreator.boss_tools.item.MoonCopperingotItem;
 import net.mcreator.boss_tools.item.CompressesteelItem;
+import net.mcreator.boss_tools.item.CompressedsiliconItem;
 import net.mcreator.boss_tools.item.CompressedTinItem;
 import net.mcreator.boss_tools.BossToolsModElements;
 
@@ -24,7 +26,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 	public CompressorTickProcedure(BossToolsModElements instance) {
-		super(instance, 368);
+		super(instance, 381);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -180,6 +182,61 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 					_tileEntity.getTileData().putDouble("recipe", 1);
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
+		} else if ((((new Object() {
+			public ItemStack getItemStack(BlockPos pos, int sltid) {
+				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+				TileEntity _ent = world.getTileEntity(pos);
+				if (_ent != null) {
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+				}
+				return _retval.get();
+			}
+		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(SiliconIngotItem.block, (int) (1)).getItem())
+				&& ((((new Object() {
+					public ItemStack getItemStack(BlockPos pos, int sltid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).copy());
+							});
+						}
+						return _retval.get();
+					}
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == new ItemStack(Blocks.AIR, (int) (1)).getItem())
+						&& ((new Object() {
+							public int getAmount(BlockPos pos, int sltid) {
+								AtomicInteger _retval = new AtomicInteger(0);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).getCount());
+									});
+								}
+								return _retval.get();
+							}
+						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) <= 1)) || ((new Object() {
+							public int getAmount(BlockPos pos, int sltid) {
+								AtomicInteger _retval = new AtomicInteger(0);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).getCount());
+									});
+								}
+								return _retval.get();
+							}
+						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) == 0)))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("recipe", 2);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
 		}
 		if (((previousRecepie) != (new Object() {
 			public double getValue(BlockPos pos, String tag) {
@@ -273,6 +330,52 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 						if (_ent != null) {
 							final int _sltid = (int) (2);
 							final ItemStack _setstack = new ItemStack(CompressedTinItem.block, (int) (1));
+							_setstack.setCount((int) ((new Object() {
+								public int getAmount(BlockPos pos, int sltid) {
+									AtomicInteger _retval = new AtomicInteger(0);
+									TileEntity _ent = world.getTileEntity(pos);
+									if (_ent != null) {
+										_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+											_retval.set(capability.getStackInSlot(sltid).getCount());
+										});
+									}
+									return _retval.get();
+								}
+							}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) + 1));
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								if (capability instanceof IItemHandlerModifiable) {
+									((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+								}
+							});
+						}
+					}
+					{
+						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (_ent != null) {
+							final int _sltid = (int) (0);
+							final int _amount = (int) 1;
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								if (capability instanceof IItemHandlerModifiable) {
+									ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+									_stk.shrink(_amount);
+									((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+								}
+							});
+						}
+					}
+				} else if (((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "recipe")) == 2)) {
+					{
+						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+						if (_ent != null) {
+							final int _sltid = (int) (2);
+							final ItemStack _setstack = new ItemStack(CompressedsiliconItem.block, (int) (1));
 							_setstack.setCount((int) ((new Object() {
 								public int getAmount(BlockPos pos, int sltid) {
 									AtomicInteger _retval = new AtomicInteger(0);
@@ -572,6 +675,130 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 							world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 						}
 					}
+				} else if (((((new Object() {
+					public ItemStack getItemStack(BlockPos pos, int sltid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).copy());
+							});
+						}
+						return _retval.get();
+					}
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(SiliconIngotItem.block, (int) (1))
+						.getItem()) && (((new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).copy());
+									});
+								}
+								return _retval.get();
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2)))
+								.getItem() == new ItemStack(CompressedsiliconItem.block, (int) (1)).getItem()) || ((new Object() {
+									public ItemStack getItemStack(BlockPos pos, int sltid) {
+										AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+										TileEntity _ent = world.getTileEntity(pos);
+										if (_ent != null) {
+											_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+										}
+										return _retval.get();
+									}
+								}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == new ItemStack(Blocks.AIR, (int) (1))
+										.getItem()))) == (true))) {
+					if ((((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) > 0) && ((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) != 0))) {
+						if (((new Object() {
+							public int getAmount(BlockPos pos, int sltid) {
+								AtomicInteger _retval = new AtomicInteger(0);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).getCount());
+									});
+								}
+								return _retval.get();
+							}
+						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) <= 63)) {
+							if (((new Object() {
+								public int getEnergyStored(BlockPos pos) {
+									AtomicInteger _retval = new AtomicInteger(0);
+									TileEntity _ent = world.getTileEntity(pos);
+									if (_ent != null)
+										_ent.getCapability(CapabilityEnergy.ENERGY, null)
+												.ifPresent(capability -> _retval.set(capability.getEnergyStored()));
+									return _retval.get();
+								}
+							}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 1)) {
+								{
+									TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+									if (_ent != null) {
+										final int _sltid = (int) (1);
+										final int _amount = (int) 1;
+										_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+											if (capability instanceof IItemHandlerModifiable) {
+												ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+												_stk.shrink(_amount);
+												((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+											}
+										});
+									}
+								}
+								if (!world.getWorld().isRemote) {
+									BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+									TileEntity _tileEntity = world.getTileEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_tileEntity != null)
+										_tileEntity.getTileData().putDouble("fuel", 660);
+									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+								}
+								if (!world.getWorld().isRemote) {
+									BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+									TileEntity _tileEntity = world.getTileEntity(_bp);
+									BlockState _bs = world.getBlockState(_bp);
+									if (_tileEntity != null)
+										_tileEntity.getTileData().putDouble("maxFuel", 660);
+									world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+								}
+							}
+						}
+					} else {
+						if (!world.getWorld().isRemote) {
+							BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+							TileEntity _tileEntity = world.getTileEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_tileEntity != null)
+								_tileEntity.getTileData().putDouble("timer", 0);
+							world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+						}
+					}
 				}
 			}
 		}
@@ -587,7 +814,7 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 				return _retval.get();
 			}
 		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(SteahlItem.block, (int) (1)).getItem())
-				|| ((new Object() {
+				|| (((new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 						TileEntity _ent = world.getTileEntity(pos);
@@ -599,7 +826,19 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 						return _retval.get();
 					}
 				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(MoonCopperingotItem.block, (int) (1))
-						.getItem())) == (false))) {
+						.getItem()) || ((new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).copy());
+									});
+								}
+								return _retval.get();
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+								.getItem() == new ItemStack(SiliconIngotItem.block, (int) (1)).getItem()))) == (false))) {
 			if (!world.getWorld().isRemote) {
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -780,6 +1019,66 @@ public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 									}
 								}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2)))
 										.getItem() == new ItemStack(CompressedTinItem.block, (int) (1)).getItem()) || ((new Object() {
+											public ItemStack getItemStack(BlockPos pos, int sltid) {
+												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+												TileEntity _ent = world.getTileEntity(pos);
+												if (_ent != null) {
+													_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+														_retval.set(capability.getStackInSlot(sltid).copy());
+													});
+												}
+												return _retval.get();
+											}
+										}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2)))
+												.getItem() == new ItemStack(Blocks.AIR, (int) (1)).getItem())))) {
+							if (!world.getWorld().isRemote) {
+								BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+								TileEntity _tileEntity = world.getTileEntity(_bp);
+								BlockState _bs = world.getBlockState(_bp);
+								if (_tileEntity != null)
+									_tileEntity.getTileData().putDouble("timer", ((new Object() {
+										public double getValue(BlockPos pos, String tag) {
+											TileEntity tileEntity = world.getTileEntity(pos);
+											if (tileEntity != null)
+												return tileEntity.getTileData().getDouble(tag);
+											return -1;
+										}
+									}.getValue(new BlockPos((int) x, (int) y, (int) z), "timer")) + 1));
+								world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+							}
+							{
+								TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+								int _amount = (int) 1;
+								if (_ent != null)
+									_ent.getCapability(CapabilityEnergy.ENERGY, null)
+											.ifPresent(capability -> capability.extractEnergy(_amount, false));
+							}
+						}
+						if ((((new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).copy());
+									});
+								}
+								return _retval.get();
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))
+								.getItem() == new ItemStack(SiliconIngotItem.block, (int) (1)).getItem()) && (((new Object() {
+									public ItemStack getItemStack(BlockPos pos, int sltid) {
+										AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+										TileEntity _ent = world.getTileEntity(pos);
+										if (_ent != null) {
+											_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+												_retval.set(capability.getStackInSlot(sltid).copy());
+											});
+										}
+										return _retval.get();
+									}
+								}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2)))
+										.getItem() == new ItemStack(CompressedsiliconItem.block, (int) (1)).getItem()) || ((new Object() {
 											public ItemStack getItemStack(BlockPos pos, int sltid) {
 												AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 												TileEntity _ent = world.getTileEntity(pos);

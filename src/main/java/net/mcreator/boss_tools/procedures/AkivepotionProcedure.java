@@ -24,7 +24,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class AkivepotionProcedure extends BossToolsModElements.ModElement {
 	public AkivepotionProcedure(BossToolsModElements instance) {
-		super(instance, 164);
+		super(instance, 177);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

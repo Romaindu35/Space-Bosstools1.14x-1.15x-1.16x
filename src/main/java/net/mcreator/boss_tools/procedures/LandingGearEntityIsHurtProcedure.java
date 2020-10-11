@@ -13,6 +13,7 @@ import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
 import net.mcreator.boss_tools.block.RocketItemtir2Block;
+import net.mcreator.boss_tools.block.RocketItemTier3Block;
 import net.mcreator.boss_tools.block.RocketItemBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
 
@@ -22,7 +23,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModElement {
 	public LandingGearEntityIsHurtProcedure(BossToolsModElements instance) {
-		super(instance, 220);
+		super(instance, 233);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -89,6 +90,24 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 							.clearMatchingItems(p -> new ItemStack(RocketItemtir2Block.block, (int) (1)).getItem() == p.getItem(), (int) 1);
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemtir2Block.block, (int) (1)));
+					entityToSpawn.setPickupDelay(10);
+					world.addEntity(entityToSpawn);
+				}
+			}
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemTier3Block.block, (int) (1)).getItem())) {
+				if (entity instanceof PlayerEntity)
+					((PlayerEntity) entity).inventory
+							.clearMatchingItems(p -> new ItemStack(RocketItemTier3Block.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemTier3Block.block, (int) (1)));
 					entityToSpawn.setPickupDelay(10);
 					world.addEntity(entityToSpawn);
 				}

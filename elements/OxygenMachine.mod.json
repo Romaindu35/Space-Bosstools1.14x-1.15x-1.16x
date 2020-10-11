@@ -90,7 +90,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "Oxygentick"
+      "name": "OxygenTick"
     },
     "onRandomUpdateEvent": {
       "name": "OxygenDisplay"

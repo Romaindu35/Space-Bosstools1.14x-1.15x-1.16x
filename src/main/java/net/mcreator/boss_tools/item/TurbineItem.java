@@ -15,7 +15,7 @@ public class TurbineItem extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:turbine")
 	public static final Item block = null;
 	public TurbineItem(BossToolsModElements instance) {
-		super(instance, 35);
+		super(instance, 42);
 	}
 
 	@Override

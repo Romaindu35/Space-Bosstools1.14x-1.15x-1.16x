@@ -33,7 +33,7 @@ public class FuelBlock extends BossToolsModElements.ModElement {
 	public static FlowingFluid still = null;
 	private ForgeFlowingFluid.Properties fluidproperties = null;
 	public FuelBlock(BossToolsModElements instance) {
-		super(instance, 40);
+		super(instance, 48);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

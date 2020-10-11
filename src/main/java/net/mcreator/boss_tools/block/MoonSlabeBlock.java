@@ -26,7 +26,7 @@ public class MoonSlabeBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:moon_slabe")
 	public static final Block block = null;
 	public MoonSlabeBlock(BossToolsModElements instance) {
-		super(instance, 20);
+		super(instance, 23);
 	}
 
 	@Override

@@ -17,7 +17,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class AlienOnEntityTickUpdateProcedure extends BossToolsModElements.ModElement {
 	public AlienOnEntityTickUpdateProcedure(BossToolsModElements instance) {
-		super(instance, 96);
+		super(instance, 109);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

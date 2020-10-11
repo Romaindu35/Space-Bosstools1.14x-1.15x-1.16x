@@ -15,7 +15,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class MoonPlayerEntersDimensionProcedure extends BossToolsModElements.ModElement {
 	public MoonPlayerEntersDimensionProcedure(BossToolsModElements instance) {
-		super(instance, 73);
+		super(instance, 86);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

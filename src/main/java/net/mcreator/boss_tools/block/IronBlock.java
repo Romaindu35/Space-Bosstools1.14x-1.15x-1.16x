@@ -39,7 +39,7 @@ public class IronBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:iron")
 	public static final Block block = null;
 	public IronBlock(BossToolsModElements instance) {
-		super(instance, 147);
+		super(instance, 160);
 	}
 
 	@Override

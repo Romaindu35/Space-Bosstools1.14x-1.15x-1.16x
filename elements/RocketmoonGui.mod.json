@@ -59,7 +59,7 @@
           "height": 20,
           "name": "orbit",
           "x": 274,
-          "y": 77
+          "y": 78
         }
       },
       {
@@ -80,6 +80,20 @@
           "name": "overworldbild.png",
           "x": 134,
           "y": 73
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "orbit",
+          "onClick": {
+            "name": "RocketTier1OrbitTpMoon"
+          },
+          "width": 37,
+          "height": 20,
+          "name": "orbit",
+          "x": 274,
+          "y": 113
         }
       }
     ]

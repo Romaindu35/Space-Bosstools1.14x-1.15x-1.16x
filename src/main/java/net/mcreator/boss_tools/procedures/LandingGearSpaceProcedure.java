@@ -14,7 +14,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearSpaceProcedure extends BossToolsModElements.ModElement {
 	public LandingGearSpaceProcedure(BossToolsModElements instance) {
-		super(instance, 221);
+		super(instance, 234);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
