@@ -41,6 +41,7 @@ import net.mcreator.boss_tools.procedures.OxygenloaderFire7Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire6Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire5Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire4Procedure;
+import net.mcreator.boss_tools.procedures.OxygenloaderFire3Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire2Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire1Procedure;
 import net.mcreator.boss_tools.procedures.OxygenloaderFire13Procedure;
@@ -70,7 +71,6 @@ import net.mcreator.boss_tools.procedures.GeneratorEngery12Procedure;
 import net.mcreator.boss_tools.procedures.GeneratorEngery11Procedure;
 import net.mcreator.boss_tools.procedures.GeneratorEngery10Procedure;
 import net.mcreator.boss_tools.procedures.GeneratorEnergyGui1Procedure;
-import net.mcreator.boss_tools.procedures.BlastFurnaceFire4Procedure;
 import net.mcreator.boss_tools.BossToolsModElements;
 import net.mcreator.boss_tools.BossToolsMod;
 
@@ -461,7 +461,7 @@ public class OxygenLoaderGuiGui extends BossToolsModElements.ModElement {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/oxygenload1.png"));
 				this.blit(this.guiLeft + 76, this.guiTop + 40, 0, 0, 15, 14, 15, 14);
 			}
-			if (BlastFurnaceFire4Procedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world))) {
+			if (OxygenloaderFire3Procedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world))) {
 				Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/oxygenload2.png"));
 				this.blit(this.guiLeft + 76, this.guiTop + 40, 0, 0, 15, 14, 15, 14);
 			}

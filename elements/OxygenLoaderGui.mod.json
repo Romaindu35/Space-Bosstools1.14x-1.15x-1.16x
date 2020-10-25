@@ -446,7 +446,7 @@
           "image": "oxygenload2.png",
           "use1Xscale": false,
           "displayCondition": {
-            "name": "BlastFurnaceFire4"
+            "name": "OxygenloaderFire3"
           },
           "name": "oxygenload2.png",
           "x": 202,

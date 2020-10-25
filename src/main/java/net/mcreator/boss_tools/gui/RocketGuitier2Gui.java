@@ -129,13 +129,13 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
 			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/guirockettier1newguinew.png"));
-			this.blit(this.guiLeft + 0, this.guiTop + 1, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 0, this.guiTop + 0, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/overworldbild.png"));
-			this.blit(this.guiLeft + 50, this.guiTop + 30, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 12, this.guiTop + 16, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/moonbild.png"));
-			this.blit(this.guiLeft + 49, this.guiTop + 67, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 12, this.guiTop + 54, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/marsbild.png"));
-			this.blit(this.guiLeft + 48, this.guiTop + 102, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 12, this.guiTop + 92, 0, 0, 256, 256, 256, 256);
 		}
 
 		@Override
@@ -166,27 +166,27 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 87, this.guiTop + 35, 97, 20, "Overworld", e -> {
+			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 22, 97, 20, "Overworld", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 88, this.guiTop + 71, 96, 20, "Moon", e -> {
+			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 22, 36, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 88, this.guiTop + 107, 98, 20, "Mars", e -> {
+			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 60, 97, 20, "Moon", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 35, 36, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 60, 36, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
 				handleButtonAction(entity, 3, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 189, this.guiTop + 71, 34, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 98, 97, 20, "Mars", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(4, x, y, z));
 				handleButtonAction(entity, 4, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 189, this.guiTop + 107, 35, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 98, 36, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(5, x, y, z));
 				handleButtonAction(entity, 5, x, y, z);
 			}));
@@ -298,7 +298,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketmoonGuiMoonTpProcedure.executeProcedure($_dependencies);
+				RocketoverworldumlaufbahnProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 2) {
@@ -309,7 +309,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketmarsworldtpProcedure.executeProcedure($_dependencies);
+				RocketmoonGuiMoonTpProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 3) {
@@ -320,7 +320,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketoverworldumlaufbahnProcedure.executeProcedure($_dependencies);
+				RocketTier2OrbitTpMoonProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 4) {
@@ -331,7 +331,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier2OrbitTpMoonProcedure.executeProcedure($_dependencies);
+				RocketmarsworldtpProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 5) {

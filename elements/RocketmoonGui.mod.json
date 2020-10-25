@@ -17,21 +17,7 @@
           "use1Xscale": false,
           "name": "guirockettier1newguinew.png",
           "x": 86,
-          "y": 36
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Moon",
-          "onClick": {
-            "name": "RocketTier1moonTp"
-          },
-          "width": 99,
-          "height": 20,
-          "name": "Moon",
-          "x": 172,
-          "y": 113
+          "y": 35
         }
       },
       {
@@ -44,8 +30,8 @@
           "width": 100,
           "height": 20,
           "name": "Overworld",
-          "x": 171,
-          "y": 78
+          "x": 139,
+          "y": 56
         }
       },
       {
@@ -58,8 +44,8 @@
           "width": 37,
           "height": 20,
           "name": "orbit",
-          "x": 274,
-          "y": 78
+          "x": 244,
+          "y": 56
         }
       },
       {
@@ -68,8 +54,8 @@
           "image": "moonbild.png",
           "use1Xscale": false,
           "name": "moonbild.png",
-          "x": 133,
-          "y": 108
+          "x": 98,
+          "y": 89
         }
       },
       {
@@ -78,8 +64,8 @@
           "image": "overworldbild.png",
           "use1Xscale": false,
           "name": "overworldbild.png",
-          "x": 134,
-          "y": 73
+          "x": 98,
+          "y": 50
         }
       },
       {
@@ -92,8 +78,22 @@
           "width": 37,
           "height": 20,
           "name": "orbit",
-          "x": 274,
-          "y": 113
+          "x": 244,
+          "y": 95
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Moon",
+          "onClick": {
+            "name": "RocketTier1moonTp"
+          },
+          "width": 100,
+          "height": 20,
+          "name": "Moon",
+          "x": 139,
+          "y": 95
         }
       }
     ]

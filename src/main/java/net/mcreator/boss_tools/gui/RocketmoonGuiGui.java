@@ -127,11 +127,11 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 		protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
 			GL11.glColor4f(1, 1, 1, 1);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/guirockettier1newguinew.png"));
-			this.blit(this.guiLeft + 0, this.guiTop + 1, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 0, this.guiTop + 0, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/moonbild.png"));
-			this.blit(this.guiLeft + 47, this.guiTop + 73, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 12, this.guiTop + 54, 0, 0, 256, 256, 256, 256);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("boss_tools:textures/overworldbild.png"));
-			this.blit(this.guiLeft + 48, this.guiTop + 38, 0, 0, 256, 256, 256, 256);
+			this.blit(this.guiLeft + 12, this.guiTop + 15, 0, 0, 256, 256, 256, 256);
 		}
 
 		@Override
@@ -162,19 +162,19 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 86, this.guiTop + 78, 99, 20, "Moon", e -> {
+			this.addButton(new Button(this.guiLeft + 53, this.guiTop + 21, 100, 20, "Overworld", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 85, this.guiTop + 43, 100, 20, "Overworld", e -> {
+			this.addButton(new Button(this.guiLeft + 158, this.guiTop + 21, 37, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 43, 37, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 158, this.guiTop + 60, 37, 20, "orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 188, this.guiTop + 78, 37, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 53, this.guiTop + 60, 100, 20, "Moon", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
 				handleButtonAction(entity, 3, x, y, z);
 			}));
@@ -275,7 +275,7 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier1moonTpProcedure.executeProcedure($_dependencies);
+				RocketTier1OverworldtpProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {
@@ -286,7 +286,7 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier1OverworldtpProcedure.executeProcedure($_dependencies);
+				RocketTier1overworldOrbitProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 2) {
@@ -297,7 +297,7 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier1overworldOrbitProcedure.executeProcedure($_dependencies);
+				RocketTier1OrbitTpMoonProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 3) {
@@ -308,7 +308,7 @@ public class RocketmoonGuiGui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier1OrbitTpMoonProcedure.executeProcedure($_dependencies);
+				RocketTier1moonTpProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

@@ -30,36 +30,8 @@
           "width": 97,
           "height": 20,
           "name": "Overworld",
-          "x": 174,
-          "y": 61
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Moon",
-          "onClick": {
-            "name": "RocketTier3moonTp"
-          },
-          "width": 96,
-          "height": 20,
-          "name": "Moon",
-          "x": 174,
-          "y": 96
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Mars",
-          "onClick": {
-            "name": "RocketTier3MarsTp"
-          },
-          "width": 98,
-          "height": 20,
-          "name": "Mars",
-          "x": 174,
-          "y": 132
+          "x": 133,
+          "y": 54
         }
       },
       {
@@ -72,8 +44,8 @@
           "width": 36,
           "height": 20,
           "name": "orbit",
-          "x": 275,
-          "y": 61
+          "x": 236,
+          "y": 54
         }
       },
       {
@@ -82,8 +54,8 @@
           "image": "overworldbild.png",
           "use1Xscale": false,
           "name": "overworldbild.png",
-          "x": 137,
-          "y": 55
+          "x": 97,
+          "y": 48
         }
       },
       {
@@ -92,8 +64,8 @@
           "image": "moonbild.png",
           "use1Xscale": false,
           "name": "moonbild.png",
-          "x": 137,
-          "y": 90
+          "x": 97,
+          "y": 86
         }
       },
       {
@@ -102,22 +74,8 @@
           "image": "marsbild.png",
           "use1Xscale": false,
           "name": "marsbild.png",
-          "x": 137,
-          "y": 126
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "Mercury",
-          "onClick": {
-            "name": "RocketTier3MerkurTp"
-          },
-          "width": 96,
-          "height": 20,
-          "name": "Mercury",
-          "x": 175,
-          "y": 168
+          "x": 97,
+          "y": 124
         }
       },
       {
@@ -126,8 +84,8 @@
           "image": "mercury_icon.png",
           "use1Xscale": false,
           "name": "mercury_icon.png",
-          "x": 137,
-          "y": 162
+          "x": 97,
+          "y": 161
         }
       },
       {
@@ -140,8 +98,8 @@
           "width": 36,
           "height": 20,
           "name": "orbit",
-          "x": 275,
-          "y": 96
+          "x": 236,
+          "y": 92
         }
       },
       {
@@ -154,8 +112,8 @@
           "width": 36,
           "height": 20,
           "name": "orbit",
-          "x": 275,
-          "y": 132
+          "x": 236,
+          "y": 130
         }
       },
       {
@@ -168,8 +126,50 @@
           "width": 36,
           "height": 20,
           "name": "orbit",
-          "x": 275,
-          "y": 168
+          "x": 236,
+          "y": 167
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Mars",
+          "onClick": {
+            "name": "RocketTier3MarsTp"
+          },
+          "width": 97,
+          "height": 20,
+          "name": "Mars",
+          "x": 133,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Moon",
+          "onClick": {
+            "name": "RocketTier3moonTp"
+          },
+          "width": 97,
+          "height": 20,
+          "name": "Moon",
+          "x": 133,
+          "y": 92
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Mercury",
+          "onClick": {
+            "name": "RocketTier3MerkurTp"
+          },
+          "width": 97,
+          "height": 20,
+          "name": "Mercury",
+          "x": 133,
+          "y": 167
         }
       }
     ]
