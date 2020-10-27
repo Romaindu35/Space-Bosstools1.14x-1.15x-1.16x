@@ -23,7 +23,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModElement {
 	public LandingGearEntityIsHurtProcedure(BossToolsModElements instance) {
-		super(instance, 233);
+		super(instance, 231);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -67,12 +67,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemBlock.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory
-							.clearMatchingItems(p -> new ItemStack(RocketItemBlock.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(RocketItemBlock.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemBlock.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -85,12 +86,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemtir2Block.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory
-							.clearMatchingItems(p -> new ItemStack(RocketItemtir2Block.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(RocketItemtir2Block.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemtir2Block.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -103,12 +105,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemTier3Block.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory
-							.clearMatchingItems(p -> new ItemStack(RocketItemTier3Block.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(RocketItemTier3Block.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemTier3Block.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -121,12 +124,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(Items.BUCKET, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(Items.BUCKET, (int) (1)).getItem() == p.getItem(),
-							(int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(Items.BUCKET, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Items.BUCKET, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -139,12 +143,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBuckedItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(FuelBuckedItem.block, (int) (1)).getItem() == p.getItem(),
-							(int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(FuelBuckedItem.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBuckedItem.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -157,12 +162,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> new ItemStack(BucketBigItem.block, (int) (1)).getItem() == p.getItem(),
-							(int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(BucketBigItem.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}
@@ -175,12 +181,13 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity)
-					((PlayerEntity) entity).inventory
-							.clearMatchingItems(p -> new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem() == p.getItem(), (int) 1);
+				if (entity instanceof PlayerEntity) {
+					ItemStack _stktoremove = new ItemStack(FuelBucketBigItem.block, (int) (1));
+					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
-					entityToSpawn.setPickupDelay(10);
+					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
 			}

@@ -8,7 +8,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.Biome;
 
 import net.mcreator.boss_tools.block.MrrcuryCobblestoneBlock;
@@ -20,7 +19,7 @@ public class MercurybiomeBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mercurybiome")
 	public static final CustomBiome biome = null;
 	public MercurybiomeBiome(BossToolsModElements instance) {
-		super(instance, 391);
+		super(instance, 389);
 	}
 
 	@Override
@@ -38,10 +37,6 @@ public class MercurybiomeBiome extends BossToolsModElements.ModElement {
 					.surfaceBuilder(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(MercurystoneBlock.block.getDefaultState(),
 							MrrcuryCobblestoneBlock.block.getDefaultState(), MrrcuryCobblestoneBlock.block.getDefaultState())));
 			setRegistryName("mercurybiome");
-			DefaultBiomeFeatures.addCarvers(this);
-			DefaultBiomeFeatures.addStructures(this);
-			DefaultBiomeFeatures.addMonsterRooms(this);
-			DefaultBiomeFeatures.addOres(this);
 		}
 
 		@OnlyIn(Dist.CLIENT)

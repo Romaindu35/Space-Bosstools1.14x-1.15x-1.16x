@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "block",
   "definition": {
     "texture": "mercury_iron_ore",
@@ -12,7 +12,9 @@
     "customModelName": "Normal",
     "rotationMode": 0,
     "emissiveRendering": false,
+    "displayFluidOverlay": false,
     "itemTexture": "",
+    "particleTexture": "",
     "hasTransparency": false,
     "connectedSides": false,
     "transparencyType": "SOLID",
@@ -22,11 +24,12 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Mercury Stone",
+    "name": "Mercury Iron Ore",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "No creative tab entry"
     },

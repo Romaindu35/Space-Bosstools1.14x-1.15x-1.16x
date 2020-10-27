@@ -119,12 +119,11 @@ public class BossToolsModVariables {
 
 	@SubscribeEvent
 	public void clonePlayer(PlayerEvent.Clone event) {
-		if (event.isWasDeath()) {
-			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
-			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
-					.orElse(new PlayerVariables()));
-			clone.RocketFueltier1 = original.RocketFueltier1;
+		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new PlayerVariables()));
+		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+		clone.RocketFueltier1 = original.RocketFueltier1;
+		if (!event.isWasDeath()) {
 		}
 	}
 	public static class PlayerVariablesSyncMessage {

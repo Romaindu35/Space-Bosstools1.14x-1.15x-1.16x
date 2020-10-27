@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "block",
   "definition": {
     "texture": "moon_copper_ore",
@@ -12,7 +12,9 @@
     "customModelName": "Normal",
     "rotationMode": 0,
     "emissiveRendering": false,
+    "displayFluidOverlay": false,
     "itemTexture": "",
+    "particleTexture": "",
     "hasTransparency": false,
     "connectedSides": false,
     "transparencyType": "SOLID",
@@ -22,13 +24,14 @@
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Tin Ore",
+    "name": "Desh Ore",
     "specialInfo": [
       "§7Can only be found on the §8Moon"
     ],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

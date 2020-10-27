@@ -7,7 +7,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygenGeneratorBlockDestroyedByPlayerProcedure extends BossToolsModElements.ModElement {
 	public OxygenGeneratorBlockDestroyedByPlayerProcedure(BossToolsModElements instance) {
-		super(instance, 204);
+		super(instance, 203);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

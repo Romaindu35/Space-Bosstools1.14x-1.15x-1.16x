@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class GlowstoneTorchtickProcedure extends BossToolsModElements.ModElement {
 	public GlowstoneTorchtickProcedure(BossToolsModElements instance) {
-		super(instance, 199);
+		super(instance, 198);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

@@ -26,7 +26,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygenGeneratortickProcedure extends BossToolsModElements.ModElement {
 	public OxygenGeneratortickProcedure(BossToolsModElements instance) {
-		super(instance, 203);
+		super(instance, 202);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

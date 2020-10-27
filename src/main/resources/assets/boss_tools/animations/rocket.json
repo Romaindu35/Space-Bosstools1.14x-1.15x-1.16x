@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.rockettier1.fly": {
+			"loop": true,
+			"animation_length": 0.10,
+			"bones": {
+				"Rocket": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.03": {
+							"vector": [0.8, 0, -0.8],
+							"easing": "linear"
+						},
+						"0.06": {
+							"vector": [0, 0, 0],
+							"easing": "linear"
+						}
+					}
+				}
+			}
+		}
+	}
+}

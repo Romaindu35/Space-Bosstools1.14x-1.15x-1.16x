@@ -1,11 +1,12 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "tinplate",
     "customModelName": "Normal",
-    "name": "Tin Plate",
+    "name": "Desh Plate",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },
@@ -14,6 +15,9 @@
     "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
     "destroyAnyBlock": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.RocketTier2.fly": {
+			"loop": true,
+			"animation_length": 0.10,
+			"bones": {
+				"RocketTier2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.03": {
+							"vector": [0.6, 0, -0.6]
+						},
+						"0.06": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

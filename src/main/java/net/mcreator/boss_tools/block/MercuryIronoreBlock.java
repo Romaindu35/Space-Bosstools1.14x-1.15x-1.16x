@@ -37,7 +37,7 @@ public class MercuryIronoreBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mercury_ironore")
 	public static final Block block = null;
 	public MercuryIronoreBlock(BossToolsModElements instance) {
-		super(instance, 393);
+		super(instance, 391);
 	}
 
 	@Override

@@ -62,9 +62,9 @@ public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModEl
 			}
 		}.checkGamemode(entity)))) {
 			if ((new Object() {
-				boolean check(LivingEntity _entity) {
+				boolean check(Entity _entity) {
 					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 						for (EffectInstance effect : effects) {
 							if (effect.getPotion() == DamagePotionPotion.potion)
 								return true;
@@ -72,7 +72,7 @@ public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModEl
 					}
 					return false;
 				}
-			}.check((LivingEntity) entity))) {
+			}.check(entity))) {
 				if ((((itemstack).getOrCreateTag().getDouble("Energy")) > 0)) {
 					(itemstack).getOrCreateTag().putDouble("Energy", (((itemstack).getOrCreateTag().getDouble("Energy")) - 1));
 					if (entity instanceof LivingEntity)

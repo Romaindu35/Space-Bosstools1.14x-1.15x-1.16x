@@ -24,7 +24,7 @@ import io.netty.buffer.Unpooled;
 @BossToolsModElements.ModElement.Tag
 public class RocketPotion9TickProcedure extends BossToolsModElements.ModElement {
 	public RocketPotion9TickProcedure(BossToolsModElements instance) {
-		super(instance, 405);
+		super(instance, 403);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

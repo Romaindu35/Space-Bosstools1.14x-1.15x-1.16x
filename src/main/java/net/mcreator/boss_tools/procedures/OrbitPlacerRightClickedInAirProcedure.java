@@ -648,15 +648,17 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 																																																																																																																														false));
 																																																																																																																							}
 																																																																																																																						}
-																																																																																																																						if (entity instanceof PlayerEntity)
+																																																																																																																						if (entity instanceof PlayerEntity) {
+																																																																																																																							ItemStack _stktoremove = new ItemStack(
+																																																																																																																									OrbitPlacerItem.block,
+																																																																																																																									(int) (1));
 																																																																																																																							((PlayerEntity) entity).inventory
 																																																																																																																									.clearMatchingItems(
-																																																																																																																											p -> new ItemStack(
-																																																																																																																													OrbitPlacerItem.block,
-																																																																																																																													(int) (1))
-																																																																																																																															.getItem() == p
-																																																																																																																																	.getItem(),
+																																																																																																																											p -> _stktoremove
+																																																																																																																													.getItem() == p
+																																																																																																																															.getItem(),
 																																																																																																																											(int) 1);
+																																																																																																																						}
 																																																																																																																					} else {
 																																																																																																																						if (entity instanceof PlayerEntity
 																																																																																																																								&& !entity.world.isRemote) {
@@ -1736,12 +1738,7 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("You are too high or nearby is a structure!"), (false));
 				}
 			}
-		} else {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Works only in orbit!"), (false));
-			}
-		}
-		if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
+		} else if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
 				.equals(new ResourceLocation("boss_tools:orbit_moon_biom")))) {
 			if ((world.isAirBlock(new BlockPos((int) (x - 1), (int) y, (int) z)))) {
 				if ((world.isAirBlock(new BlockPos((int) (x - 2), (int) y, (int) z)))) {
@@ -2332,15 +2329,17 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 																																																																																																																														false));
 																																																																																																																							}
 																																																																																																																						}
-																																																																																																																						if (entity instanceof PlayerEntity)
+																																																																																																																						if (entity instanceof PlayerEntity) {
+																																																																																																																							ItemStack _stktoremove = new ItemStack(
+																																																																																																																									OrbitPlacerItem.block,
+																																																																																																																									(int) (1));
 																																																																																																																							((PlayerEntity) entity).inventory
 																																																																																																																									.clearMatchingItems(
-																																																																																																																											p -> new ItemStack(
-																																																																																																																													OrbitPlacerItem.block,
-																																																																																																																													(int) (1))
-																																																																																																																															.getItem() == p
-																																																																																																																																	.getItem(),
+																																																																																																																											p -> _stktoremove
+																																																																																																																													.getItem() == p
+																																																																																																																															.getItem(),
 																																																																																																																											(int) 1);
+																																																																																																																						}
 																																																																																																																					} else {
 																																																																																																																						if (entity instanceof PlayerEntity
 																																																																																																																								&& !entity.world.isRemote) {
@@ -3420,12 +3419,7 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("You are too high or nearby is a structure!"), (false));
 				}
 			}
-		} else {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Works only in orbit!"), (false));
-			}
-		}
-		if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
+		} else if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
 				.equals(new ResourceLocation("boss_tools:orbit_mars_biom")))) {
 			if ((world.isAirBlock(new BlockPos((int) (x - 1), (int) y, (int) z)))) {
 				if ((world.isAirBlock(new BlockPos((int) (x - 2), (int) y, (int) z)))) {
@@ -4016,15 +4010,17 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 																																																																																																																														false));
 																																																																																																																							}
 																																																																																																																						}
-																																																																																																																						if (entity instanceof PlayerEntity)
+																																																																																																																						if (entity instanceof PlayerEntity) {
+																																																																																																																							ItemStack _stktoremove = new ItemStack(
+																																																																																																																									OrbitPlacerItem.block,
+																																																																																																																									(int) (1));
 																																																																																																																							((PlayerEntity) entity).inventory
 																																																																																																																									.clearMatchingItems(
-																																																																																																																											p -> new ItemStack(
-																																																																																																																													OrbitPlacerItem.block,
-																																																																																																																													(int) (1))
-																																																																																																																															.getItem() == p
-																																																																																																																																	.getItem(),
+																																																																																																																											p -> _stktoremove
+																																																																																																																													.getItem() == p
+																																																																																																																															.getItem(),
 																																																																																																																											(int) 1);
+																																																																																																																						}
 																																																																																																																					} else {
 																																																																																																																						if (entity instanceof PlayerEntity
 																																																																																																																								&& !entity.world.isRemote) {
@@ -5104,12 +5100,7 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("You are too high or nearby is a structure!"), (false));
 				}
 			}
-		} else {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Works only in orbit!"), (false));
-			}
-		}
-		if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
+		} else if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
 				.equals(new ResourceLocation("boss_tools:orbit_mercury_biom")))) {
 			if ((world.isAirBlock(new BlockPos((int) (x - 1), (int) y, (int) z)))) {
 				if ((world.isAirBlock(new BlockPos((int) (x - 2), (int) y, (int) z)))) {
@@ -5700,15 +5691,17 @@ public class OrbitPlacerRightClickedInAirProcedure extends BossToolsModElements.
 																																																																																																																														false));
 																																																																																																																							}
 																																																																																																																						}
-																																																																																																																						if (entity instanceof PlayerEntity)
+																																																																																																																						if (entity instanceof PlayerEntity) {
+																																																																																																																							ItemStack _stktoremove = new ItemStack(
+																																																																																																																									OrbitPlacerItem.block,
+																																																																																																																									(int) (1));
 																																																																																																																							((PlayerEntity) entity).inventory
 																																																																																																																									.clearMatchingItems(
-																																																																																																																											p -> new ItemStack(
-																																																																																																																													OrbitPlacerItem.block,
-																																																																																																																													(int) (1))
-																																																																																																																															.getItem() == p
-																																																																																																																																	.getItem(),
+																																																																																																																											p -> _stktoremove
+																																																																																																																													.getItem() == p
+																																																																																																																															.getItem(),
 																																																																																																																											(int) 1);
+																																																																																																																						}
 																																																																																																																					} else {
 																																																																																																																						if (entity instanceof PlayerEntity
 																																																																																																																								&& !entity.world.isRemote) {

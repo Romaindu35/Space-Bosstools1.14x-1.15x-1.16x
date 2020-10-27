@@ -8,6 +8,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec2f;
+import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.LivingEntity;
@@ -87,9 +88,9 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 			}
 		}
 		if ((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == RocketpotionPotion.potion)
 							return true;
@@ -97,7 +98,7 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 				}
 				return false;
 			}
-		}.check((LivingEntity) entity))) {
+		}.check(entity))) {
 			if (((entity.isBeingRidden()) == (true))) {
 				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 					world.getWorld().getServer().getCommandManager().handleCommand(
@@ -111,13 +112,13 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 					world.getWorld().getServer().getCommandManager().handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/particle minecraft:flame ~ ~-2 ~ 0.5 .1 0.5 .001 60 force");
+							"/particle minecraft:flame ~ ~-2 ~ .1 .1 .1 .001 100 force");
 				}
 				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 					world.getWorld().getServer().getCommandManager().handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/particle minecraft:smoke ~ ~-3 ~ 0.6 .1 0.6 .04 60 force");
+							"/particle minecraft:smoke ~ ~-3 ~ .1 .1 .1 .04 50 force");
 				}
 			}
 		}
@@ -188,9 +189,9 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 			}
 		}
 		if ((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == FuelSyncSystemPotion.potion)
 							return true;
@@ -198,8 +199,189 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 				}
 				return false;
 			}
-		}.check((LivingEntity) entity))) {
+		}.check(entity))) {
 			entity.getPersistentData().putDouble("fuel", 400);
+		}
+		if ((new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == RocketpotionPotion.potion)
+							return true;
+					}
+				}
+				return false;
+			}
+		}.check(entity))) {
+			entity.getPersistentData().putDouble("fly", ((entity.getPersistentData().getDouble("fly")) + 1));
+		}
+		if (((entity.getPersistentData().getDouble("fly")) >= 200)) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 99999, (int) 13, (false), (false)));
+		}
+		if ((new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == RocketpotionPotion.potion)
+							return true;
+					}
+				}
+				return false;
+			}
+		}.check(entity))) {
+			if (((entity.getPersistentData().getDouble("fly")) <= 200)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/particle minecraft:campfire_cosy_smoke ~ ~-0.5 ~ 0.1 .1 0.1 .013 6 force");
+				}
+			}
+		}
+		if ((entity.isBeingRidden())) {
+			if (((entity.getPersistentData().getDouble("fly")) == 1)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"10\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 20)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"9\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 40)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"8\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 60)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"7\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 80)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"6\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 100)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"5\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 120)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"4\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 140)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"3\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 160)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"2\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
+			if (((entity.getPersistentData().getDouble("fly")) == 180)) {
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p times 5 10 10");
+				}
+				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+					world.getWorld().getServer().getCommandManager().handleCommand(
+							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+							"/title @p title {\"text\":\"1\",\"color\":\"red\",\"bold\":\"false\"}");
+				}
+			}
 		}
 	}
 }

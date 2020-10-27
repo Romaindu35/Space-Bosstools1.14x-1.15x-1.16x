@@ -8,7 +8,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.Biome;
 
 import net.mcreator.boss_tools.block.MoonsandBlock;
@@ -20,7 +19,7 @@ public class MoonBiomBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:moon_biom")
 	public static final CustomBiome biome = null;
 	public MoonBiomBiome(BossToolsModElements instance) {
-		super(instance, 227);
+		super(instance, 225);
 	}
 
 	@Override
@@ -38,10 +37,6 @@ public class MoonBiomBiome extends BossToolsModElements.ModElement {
 					.surfaceBuilder(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(MoonsandBlock.block.getDefaultState(),
 							MoonStoneBlock.block.getDefaultState(), MoonStoneBlock.block.getDefaultState())));
 			setRegistryName("moon_biom");
-			DefaultBiomeFeatures.addCarvers(this);
-			DefaultBiomeFeatures.addStructures(this);
-			DefaultBiomeFeatures.addMonsterRooms(this);
-			DefaultBiomeFeatures.addOres(this);
 		}
 
 		@OnlyIn(Dist.CLIENT)

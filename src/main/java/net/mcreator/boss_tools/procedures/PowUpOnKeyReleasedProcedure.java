@@ -1,5 +1,8 @@
 package net.mcreator.boss_tools.procedures;
 
+import software.bernie.geckolib.entity.IAnimatedEntity;
+import software.bernie.geckolib.animation.builder.AnimationBuilder;
+
 import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.server.ServerWorld;
@@ -10,7 +13,6 @@ import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.potion.Effects;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
@@ -63,9 +65,9 @@ public class PowUpOnKeyReleasedProcedure extends BossToolsModElements.ModElement
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((new Object() {
-			boolean check(LivingEntity _entity) {
+			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = _entity.getActivePotionEffects();
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
 					for (EffectInstance effect : effects) {
 						if (effect.getPotion() == RocketpotionPotion.potion)
 							return true;
@@ -73,15 +75,21 @@ public class PowUpOnKeyReleasedProcedure extends BossToolsModElements.ModElement
 				}
 				return false;
 			}
-		}.check((LivingEntity) (entity.getRidingEntity()))) == (false))) {
+		}.check((entity.getRidingEntity()))) == (false))) {
 			if (((entity.getRidingEntity()) instanceof RocketEntity.CustomEntity)) {
 				if ((((entity.getRidingEntity()).getPersistentData().getDouble("fuel")) == 400)) {
 					if ((entity.getRidingEntity()) instanceof LivingEntity)
 						((LivingEntity) (entity.getRidingEntity()))
-								.addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) 99999, (int) 13, (false), (false)));
-					if ((entity.getRidingEntity()) instanceof LivingEntity)
-						((LivingEntity) (entity.getRidingEntity()))
 								.addPotionEffect(new EffectInstance(RocketpotionPotion.potion, (int) 99999, (int) 13, (false), (false)));
+					if ((entity.getRidingEntity()) instanceof IAnimatedEntity) {
+						new Object() {
+							void playAnimation(Entity entity, String animationID) {
+								IAnimatedEntity aniEntity = (IAnimatedEntity) entity;
+								aniEntity.getAnimationManager().get("controller")
+										.setAnimation(new AnimationBuilder().addAnimation(animationID, (true)));
+							}
+						}.playAnimation((entity.getRidingEntity()), "animation.rockettier1.fly");
+					}
 					if (!world.getWorld().isRemote) {
 						world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("boss_tools:rocketfly")),

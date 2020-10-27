@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "block",
   "definition": {
     "texture": "workbench_nasa_top",
@@ -12,6 +12,7 @@
     "customModelName": "rocketitemtier1v9:default",
     "rotationMode": 0,
     "emissiveRendering": false,
+    "displayFluidOverlay": false,
     "itemTexture": "",
     "hasTransparency": true,
     "connectedSides": false,
@@ -27,6 +28,7 @@
     "hardness": 0.5,
     "resistance": 2.0,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

@@ -1,11 +1,12 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "iron-plate",
     "customModelName": "Normal",
     "name": "Iron Plate",
+    "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

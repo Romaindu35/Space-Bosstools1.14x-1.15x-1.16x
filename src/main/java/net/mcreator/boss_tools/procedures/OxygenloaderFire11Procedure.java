@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygenloaderFire11Procedure extends BossToolsModElements.ModElement {
 	public OxygenloaderFire11Procedure(BossToolsModElements instance) {
-		super(instance, 359);
+		super(instance, 357);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {
@@ -46,6 +46,6 @@ public class OxygenloaderFire11Procedure extends BossToolsModElements.ModElement
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "fire")) <= 35);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "fire")) <= 50);
 	}
 }

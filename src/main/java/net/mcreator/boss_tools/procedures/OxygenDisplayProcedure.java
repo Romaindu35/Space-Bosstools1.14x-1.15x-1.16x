@@ -1,6 +1,7 @@
 package net.mcreator.boss_tools.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.energy.CapabilityEnergy;
 
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
@@ -15,12 +16,13 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.boss_tools.BossToolsModElements;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Map;
 
 @BossToolsModElements.ModElement.Tag
 public class OxygenDisplayProcedure extends BossToolsModElements.ModElement {
 	public OxygenDisplayProcedure(BossToolsModElements instance) {
-		super(instance, 193);
+		super(instance, 192);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -57,83 +59,93 @@ public class OxygenDisplayProcedure extends BossToolsModElements.ModElement {
 				return -1;
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuel")) > 0)) {
-			firehaight = (double) (((new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuelRemaining")) / 100) * 0.0625);
 			if (((new Object() {
-				public Direction getDirection(BlockPos pos) {
-					try {
-						BlockState _bs = world.getBlockState(pos);
-						DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						return _bs.get(property);
-					} catch (Exception e) {
-						return Direction.NORTH;
+				public int getEnergyStored(BlockPos pos) {
+					AtomicInteger _retval = new AtomicInteger(0);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(CapabilityEnergy.ENERGY, null).ifPresent(capability -> _retval.set(capability.getEnergyStored()));
+					return _retval.get();
+				}
+			}.getEnergyStored(new BlockPos((int) x, (int) y, (int) z))) >= 1)) {
+				firehaight = (double) (((new Object() {
+					public double getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getDouble(tag);
+						return -1;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "fuelRemaining")) / 100) * 0.0625);
+				if (((new Object() {
+					public Direction getDirection(BlockPos pos) {
+						try {
+							BlockState _bs = world.getBlockState(pos);
+							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+							return _bs.get(property);
+						} catch (Exception e) {
+							return Direction.NORTH;
+						}
+					}
+				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 0.5), (y + 0.2), (z - 0.1), (int) 1, (Math.random() * 0.01),
+								(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
+					}
+				} else if (((new Object() {
+					public Direction getDirection(BlockPos pos) {
+						try {
+							BlockState _bs = world.getBlockState(pos);
+							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+							return _bs.get(property);
+						} catch (Exception e) {
+							return Direction.NORTH;
+						}
+					}
+				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 0.5), (y + 0.2), (z + 1.1), (int) 1, (Math.random() * 0.01),
+								(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
+					}
+				} else if (((new Object() {
+					public Direction getDirection(BlockPos pos) {
+						try {
+							BlockState _bs = world.getBlockState(pos);
+							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+							return _bs.get(property);
+						} catch (Exception e) {
+							return Direction.NORTH;
+						}
+					}
+				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x - 0.1), (y + 0.2), (z + 0.5), (int) 1, (Math.random() * 0.01),
+								(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
+					}
+				} else if (((new Object() {
+					public Direction getDirection(BlockPos pos) {
+						try {
+							BlockState _bs = world.getBlockState(pos);
+							DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
+							return _bs.get(property);
+						} catch (Exception e) {
+							return Direction.NORTH;
+						}
+					}
+				}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
+					if (world instanceof ServerWorld) {
+						((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 1.1), (y + 0.2), (z + 0.5), (int) 1, (Math.random() * 0.01),
+								(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
 					}
 				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 0.5), (y + 0.2), (z - 0.1), (int) 1, (Math.random() * 0.01),
-							(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
+				if (!world.getWorld().isRemote) {
+					world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.furnace.fire_crackle")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1);
+				} else {
+					world.getWorld().playSound(x, y, z,
+							(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.furnace.fire_crackle")),
+							SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 				}
-			} else if (((new Object() {
-				public Direction getDirection(BlockPos pos) {
-					try {
-						BlockState _bs = world.getBlockState(pos);
-						DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						return _bs.get(property);
-					} catch (Exception e) {
-						return Direction.NORTH;
-					}
-				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 0.5), (y + 0.2), (z + 1.1), (int) 1, (Math.random() * 0.01),
-							(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
-				}
-			} else if (((new Object() {
-				public Direction getDirection(BlockPos pos) {
-					try {
-						BlockState _bs = world.getBlockState(pos);
-						DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						return _bs.get(property);
-					} catch (Exception e) {
-						return Direction.NORTH;
-					}
-				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x - 0.1), (y + 0.2), (z + 0.5), (int) 1, (Math.random() * 0.01),
-							(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
-				}
-			} else if (((new Object() {
-				public Direction getDirection(BlockPos pos) {
-					try {
-						BlockState _bs = world.getBlockState(pos);
-						DirectionProperty property = (DirectionProperty) _bs.getBlock().getStateContainer().getProperty("facing");
-						return _bs.get(property);
-					} catch (Exception e) {
-						return Direction.NORTH;
-					}
-				}
-			}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-				if (world instanceof ServerWorld) {
-					((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, (x + 1.1), (y + 0.2), (z + 0.5), (int) 1, (Math.random() * 0.01),
-							(firehaight), (Math.random() * 0.01), (Math.random() * 0.01));
-				}
-			}
-			if (!world.getWorld().isRemote) {
-				world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.furnace.fire_crackle")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1);
-			} else {
-				world.getWorld().playSound(x, y, z,
-						(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.furnace.fire_crackle")),
-						SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
 			}
 		}
 	}

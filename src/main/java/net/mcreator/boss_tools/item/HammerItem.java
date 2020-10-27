@@ -3,6 +3,7 @@ package net.mcreator.boss_tools.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
@@ -24,7 +25,7 @@ public class HammerItem extends BossToolsModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(BossToolsItemGroup.tab).maxDamage(3));
+			super(new Item.Properties().group(BossToolsItemGroup.tab).maxDamage(3).rarity(Rarity.COMMON));
 			setRegistryName("hammer");
 		}
 

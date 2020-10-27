@@ -8,7 +8,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.block.Blocks;
 
@@ -19,7 +18,7 @@ public class OrbitMarsBiomBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:orbit_mars_biom")
 	public static final CustomBiome biome = null;
 	public OrbitMarsBiomBiome(BossToolsModElements instance) {
-		super(instance, 413);
+		super(instance, 411);
 	}
 
 	@Override
@@ -37,10 +36,6 @@ public class OrbitMarsBiomBiome extends BossToolsModElements.ModElement {
 					.surfaceBuilder(SurfaceBuilder.DEFAULT,
 							new SurfaceBuilderConfig(Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState(), Blocks.AIR.getDefaultState())));
 			setRegistryName("orbit_mars_biom");
-			DefaultBiomeFeatures.addCarvers(this);
-			DefaultBiomeFeatures.addStructures(this);
-			DefaultBiomeFeatures.addMonsterRooms(this);
-			DefaultBiomeFeatures.addOres(this);
 		}
 
 		@OnlyIn(Dist.CLIENT)

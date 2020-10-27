@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "structure",
   "definition": {
     "structure": "moonhouse2",
@@ -10,6 +10,8 @@
     "maxCountPerChunk": 1,
     "spawnLocation": "Ground",
     "spawnHeightOffset": 1,
+    "spawnXOffset": 0,
+    "spawnZOffset": 0,
     "spawnWorldTypes": [
       "CUSTOM:Moon"
     ],

@@ -1,5 +1,5 @@
 {
-  "_fv": 11,
+  "_fv": 13,
   "_type": "block",
   "definition": {
     "texture": "torch",
@@ -12,6 +12,7 @@
     "customModelName": "glowstonetorch:default",
     "rotationMode": 1,
     "emissiveRendering": false,
+    "displayFluidOverlay": false,
     "itemTexture": "glowstonetorch",
     "hasTransparency": true,
     "connectedSides": false,
@@ -27,6 +28,7 @@
     "hardness": 0.01,
     "resistance": 10.0,
     "hasGravity": false,
+    "isWaterloggable": false,
     "creativeTab": {
       "value": "CUSTOM:BossTools"
     },

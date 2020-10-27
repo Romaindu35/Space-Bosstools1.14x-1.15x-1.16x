@@ -3,6 +3,7 @@ package net.mcreator.boss_tools.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
@@ -15,7 +16,7 @@ public class TinplateItem extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:tinplate")
 	public static final Item block = null;
 	public TinplateItem(BossToolsModElements instance) {
-		super(instance, 15);
+		super(instance, 16);
 	}
 
 	@Override
@@ -24,7 +25,7 @@ public class TinplateItem extends BossToolsModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(BossToolsItemGroup.tab).maxStackSize(64));
+			super(new Item.Properties().group(BossToolsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("tinplate");
 		}
 
