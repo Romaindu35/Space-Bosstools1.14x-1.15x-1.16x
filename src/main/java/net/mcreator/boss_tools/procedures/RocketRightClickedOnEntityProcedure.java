@@ -11,5 +11,6 @@ public class RocketRightClickedOnEntityProcedure extends BossToolsModElements.Mo
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		double fuelSync = 0;
 	}
 }

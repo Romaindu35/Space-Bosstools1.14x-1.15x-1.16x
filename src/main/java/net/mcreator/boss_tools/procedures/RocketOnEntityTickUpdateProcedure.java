@@ -63,6 +63,7 @@ public class RocketOnEntityTickUpdateProcedure extends BossToolsModElements.ModE
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+		double fuelSync = 0;
 		if ((entity.isBeingRidden())) {
 			if (((entity.getPosY()) > 600)) {
 				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {

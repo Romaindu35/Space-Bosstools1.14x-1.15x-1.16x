@@ -78,6 +78,7 @@ public class BossToolsModVariables {
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
 			nbt.putDouble("RocketFueltier1", instance.RocketFueltier1);
+			nbt.putDouble("fuel", instance.fuel);
 			return nbt;
 		}
 
@@ -85,11 +86,13 @@ public class BossToolsModVariables {
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
 			instance.RocketFueltier1 = nbt.getDouble("RocketFueltier1");
+			instance.fuel = nbt.getDouble("fuel");
 		}
 	}
 
 	public static class PlayerVariables {
 		public double RocketFueltier1 = 0;
+		public double fuel = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				BossToolsMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -123,6 +126,7 @@ public class BossToolsModVariables {
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 		clone.RocketFueltier1 = original.RocketFueltier1;
+		clone.fuel = original.fuel;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -148,6 +152,7 @@ public class BossToolsModVariables {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
 					variables.RocketFueltier1 = message.data.RocketFueltier1;
+					variables.fuel = message.data.fuel;
 				}
 			});
 			context.setPacketHandled(true);

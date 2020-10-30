@@ -5833,18 +5833,6 @@
       }
     },
     {
-      "name": "LoadingSyncEvent",
-      "type": "procedure",
-      "sortid": 343,
-      "compiles": true,
-      "locked_code": true,
-      "ids": {},
-      "registry_name": "loading_sync_event",
-      "metadata": {
-        "dependencies": []
-      }
-    },
-    {
       "name": "FuelSyncSystem",
       "type": "potion",
       "sortid": 344,
@@ -7712,6 +7700,18 @@
       "metadata": {
         "dependencies": []
       }
+    },
+    {
+      "name": "LoadingSyncEvent",
+      "type": "procedure",
+      "sortid": 416,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "loading_sync_event",
+      "metadata": {
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [
@@ -7780,6 +7780,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "fuel",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -7820,20 +7826,20 @@
       "block.boss_tools.moon_slabe": "Moon Stone Slab",
       "item.minecraft.lingering_potion.effect.rocket_paticle": "Lingering RocketParticle",
       "item.minecraft.potion.effect.rocketpotion": "Rocketpotion",
-      "item.minecraft.tipped_arrow.effect.damage_remove": "Arrow of SpaceSuite",
       "block.boss_tools.cheese_block": "Cheese Ore",
+      "item.minecraft.tipped_arrow.effect.damage_remove": "Arrow of SpaceSuite",
       "item.boss_tools.oxygen_tank": "Oxygen Tank",
       "item.boss_tools.umlaufbahnerde": "Admin Feuerzeug",
       "item.boss_tools.rocket_tier_2": "Rocket Spawn Egg",
       "item.boss_tools.tank_tier_3": "Tier 3 Tank",
       "block.boss_tools.blasting_furnace": "Blast Furnace",
-      "item.boss_tools.rocket": "Rocket Spawn Egg",
       "item.boss_tools.space_armor_boots": "Space Boots",
+      "item.boss_tools.rocket": "Rocket Spawn Egg",
       "block.boss_tools.glowstone_torch": "Glowstone Torch",
       "item.minecraft.splash_potion.effect.damage_remove": "Splash SpaceSuite",
       "item.boss_tools.fuel_bucked": "Fuel Bucket",
-      "item.boss_tools.mars": "Admin Feuerzeug",
       "block.boss_tools.green_flag": "Green Flag",
+      "item.boss_tools.mars": "Admin Feuerzeug",
       "biome.boss_tools.mars_biom": "Mars Biom",
       "item.minecraft.potion.effect.damage_remove": "SpaceSuite",
       "block.boss_tools.steahlblock": "Steel Block",
@@ -7855,10 +7861,10 @@
       "block.boss_tools.rocked_base": "Rocket Launch Pad",
       "item.minecraft.splash_potion.effect.damage_potion": "Splash space",
       "item.minecraft.splash_potion.effect.rocketpotion": "Splash Rocketpotion",
-      "item.minecraft.tipped_arrow.effect.damage_potion": "Arrow of space",
       "item.minecraft.lingering_potion.effect.rocket_potion_9": "Lingering Rocketpotion 9",
-      "item.minecraft.lingering_potion.effect.rocket_potion_8": "Lingering Rocketpotion 8",
+      "item.minecraft.tipped_arrow.effect.damage_potion": "Arrow of space",
       "item.minecraft.potion.effect.bee_potion": "BeePotion",
+      "item.minecraft.lingering_potion.effect.rocket_potion_8": "Lingering Rocketpotion 8",
       "item.boss_tools.hammer": "Hammer",
       "item.boss_tools.fuel_bucket_big": "Big Fuel Bucket",
       "item.boss_tools.alien": "Alien Spawn Egg",
@@ -7884,8 +7890,8 @@
       "item.minecraft.tipped_arrow.effect.rocketpotion_3": "Arrow of Rocketpotion3",
       "item.minecraft.tipped_arrow.effect.rocketpotion_4": "Arrow of Rocketpotion4",
       "item.minecraft.tipped_arrow.effect.rocketpotion_5": "Arrow of Rocketpotion5",
-      "item.minecraft.lingering_potion.effect.landinggear_potion_1": "Lingering LandinggearParticle",
       "item.minecraft.lingering_potion.effect.rocket_particle_3": "Lingering RocketParticle3",
+      "item.minecraft.lingering_potion.effect.landinggear_potion_1": "Lingering LandinggearParticle",
       "item.minecraft.potion.effect.landinggear_particle": "LandinggearParticle",
       "item.minecraft.lingering_potion.effect.rocketpotion_7": "Lingering Rocketpotion 7",
       "item.minecraft.lingering_potion.effect.rocketpotion_4": "Lingering Rocketpotion4",
@@ -7899,8 +7905,8 @@
       "item.boss_tools.compressed_tin": "Compressed Desh",
       "block.boss_tools.marssiliconore": "Silicon Ore",
       "item.minecraft.tipped_arrow.effect.landinggear_potion_1": "Arrow of LandinggearParticle",
-      "block.boss_tools.marssand": "Mars Sand",
       "block.boss_tools.oxygen_generator": "Oxygen Bullet Generator | 3x6",
+      "block.boss_tools.marssand": "Mars Sand",
       "block.boss_tools.rocket_itemtir_2": "Tier 2 Rocket",
       "item.boss_tools.rocket_nose": "Nose Cone",
       "block.boss_tools.blue_flag": "Blue Flag",
@@ -8035,7 +8041,7 @@
   "workspaceSettings": {
     "modid": "boss_tools",
     "modName": "boss tools",
-    "version": "Release",
+    "version": "Released",
     "author": "MrScautHD",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/space-bosstools",
     "disableForgeVersionCheck": true,

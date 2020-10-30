@@ -1,5 +1,6 @@
 package net.mcreator.boss_tools.procedures;
 
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import net.minecraft.world.server.ServerWorld;
@@ -8,11 +9,11 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
@@ -68,9 +69,15 @@ public class Rockethurtentity2Procedure extends BossToolsModElements.ModElement 
 				return _retval.get();
 			}
 		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(FuelBucketBigItem.block, (int) (1));
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+			{
+				final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+				final int _sltid = (int) (0);
+				_setstack.setCount((int) 1);
+				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable) {
+						((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+					}
+				});
 			}
 			if (!world.getWorld().isRemote) {
 				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
@@ -87,9 +94,15 @@ public class Rockethurtentity2Procedure extends BossToolsModElements.ModElement 
 				return _retval.get();
 			}
 		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
-			if (entity instanceof PlayerEntity) {
-				ItemStack _stktoremove = new ItemStack(BucketBigItem.block, (int) (1));
-				((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+			{
+				final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+				final int _sltid = (int) (0);
+				_setstack.setCount((int) 1);
+				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+					if (capability instanceof IItemHandlerModifiable) {
+						((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+					}
+				});
 			}
 			if (!world.getWorld().isRemote) {
 				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));

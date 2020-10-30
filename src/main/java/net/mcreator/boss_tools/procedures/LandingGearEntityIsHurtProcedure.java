@@ -1,13 +1,14 @@
 package net.mcreator.boss_tools.procedures;
 
+import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
@@ -67,9 +68,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemBlock.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(RocketItemBlock.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (0);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemBlock.block, (int) (1)));
@@ -86,9 +93,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemtir2Block.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(RocketItemtir2Block.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (0);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemtir2Block.block, (int) (1)));
@@ -105,9 +118,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(RocketItemTier3Block.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(RocketItemTier3Block.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (0);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemTier3Block.block, (int) (1)));
@@ -124,9 +143,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(Items.BUCKET, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(Items.BUCKET, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (1);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Items.BUCKET, (int) (1)));
@@ -143,9 +168,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBuckedItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(FuelBuckedItem.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (1);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBuckedItem.block, (int) (1)));
@@ -162,9 +193,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(BucketBigItem.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (1);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
@@ -181,9 +218,15 @@ public class LandingGearEntityIsHurtProcedure extends BossToolsModElements.ModEl
 					return _retval.get();
 				}
 			}.getItemStack((int) (1), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
-				if (entity instanceof PlayerEntity) {
-					ItemStack _stktoremove = new ItemStack(FuelBucketBigItem.block, (int) (1));
-					((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (1);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
 				}
 				if (!world.getWorld().isRemote) {
 					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
