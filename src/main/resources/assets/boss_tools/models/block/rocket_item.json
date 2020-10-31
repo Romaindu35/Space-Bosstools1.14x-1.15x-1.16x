@@ -1,9 +1,0 @@
-{
-  "parent": "boss_tools:custom/rocketitemtier1v9",
-  "textures": {
-    "all": "boss_tools:blocks/workbench_nasa_top",
-    "particle": "boss_tools:blocks/workbench_nasa_top",
-    "0": "boss_tools:blocks/rocketitem",
-    "missing": "boss_tools:blocks/zauber"
-  }
-}

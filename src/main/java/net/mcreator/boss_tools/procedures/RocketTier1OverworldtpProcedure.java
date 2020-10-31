@@ -15,9 +15,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.boss_tools.item.Tier1RocketItemItem;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
 import net.mcreator.boss_tools.entity.LandingGearEntity;
-import net.mcreator.boss_tools.block.RocketItemBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.Map;
@@ -104,7 +104,7 @@ public class RocketTier1OverworldtpProcedure extends BossToolsModElements.ModEle
 			entity.startRiding(entity2);
 			if (((entity.getRidingEntity()) instanceof LandingGearEntity.CustomEntity)) {
 				{
-					final ItemStack _setstack = new ItemStack(RocketItemBlock.block, (int) (1));
+					final ItemStack _setstack = new ItemStack(Tier1RocketItemItem.block, (int) (1));
 					final int _sltid = (int) (0);
 					_setstack.setCount((int) 1);
 					(entity.getRidingEntity()).getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {

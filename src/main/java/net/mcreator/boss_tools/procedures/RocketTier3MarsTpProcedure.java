@@ -14,10 +14,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
+import net.mcreator.boss_tools.item.Tier3RocketItemItem;
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
 import net.mcreator.boss_tools.entity.LandingGearEntity;
-import net.mcreator.boss_tools.block.RocketItemTier3Block;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.Map;
@@ -25,7 +25,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RocketTier3MarsTpProcedure extends BossToolsModElements.ModElement {
 	public RocketTier3MarsTpProcedure(BossToolsModElements instance) {
-		super(instance, 399);
+		super(instance, 398);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -104,7 +104,7 @@ public class RocketTier3MarsTpProcedure extends BossToolsModElements.ModElement 
 			entity.startRiding(entity2);
 			if (((entity.getRidingEntity()) instanceof LandingGearEntity.CustomEntity)) {
 				{
-					final ItemStack _setstack = new ItemStack(RocketItemTier3Block.block, (int) (1));
+					final ItemStack _setstack = new ItemStack(Tier3RocketItemItem.block, (int) (1));
 					final int _sltid = (int) (0);
 					_setstack.setCount((int) 1);
 					(entity.getRidingEntity()).getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {

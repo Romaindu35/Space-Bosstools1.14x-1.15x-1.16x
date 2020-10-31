@@ -16,6 +16,9 @@ import net.minecraft.block.Blocks;
 
 import net.mcreator.boss_tools.item.TurbineTier2Item;
 import net.mcreator.boss_tools.item.TurbineItem;
+import net.mcreator.boss_tools.item.Tier3RocketItemItem;
+import net.mcreator.boss_tools.item.Tier2RocketItemItem;
+import net.mcreator.boss_tools.item.Tier1RocketItemItem;
 import net.mcreator.boss_tools.item.TankTier3Item;
 import net.mcreator.boss_tools.item.RocketfinsItem;
 import net.mcreator.boss_tools.item.RocketNoseItem;
@@ -26,9 +29,6 @@ import net.mcreator.boss_tools.item.EngineTier3Item;
 import net.mcreator.boss_tools.item.CompressesteelItem;
 import net.mcreator.boss_tools.item.CompressedsiliconItem;
 import net.mcreator.boss_tools.item.CompressedTinItem;
-import net.mcreator.boss_tools.block.RocketItemtir2Block;
-import net.mcreator.boss_tools.block.RocketItemTier3Block;
-import net.mcreator.boss_tools.block.RocketItemBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -333,7 +333,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 						}
 						return _retval.get();
 					}
-				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(RocketItemBlock.block, (int) (1))
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(Tier1RocketItemItem.block, (int) (1))
 						.getItem())) || ((new Object() {
 							public ItemStack getItemStack(BlockPos pos, int sltid) {
 								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -559,7 +559,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
 						final int _sltid = (int) (14);
-						final ItemStack _setstack = new ItemStack(RocketItemBlock.block, (int) (1));
+						final ItemStack _setstack = new ItemStack(Tier1RocketItemItem.block, (int) (1));
 						_setstack.setCount((int) ((new Object() {
 							public int getAmount(BlockPos pos, int sltid) {
 								AtomicInteger _retval = new AtomicInteger(0);
@@ -1079,7 +1079,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 						}
 						return _retval.get();
 					}
-				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(RocketItemtir2Block.block, (int) (1))
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(Tier2RocketItemItem.block, (int) (1))
 						.getItem())) || ((new Object() {
 							public ItemStack getItemStack(BlockPos pos, int sltid) {
 								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -1305,7 +1305,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
 						final int _sltid = (int) (14);
-						final ItemStack _setstack = new ItemStack(RocketItemtir2Block.block, (int) (1));
+						final ItemStack _setstack = new ItemStack(Tier2RocketItemItem.block, (int) (1));
 						_setstack.setCount((int) ((new Object() {
 							public int getAmount(BlockPos pos, int sltid) {
 								AtomicInteger _retval = new AtomicInteger(0);
@@ -1824,7 +1824,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 						}
 						return _retval.get();
 					}
-				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(RocketItemTier3Block.block, (int) (1))
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (14))).getItem() == new ItemStack(Tier3RocketItemItem.block, (int) (1))
 						.getItem())) || ((new Object() {
 							public ItemStack getItemStack(BlockPos pos, int sltid) {
 								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -2050,7 +2050,7 @@ public class WorkbenchUpdateTickProcedure extends BossToolsModElements.ModElemen
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
 						final int _sltid = (int) (14);
-						final ItemStack _setstack = new ItemStack(RocketItemTier3Block.block, (int) (1));
+						final ItemStack _setstack = new ItemStack(Tier3RocketItemItem.block, (int) (1));
 						_setstack.setCount((int) ((new Object() {
 							public int getAmount(BlockPos pos, int sltid) {
 								AtomicInteger _retval = new AtomicInteger(0);

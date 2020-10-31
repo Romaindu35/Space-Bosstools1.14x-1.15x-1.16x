@@ -131,15 +131,6 @@
       "registry_name": "rocked_base"
     },
     {
-      "name": "RocketItem",
-      "type": "block",
-      "sortid": 1,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rocket_item"
-    },
-    {
       "name": "Rocketplace",
       "type": "procedure",
       "sortid": 83,
@@ -1225,15 +1216,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "rocket_tier_2"
-    },
-    {
-      "name": "RocketItemtir2",
-      "type": "block",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rocket_itemtir_2"
     },
     {
       "name": "RocketPlacetir2",
@@ -5835,7 +5817,7 @@
     {
       "name": "FuelSyncSystem",
       "type": "potion",
-      "sortid": 344,
+      "sortid": 343,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5844,7 +5826,7 @@
     {
       "name": "RocketTier2GuiFuel",
       "type": "gui",
-      "sortid": 345,
+      "sortid": 344,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5853,7 +5835,7 @@
     {
       "name": "OxygenLoaderGui",
       "type": "gui",
-      "sortid": 346,
+      "sortid": 345,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5862,7 +5844,7 @@
     {
       "name": "OxygenloaderFire1",
       "type": "procedure",
-      "sortid": 347,
+      "sortid": 346,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5892,7 +5874,7 @@
     {
       "name": "OxygenloaderFire2",
       "type": "procedure",
-      "sortid": 348,
+      "sortid": 347,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5922,7 +5904,7 @@
     {
       "name": "OxygenloaderFire3",
       "type": "procedure",
-      "sortid": 349,
+      "sortid": 348,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5952,7 +5934,7 @@
     {
       "name": "OxygenloaderFire4",
       "type": "procedure",
-      "sortid": 350,
+      "sortid": 349,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -5982,7 +5964,7 @@
     {
       "name": "OxygenloaderFire5",
       "type": "procedure",
-      "sortid": 351,
+      "sortid": 350,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6012,7 +5994,7 @@
     {
       "name": "OxygenloaderFire6",
       "type": "procedure",
-      "sortid": 352,
+      "sortid": 351,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6042,7 +6024,7 @@
     {
       "name": "OxygenloaderFire7",
       "type": "procedure",
-      "sortid": 353,
+      "sortid": 352,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6072,7 +6054,7 @@
     {
       "name": "OxygenloaderFire8",
       "type": "procedure",
-      "sortid": 354,
+      "sortid": 353,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6102,7 +6084,7 @@
     {
       "name": "OxygenloaderFire9",
       "type": "procedure",
-      "sortid": 355,
+      "sortid": 354,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6132,7 +6114,7 @@
     {
       "name": "OxygenloaderFire10",
       "type": "procedure",
-      "sortid": 356,
+      "sortid": 355,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6162,7 +6144,7 @@
     {
       "name": "OxygenloaderFire11",
       "type": "procedure",
-      "sortid": 357,
+      "sortid": 356,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6192,7 +6174,7 @@
     {
       "name": "OxygenloaderFire12",
       "type": "procedure",
-      "sortid": 358,
+      "sortid": 357,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6222,7 +6204,7 @@
     {
       "name": "OxygenloaderFire13",
       "type": "procedure",
-      "sortid": 359,
+      "sortid": 358,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6252,7 +6234,7 @@
     {
       "name": "OxygenBulletGeneratorGUI",
       "type": "gui",
-      "sortid": 360,
+      "sortid": 359,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6261,7 +6243,7 @@
     {
       "name": "OxygenGeneratorFire1",
       "type": "procedure",
-      "sortid": 361,
+      "sortid": 360,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6291,7 +6273,7 @@
     {
       "name": "OxygenGeneratorFire2",
       "type": "procedure",
-      "sortid": 362,
+      "sortid": 361,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6321,7 +6303,7 @@
     {
       "name": "OxygenGeneratorFire3",
       "type": "procedure",
-      "sortid": 363,
+      "sortid": 362,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6351,7 +6333,7 @@
     {
       "name": "OxygenGeneratorFire4",
       "type": "procedure",
-      "sortid": 364,
+      "sortid": 363,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6381,7 +6363,7 @@
     {
       "name": "OxygenGeneratorFire5",
       "type": "procedure",
-      "sortid": 365,
+      "sortid": 364,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6411,7 +6393,7 @@
     {
       "name": "OxygenGeneratorFire6",
       "type": "procedure",
-      "sortid": 366,
+      "sortid": 365,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6441,7 +6423,7 @@
     {
       "name": "OxygenGeneratorFire7",
       "type": "procedure",
-      "sortid": 367,
+      "sortid": 366,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6471,7 +6453,7 @@
     {
       "name": "OxygenGeneratorFire8",
       "type": "procedure",
-      "sortid": 368,
+      "sortid": 367,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6501,7 +6483,7 @@
     {
       "name": "OxygenGeneratorFire9",
       "type": "procedure",
-      "sortid": 369,
+      "sortid": 368,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6531,7 +6513,7 @@
     {
       "name": "OxygenGeneratorFire10",
       "type": "procedure",
-      "sortid": 370,
+      "sortid": 369,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6561,7 +6543,7 @@
     {
       "name": "OxygenGeneratorFire11",
       "type": "procedure",
-      "sortid": 371,
+      "sortid": 370,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6591,7 +6573,7 @@
     {
       "name": "OxygenGeneratorFire12",
       "type": "procedure",
-      "sortid": 372,
+      "sortid": 371,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6621,7 +6603,7 @@
     {
       "name": "OxygenGeneratorFire13",
       "type": "procedure",
-      "sortid": 373,
+      "sortid": 372,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6651,7 +6633,7 @@
     {
       "name": "Oxygenaddlarge",
       "type": "procedure",
-      "sortid": 374,
+      "sortid": 373,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6680,7 +6662,7 @@
     {
       "name": "OxygenRemovelarge",
       "type": "procedure",
-      "sortid": 375,
+      "sortid": 374,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6709,7 +6691,7 @@
     {
       "name": "Oxygenlargeshow1",
       "type": "procedure",
-      "sortid": 376,
+      "sortid": 375,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6739,7 +6721,7 @@
     {
       "name": "Oxygenlargeshow2",
       "type": "procedure",
-      "sortid": 377,
+      "sortid": 376,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6778,7 +6760,7 @@
     {
       "name": "CompressorGui",
       "type": "gui",
-      "sortid": 378,
+      "sortid": 377,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6787,7 +6769,7 @@
     {
       "name": "CompressorTick",
       "type": "procedure",
-      "sortid": 379,
+      "sortid": 378,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6816,25 +6798,16 @@
     {
       "name": "Compressorrecpie",
       "type": "recipe",
-      "sortid": 380,
+      "sortid": 379,
       "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "compressorrecpie"
     },
     {
-      "name": "RocketItemTier3",
-      "type": "block",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rocket_item_tier_3"
-    },
-    {
       "name": "RocketPlaceTier3",
       "type": "procedure",
-      "sortid": 381,
+      "sortid": 380,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6872,7 +6845,7 @@
     {
       "name": "RocketOnEntityTickTier3",
       "type": "procedure",
-      "sortid": 382,
+      "sortid": 381,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6905,7 +6878,7 @@
     {
       "name": "Rockethurtentity3",
       "type": "procedure",
-      "sortid": 383,
+      "sortid": 382,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6938,7 +6911,7 @@
     {
       "name": "PowupTier3",
       "type": "keybind",
-      "sortid": 384,
+      "sortid": 383,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6947,7 +6920,7 @@
     {
       "name": "PowUponkeypressTier3",
       "type": "procedure",
-      "sortid": 385,
+      "sortid": 384,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6980,7 +6953,7 @@
     {
       "name": "RocketTier3GuiFuel",
       "type": "gui",
-      "sortid": 386,
+      "sortid": 385,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6989,7 +6962,7 @@
     {
       "name": "RocketParticle3",
       "type": "potion",
-      "sortid": 387,
+      "sortid": 386,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -6998,7 +6971,7 @@
     {
       "name": "RocketParticleOnTick3",
       "type": "procedure",
-      "sortid": 388,
+      "sortid": 387,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7049,7 +7022,7 @@
     {
       "name": "Mercurybiome",
       "type": "biome",
-      "sortid": 389,
+      "sortid": 388,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7067,7 +7040,7 @@
     {
       "name": "Mercuryeffects",
       "type": "procedure",
-      "sortid": 390,
+      "sortid": 389,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7096,7 +7069,7 @@
     {
       "name": "MercuryIronore",
       "type": "block",
-      "sortid": 391,
+      "sortid": 390,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7105,7 +7078,7 @@
     {
       "name": "MercuryIroneoreRecpie",
       "type": "recipe",
-      "sortid": 392,
+      "sortid": 391,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7132,7 +7105,7 @@
     {
       "name": "Marssiliconrecpie",
       "type": "recipe",
-      "sortid": 393,
+      "sortid": 392,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7168,7 +7141,7 @@
     {
       "name": "TankRecpeieTier3",
       "type": "recipe",
-      "sortid": 394,
+      "sortid": 393,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7177,7 +7150,7 @@
     {
       "name": "EngineRecpieTier3",
       "type": "recipe",
-      "sortid": 395,
+      "sortid": 394,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7186,7 +7159,7 @@
     {
       "name": "RocketTier3moonTp",
       "type": "procedure",
-      "sortid": 396,
+      "sortid": 395,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7219,7 +7192,7 @@
     {
       "name": "RocketTier3OverworldTp",
       "type": "procedure",
-      "sortid": 397,
+      "sortid": 396,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7252,7 +7225,7 @@
     {
       "name": "RocketTier3OverworldOrbittp",
       "type": "procedure",
-      "sortid": 398,
+      "sortid": 397,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7285,7 +7258,7 @@
     {
       "name": "RocketTier3MarsTp",
       "type": "procedure",
-      "sortid": 399,
+      "sortid": 398,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7318,7 +7291,7 @@
     {
       "name": "RocketTier3MerkurTp",
       "type": "procedure",
-      "sortid": 400,
+      "sortid": 399,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7351,7 +7324,7 @@
     {
       "name": "RocketGuiTier3",
       "type": "gui",
-      "sortid": 401,
+      "sortid": 400,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7360,7 +7333,7 @@
     {
       "name": "RocketPotion9",
       "type": "potion",
-      "sortid": 402,
+      "sortid": 401,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7369,7 +7342,7 @@
     {
       "name": "RocketPotion9Tick",
       "type": "procedure",
-      "sortid": 403,
+      "sortid": 402,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7429,7 +7402,7 @@
     {
       "name": "RocketTier1OrbitTpMoon",
       "type": "procedure",
-      "sortid": 404,
+      "sortid": 403,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7462,7 +7435,7 @@
     {
       "name": "RocketTier2OrbitTpMoon",
       "type": "procedure",
-      "sortid": 405,
+      "sortid": 404,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7495,7 +7468,7 @@
     {
       "name": "RocketTier2OrbitTpMars",
       "type": "procedure",
-      "sortid": 406,
+      "sortid": 405,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7528,7 +7501,7 @@
     {
       "name": "RocketTier3OrbitTpMoon",
       "type": "procedure",
-      "sortid": 407,
+      "sortid": 406,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7561,7 +7534,7 @@
     {
       "name": "RocketTier3OrbitTpMars",
       "type": "procedure",
-      "sortid": 408,
+      "sortid": 407,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7594,7 +7567,7 @@
     {
       "name": "RocketTier3OrbitTpMercury",
       "type": "procedure",
-      "sortid": 409,
+      "sortid": 408,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7627,7 +7600,7 @@
     {
       "name": "OrbitMoonBiom",
       "type": "biome",
-      "sortid": 410,
+      "sortid": 409,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7636,7 +7609,7 @@
     {
       "name": "OrbitMarsBiom",
       "type": "biome",
-      "sortid": 411,
+      "sortid": 410,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7645,7 +7618,7 @@
     {
       "name": "OrbitMercuryBiom",
       "type": "biome",
-      "sortid": 412,
+      "sortid": 411,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7654,7 +7627,7 @@
     {
       "name": "OxygenTick",
       "type": "procedure",
-      "sortid": 413,
+      "sortid": 412,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -7683,7 +7656,7 @@
     {
       "name": "JeiPlugin",
       "type": "code",
-      "sortid": 414,
+      "sortid": 413,
       "compiles": true,
       "locked_code": true,
       "ids": {},
@@ -7692,7 +7665,7 @@
     {
       "name": "FlySyncEvent",
       "type": "procedure",
-      "sortid": 415,
+      "sortid": 414,
       "compiles": true,
       "locked_code": true,
       "ids": {},
@@ -7704,13 +7677,139 @@
     {
       "name": "LoadingSyncEvent",
       "type": "procedure",
-      "sortid": 416,
+      "sortid": 415,
       "compiles": true,
       "locked_code": true,
       "ids": {},
       "registry_name": "loading_sync_event",
       "metadata": {
         "dependencies": []
+      }
+    },
+    {
+      "name": "Tier1RocketItemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 416,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_1_rocket_item_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tier1RocketItem",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_1_rocket_item"
+    },
+    {
+      "name": "Tier2RocketItem",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_2_rocket_item"
+    },
+    {
+      "name": "Tier2RocketItemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 417,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_2_rocket_item_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tier3RocketItem",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_3_rocket_item"
+    },
+    {
+      "name": "Tier3RocketItemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 418,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tier_3_rocket_item_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     }
   ],
@@ -7826,25 +7925,25 @@
       "block.boss_tools.moon_slabe": "Moon Stone Slab",
       "item.minecraft.lingering_potion.effect.rocket_paticle": "Lingering RocketParticle",
       "item.minecraft.potion.effect.rocketpotion": "Rocketpotion",
-      "block.boss_tools.cheese_block": "Cheese Ore",
       "item.minecraft.tipped_arrow.effect.damage_remove": "Arrow of SpaceSuite",
+      "block.boss_tools.cheese_block": "Cheese Ore",
       "item.boss_tools.oxygen_tank": "Oxygen Tank",
       "item.boss_tools.umlaufbahnerde": "Admin Feuerzeug",
       "item.boss_tools.rocket_tier_2": "Rocket Spawn Egg",
       "item.boss_tools.tank_tier_3": "Tier 3 Tank",
       "block.boss_tools.blasting_furnace": "Blast Furnace",
-      "item.boss_tools.space_armor_boots": "Space Boots",
       "item.boss_tools.rocket": "Rocket Spawn Egg",
+      "item.boss_tools.space_armor_boots": "Space Boots",
       "block.boss_tools.glowstone_torch": "Glowstone Torch",
       "item.minecraft.splash_potion.effect.damage_remove": "Splash SpaceSuite",
       "item.boss_tools.fuel_bucked": "Fuel Bucket",
-      "block.boss_tools.green_flag": "Green Flag",
       "item.boss_tools.mars": "Admin Feuerzeug",
+      "block.boss_tools.green_flag": "Green Flag",
       "biome.boss_tools.mars_biom": "Mars Biom",
       "item.minecraft.potion.effect.damage_remove": "SpaceSuite",
       "block.boss_tools.steahlblock": "Steel Block",
       "item.minecraft.lingering_potion.effect.fuel_sync_system": "Lingering FuelSyncSystem",
-      "itemGroup.tabboss_tools": "Boss Tools",
+      "itemGroup.tabboss_tools": "Space-BossTools",
       "item.minecraft.potion.effect.rocket_potion_8": "Rocketpotion 8",
       "item.minecraft.splash_potion.effect.landinggear_potion_1": "Splash LandinggearParticle",
       "entity.boss_tools.landing_gear": "Landing Gear",
@@ -7861,10 +7960,10 @@
       "block.boss_tools.rocked_base": "Rocket Launch Pad",
       "item.minecraft.splash_potion.effect.damage_potion": "Splash space",
       "item.minecraft.splash_potion.effect.rocketpotion": "Splash Rocketpotion",
-      "item.minecraft.lingering_potion.effect.rocket_potion_9": "Lingering Rocketpotion 9",
       "item.minecraft.tipped_arrow.effect.damage_potion": "Arrow of space",
-      "item.minecraft.potion.effect.bee_potion": "BeePotion",
+      "item.minecraft.lingering_potion.effect.rocket_potion_9": "Lingering Rocketpotion 9",
       "item.minecraft.lingering_potion.effect.rocket_potion_8": "Lingering Rocketpotion 8",
+      "item.minecraft.potion.effect.bee_potion": "BeePotion",
       "item.boss_tools.hammer": "Hammer",
       "item.boss_tools.fuel_bucket_big": "Big Fuel Bucket",
       "item.boss_tools.alien": "Alien Spawn Egg",
@@ -7890,8 +7989,8 @@
       "item.minecraft.tipped_arrow.effect.rocketpotion_3": "Arrow of Rocketpotion3",
       "item.minecraft.tipped_arrow.effect.rocketpotion_4": "Arrow of Rocketpotion4",
       "item.minecraft.tipped_arrow.effect.rocketpotion_5": "Arrow of Rocketpotion5",
-      "item.minecraft.lingering_potion.effect.rocket_particle_3": "Lingering RocketParticle3",
       "item.minecraft.lingering_potion.effect.landinggear_potion_1": "Lingering LandinggearParticle",
+      "item.minecraft.lingering_potion.effect.rocket_particle_3": "Lingering RocketParticle3",
       "item.minecraft.potion.effect.landinggear_particle": "LandinggearParticle",
       "item.minecraft.lingering_potion.effect.rocketpotion_7": "Lingering Rocketpotion 7",
       "item.minecraft.lingering_potion.effect.rocketpotion_4": "Lingering Rocketpotion4",
@@ -7907,8 +8006,8 @@
       "item.minecraft.tipped_arrow.effect.landinggear_potion_1": "Arrow of LandinggearParticle",
       "block.boss_tools.oxygen_generator": "Oxygen Bullet Generator | 3x6",
       "block.boss_tools.marssand": "Mars Sand",
-      "block.boss_tools.rocket_itemtir_2": "Tier 2 Rocket",
       "item.boss_tools.rocket_nose": "Nose Cone",
+      "item.boss_tools.tier_3_rocket_item": "§bTier 3 Rocket",
       "block.boss_tools.blue_flag": "Blue Flag",
       "block.boss_tools.iron_block_slab": "Iron Block Slab",
       "block.boss_tools.redsgreen": "Red Decoration Block",
@@ -7936,6 +8035,7 @@
       "block.boss_tools.moon_stone": "Moon Stone",
       "block.boss_tools.iron": "Iron Ore",
       "item.boss_tools.mercury": "Admin Feuerzeug",
+      "item.boss_tools.tier_1_rocket_item": "§bTier 1 Rocket",
       "item.minecraft.splash_potion.effect.fuel_sync_system": "Splash FuelSyncSystem",
       "item.minecraft.potion.effect.rocket_paticle_2": "RocketParticle2",
       "item.boss_tools.turbinen_gehause": "Engine Casing",
@@ -7953,14 +8053,13 @@
       "effect.bee_potion": "BeePotion",
       "item.boss_tools.rocketfins": "Rocket Fins",
       "item.minecraft.potion.effect.rocket_particle_3": "RocketParticle3",
-      "block.boss_tools.rocket_item_tier_3": "Tier 3 Rocket",
       "item.minecraft.lingering_potion.effect.damage_remove": "Lingering SpaceSuite",
       "item.minecraft.lingering_potion.effect.bee_potion": "Lingering BeePotion",
       "item.minecraft.tipped_arrow.effect.damage_remove_2": "Arrow of SpaceSuite",
       "item.boss_tools.oxygen_gear": "Oxygen Gear",
       "item.minecraft.tipped_arrow.effect.damage_remove_3": "Arrow of SpaceSuite",
       "item.minecraft.lingering_potion.effect.landinggear_particle": "Lingering LandinggearParticle",
-      "block.boss_tools.workbench": "NASA Workbench",
+      "block.boss_tools.workbench": "§dNASA Workbench",
       "biome.boss_tools.mercurybiome": "Mercurybiome",
       "block.boss_tools.mercury_ironore": "Mercury Iron Ore",
       "biome.boss_tools.moon_biome": "Moon Biome",
@@ -8014,6 +8113,7 @@
       "item.boss_tools.battery": "Battery",
       "item.boss_tools.bucket_big": "Big Bucket",
       "item.boss_tools.motor": "Tier 1 Tank",
+      "item.boss_tools.tier_2_rocket_item": "§bTier 2 Rocket",
       "block.boss_tools.oxygen_machine": "Oxygen Loader",
       "item.minecraft.potion.effect.rocketpotion_7": "Rocketpotion 7",
       "item.boss_tools.landing_gear": "Landing Gear Spawn Egg",
@@ -8032,7 +8132,6 @@
       "subtitles.rocketfly": "",
       "item.boss_tools.tinplate": "Desh Plate",
       "item.minecraft.potion.effect.damage_potion": "space",
-      "block.boss_tools.rocket_item": "Tier 1 Rocket",
       "effect.rocketpotion": "Rocketpotion",
       "item.boss_tools.rocket_tier_3_spawn_egg": "Rocket Spawn Egg",
       "item.boss_tools.ohl_bucket": "Ohl Bucket"

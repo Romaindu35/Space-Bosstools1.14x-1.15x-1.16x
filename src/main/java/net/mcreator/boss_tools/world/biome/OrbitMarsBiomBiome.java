@@ -18,7 +18,7 @@ public class OrbitMarsBiomBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:orbit_mars_biom")
 	public static final CustomBiome biome = null;
 	public OrbitMarsBiomBiome(BossToolsModElements instance) {
-		super(instance, 411);
+		super(instance, 410);
 	}
 
 	@Override

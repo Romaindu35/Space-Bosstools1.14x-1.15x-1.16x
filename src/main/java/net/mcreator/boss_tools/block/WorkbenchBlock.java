@@ -213,7 +213,7 @@ public class WorkbenchBlock extends BossToolsModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("NASA Workbench");
+						return new StringTextComponent("§dNASA Workbench");
 					}
 
 					@Override
@@ -345,7 +345,7 @@ public class WorkbenchBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("NASA Workbench");
+			return new StringTextComponent("§dNASA Workbench");
 		}
 
 		@Override

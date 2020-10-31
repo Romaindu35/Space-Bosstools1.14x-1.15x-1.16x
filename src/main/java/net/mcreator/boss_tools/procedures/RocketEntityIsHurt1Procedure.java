@@ -17,8 +17,8 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.boss_tools.item.Tier1RocketItemItem;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
-import net.mcreator.boss_tools.block.RocketItemBlock;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -113,7 +113,7 @@ public class RocketEntityIsHurt1Procedure extends BossToolsModElements.ModElemen
 		if (!entity.world.isRemote)
 			entity.remove();
 		if (!world.getWorld().isRemote) {
-			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemBlock.block, (int) (1)));
+			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Tier1RocketItemItem.block, (int) (1)));
 			entityToSpawn.setPickupDelay((int) 10);
 			world.addEntity(entityToSpawn);
 		}

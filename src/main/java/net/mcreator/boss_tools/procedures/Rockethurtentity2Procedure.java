@@ -15,9 +15,9 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.boss_tools.item.Tier2RocketItemItem;
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
-import net.mcreator.boss_tools.block.RocketItemtir2Block;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -113,7 +113,7 @@ public class Rockethurtentity2Procedure extends BossToolsModElements.ModElement 
 		if (!entity.world.isRemote)
 			entity.remove();
 		if (!world.getWorld().isRemote) {
-			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemtir2Block.block, (int) (1)));
+			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Tier2RocketItemItem.block, (int) (1)));
 			entityToSpawn.setPickupDelay((int) 10);
 			world.addEntity(entityToSpawn);
 		}

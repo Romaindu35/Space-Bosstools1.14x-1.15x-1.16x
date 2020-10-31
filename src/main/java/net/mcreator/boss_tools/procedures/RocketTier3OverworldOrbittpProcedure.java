@@ -22,7 +22,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RocketTier3OverworldOrbittpProcedure extends BossToolsModElements.ModElement {
 	public RocketTier3OverworldOrbittpProcedure(BossToolsModElements instance) {
-		super(instance, 398);
+		super(instance, 397);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -66,7 +66,7 @@ public class RocketTier3OverworldOrbittpProcedure extends BossToolsModElements.M
 					.handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/give @p boss_tools:rocket_item_tier_3");
+							"/give @p boss_tools:tier_3_rocket_item");
 		}
 		if (((entity.getPersistentData().getDouble("Bucket")) == 1)) {
 			if (entity instanceof PlayerEntity) {

@@ -15,9 +15,9 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 import net.minecraft.block.Blocks;
 
+import net.mcreator.boss_tools.item.Tier3RocketItemItem;
 import net.mcreator.boss_tools.item.FuelBucketBigItem;
 import net.mcreator.boss_tools.item.BucketBigItem;
-import net.mcreator.boss_tools.block.RocketItemTier3Block;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -26,7 +26,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class Rockethurtentity3Procedure extends BossToolsModElements.ModElement {
 	public Rockethurtentity3Procedure(BossToolsModElements instance) {
-		super(instance, 383);
+		super(instance, 382);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -113,7 +113,7 @@ public class Rockethurtentity3Procedure extends BossToolsModElements.ModElement 
 		if (!entity.world.isRemote)
 			entity.remove();
 		if (!world.getWorld().isRemote) {
-			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(RocketItemTier3Block.block, (int) (1)));
+			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Tier3RocketItemItem.block, (int) (1)));
 			entityToSpawn.setPickupDelay((int) 10);
 			world.addEntity(entityToSpawn);
 		}

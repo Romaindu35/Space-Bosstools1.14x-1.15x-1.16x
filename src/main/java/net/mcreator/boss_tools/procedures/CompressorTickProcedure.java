@@ -26,7 +26,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class CompressorTickProcedure extends BossToolsModElements.ModElement {
 	public CompressorTickProcedure(BossToolsModElements instance) {
-		super(instance, 379);
+		super(instance, 378);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

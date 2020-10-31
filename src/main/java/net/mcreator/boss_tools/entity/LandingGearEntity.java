@@ -41,11 +41,11 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.client.renderer.model.ModelRenderer;
@@ -97,7 +97,7 @@ public class LandingGearEntity extends BossToolsModElements.ModElement {
 			};
 		});
 	}
-	public static class CustomEntity extends MonsterEntity implements IAnimatedEntity {
+	public static class CustomEntity extends CreatureEntity implements IAnimatedEntity {
 		EntityAnimationManager manager = new EntityAnimationManager();
 		EntityAnimationController controller = new EntityAnimationController(this, "controller", 1, this::animationPredicate);
 		private <E extends Entity> boolean animationPredicate(AnimationTestEvent<E> event) {

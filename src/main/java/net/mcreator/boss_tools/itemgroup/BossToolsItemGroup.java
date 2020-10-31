@@ -7,7 +7,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 
-import net.mcreator.boss_tools.block.RocketItemtir2Block;
+import net.mcreator.boss_tools.item.Tier2RocketItemItem;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 @BossToolsModElements.ModElement.Tag
@@ -22,7 +22,7 @@ public class BossToolsItemGroup extends BossToolsModElements.ModElement {
 			@OnlyIn(Dist.CLIENT)
 			@Override
 			public ItemStack createIcon() {
-				return new ItemStack(RocketItemtir2Block.block, (int) (1));
+				return new ItemStack(Tier2RocketItemItem.block, (int) (1));
 			}
 
 			@OnlyIn(Dist.CLIENT)

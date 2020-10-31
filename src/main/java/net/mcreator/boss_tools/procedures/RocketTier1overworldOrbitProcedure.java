@@ -66,7 +66,7 @@ public class RocketTier1overworldOrbitProcedure extends BossToolsModElements.Mod
 					.handleCommand(
 							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/give @p boss_tools:rocket_item");
+							"/give @p boss_tools:tier_1_rocket_item");
 		}
 		if (((entity.getPersistentData().getDouble("Bucket")) == 1)) {
 			if (entity instanceof PlayerEntity) {
