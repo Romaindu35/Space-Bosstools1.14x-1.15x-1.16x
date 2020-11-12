@@ -384,7 +384,7 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 			}
 		}
 		if (((entity.getPersistentData().getDouble("Rotation")) >= 1)) {
-			entity.rotationYaw = (float) (((entity.rotationYaw) + 1));
+			entity.rotationYaw = (float) (((entity.rotationYaw) - 1));
 			entity.setRenderYawOffset(entity.rotationYaw);
 			entity.prevRotationYaw = entity.rotationYaw;
 			if (entity instanceof LivingEntity) {
@@ -395,7 +395,7 @@ public class RocketOnEntityTicktier2Procedure extends BossToolsModElements.ModEl
 			entity.rotationPitch = (float) (0);
 		}
 		if (((entity.getPersistentData().getDouble("RotationB")) >= 1)) {
-			entity.rotationYaw = (float) (((entity.rotationYaw) - 1));
+			entity.rotationYaw = (float) (((entity.rotationYaw) + 1));
 			entity.setRenderYawOffset(entity.rotationYaw);
 			entity.prevRotationYaw = entity.rotationYaw;
 			if (entity instanceof LivingEntity) {
