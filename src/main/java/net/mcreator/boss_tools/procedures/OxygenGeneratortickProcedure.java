@@ -546,6 +546,12 @@ public class OxygenGeneratortickProcedure extends BossToolsModElements.ModElemen
 										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 								"/effect clear @e[type=minecraft:player,distance=..7] boss_tools:damage_remove_4");
 					}
+					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+						world.getWorld().getServer().getCommandManager().handleCommand(
+								new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+								"/effect clear @e[type=minecraft:player,distance=..7] boss_tools:bullet_generator");
+					}
 				} else if (((new Object() {
 					public double getValue(BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
@@ -1042,6 +1048,12 @@ public class OxygenGeneratortickProcedure extends BossToolsModElements.ModElemen
 											new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 									"/effect give @e[type=minecraft:player,distance=..4] boss_tools:damage_remove_4 1 1 true");
 						}
+						if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+							world.getWorld().getServer().getCommandManager().handleCommand(
+									new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+											new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+									"/effect give @e[type=minecraft:player,distance=..4] boss_tools:bullet_generator 1 1 true");
+						}
 					}
 					if (((new Object() {
 						public double getValue(BlockPos pos, String tag) {
@@ -1086,6 +1098,12 @@ public class OxygenGeneratortickProcedure extends BossToolsModElements.ModElemen
 									new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
 											new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 									"/effect give @e[type=minecraft:player,distance=..7] boss_tools:damage_remove_4 1 1 true");
+						}
+						if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+							world.getWorld().getServer().getCommandManager().handleCommand(
+									new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+											new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+									"/effect give @e[type=minecraft:player,distance=..7] boss_tools:bullet_generator 1 1 true");
 						}
 					}
 				}

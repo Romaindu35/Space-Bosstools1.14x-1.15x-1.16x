@@ -3,7 +3,7 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "SPACE",
-    "keyBindingName": "Rocket Start Tier 1",
+    "keyBindingName": "Tier 1 Rocket Start",
     "keyBindingCategoryKey": "spacebosstools",
     "onKeyPressed": {
       "name": "PowUpOnKeyReleased"

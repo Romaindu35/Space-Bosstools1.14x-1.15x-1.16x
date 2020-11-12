@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.boss_tools.potion.DamageRemove2Potion;
 import net.mcreator.boss_tools.potion.DamagePotionPotion;
+import net.mcreator.boss_tools.potion.BulletGeneratorPotion;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.Map;
@@ -38,61 +39,75 @@ public class SpaceArmorBodyTickEventProcedure extends BossToolsModElements.ModEl
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		if (((new Object() {
-			public boolean checkGamemode(Entity _ent) {
-				if (_ent instanceof ServerPlayerEntity) {
-					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.NOT_SET;
-				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
-					return _npi != null && _npi.getGameType() == GameType.NOT_SET;
+		if ((!(new Object() {
+			boolean check(Entity _entity) {
+				if (_entity instanceof LivingEntity) {
+					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+					for (EffectInstance effect : effects) {
+						if (effect.getPotion() == BulletGeneratorPotion.potion)
+							return true;
+					}
 				}
 				return false;
 			}
-		}.checkGamemode(entity)) || (new Object() {
-			public boolean checkGamemode(Entity _ent) {
-				if (_ent instanceof ServerPlayerEntity) {
-					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
-				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
-					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
-							.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
-					return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
-				}
-				return false;
-			}
-		}.checkGamemode(entity)))) {
-			if ((new Object() {
-				boolean check(Entity _entity) {
-					if (_entity instanceof LivingEntity) {
-						Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-						for (EffectInstance effect : effects) {
-							if (effect.getPotion() == DamagePotionPotion.potion)
-								return true;
-						}
+		}.check(entity)))) {
+			if (((new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.NOT_SET;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.NOT_SET;
 					}
 					return false;
 				}
-			}.check(entity))) {
-				if ((((itemstack).getOrCreateTag().getDouble("Energy")) > 0)) {
-					(itemstack).getOrCreateTag().putDouble("Energy", (((itemstack).getOrCreateTag().getDouble("Energy")) - 1));
-					if (entity instanceof LivingEntity)
-						((LivingEntity) entity).addPotionEffect(new EffectInstance(DamageRemove2Potion.potion, (int) 2, (int) 1, (false), (false)));
+			}.checkGamemode(entity)) || (new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayerEntity) {
+						return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.SURVIVAL;
+					} else if (_ent instanceof PlayerEntity && _ent.world.isRemote) {
+						NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+								.getPlayerInfo(((ClientPlayerEntity) _ent).getGameProfile().getId());
+						return _npi != null && _npi.getGameType() == GameType.SURVIVAL;
+					}
+					return false;
 				}
-			}
-			if ((((itemstack).getOrCreateTag().getDouble("Energy")) == 1000)) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A761000 \u00A79Oxygen!"), (false));
+			}.checkGamemode(entity)))) {
+				if ((new Object() {
+					boolean check(Entity _entity) {
+						if (_entity instanceof LivingEntity) {
+							Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+							for (EffectInstance effect : effects) {
+								if (effect.getPotion() == DamagePotionPotion.potion)
+									return true;
+							}
+						}
+						return false;
+					}
+				}.check(entity))) {
+					if ((((itemstack).getOrCreateTag().getDouble("Energy")) > 0)) {
+						(itemstack).getOrCreateTag().putDouble("Energy", (((itemstack).getOrCreateTag().getDouble("Energy")) - 1));
+						if (entity instanceof LivingEntity)
+							((LivingEntity) entity)
+									.addPotionEffect(new EffectInstance(DamageRemove2Potion.potion, (int) 2, (int) 1, (false), (false)));
+					}
 				}
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A761000 \u00A79Oxygen!"), (true));
+				if ((((itemstack).getOrCreateTag().getDouble("Energy")) == 1000)) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A761000 \u00A79Oxygen!"), (false));
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A761000 \u00A79Oxygen!"), (true));
+					}
 				}
-			}
-			if ((((itemstack).getOrCreateTag().getDouble("Energy")) == 1)) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A760 \u00A79Oxygen!"), (false));
-				}
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A760 \u00A79Oxygen!"), (true));
+				if ((((itemstack).getOrCreateTag().getDouble("Energy")) == 1)) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A760 \u00A79Oxygen!"), (false));
+					}
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("\u00A7cWARNING! \u00A760 \u00A79Oxygen!"), (true));
+					}
 				}
 			}
 		}

@@ -383,5 +383,31 @@ public class RocketOnEntityTickTier3Procedure extends BossToolsModElements.ModEl
 				}
 			}
 		}
+		if (((entity.getPersistentData().getDouble("Rotation")) >= 1)) {
+			entity.rotationYaw = (float) (((entity.rotationYaw) + 1));
+			entity.setRenderYawOffset(entity.rotationYaw);
+			entity.prevRotationYaw = entity.rotationYaw;
+			if (entity instanceof LivingEntity) {
+				((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+				((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+				((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+			}
+			entity.rotationPitch = (float) (0);
+		}
+		if (((entity.getPersistentData().getDouble("RotationB")) >= 1)) {
+			entity.rotationYaw = (float) (((entity.rotationYaw) - 1));
+			entity.setRenderYawOffset(entity.rotationYaw);
+			entity.prevRotationYaw = entity.rotationYaw;
+			if (entity instanceof LivingEntity) {
+				((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+				((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+				((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+			}
+			entity.rotationPitch = (float) (0);
+		}
+		if ((!(entity.isBeingRidden()))) {
+			entity.getPersistentData().putDouble("Rotation", 0);
+			entity.getPersistentData().putDouble("RotationB", 0);
+		}
 	}
 }
