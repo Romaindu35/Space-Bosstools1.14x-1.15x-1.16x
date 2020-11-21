@@ -18,7 +18,6 @@ import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
 import net.mcreator.boss_tools.potion.RocketpotionPotion;
-import net.mcreator.boss_tools.potion.FuelSyncSystemPotion;
 import net.mcreator.boss_tools.item.FuelBuckedItem;
 import net.mcreator.boss_tools.BossToolsModElements;
 
@@ -64,6 +63,7 @@ public class RocketOnEntityTickUpdateProcedure extends BossToolsModElements.ModE
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		double fuelSync = 0;
+		double geckolibsync = 0;
 		if ((entity.isBeingRidden())) {
 			if (((entity.getPosY()) > 600)) {
 				if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
@@ -184,25 +184,6 @@ public class RocketOnEntityTickUpdateProcedure extends BossToolsModElements.ModE
 				entity.getPersistentData().putDouble("loadingArrow", 500);
 				entity.getPersistentData().putDouble("loading", 0);
 			}
-			if (((entity.getPersistentData().getDouble("fuel")) == 400)) {
-				if (entity instanceof LivingEntity)
-					((LivingEntity) entity)
-							.addPotionEffect(new EffectInstance(FuelSyncSystemPotion.potion, (int) 99999999, (int) 1, (false), (false)));
-			}
-		}
-		if ((new Object() {
-			boolean check(Entity _entity) {
-				if (_entity instanceof LivingEntity) {
-					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
-					for (EffectInstance effect : effects) {
-						if (effect.getPotion() == FuelSyncSystemPotion.potion)
-							return true;
-					}
-				}
-				return false;
-			}
-		}.check(entity))) {
-			entity.getPersistentData().putDouble("fuel", 400);
 		}
 		if ((new Object() {
 			boolean check(Entity _entity) {
@@ -410,6 +391,34 @@ public class RocketOnEntityTickUpdateProcedure extends BossToolsModElements.ModE
 		if ((!(entity.isBeingRidden()))) {
 			entity.getPersistentData().putDouble("Rotation", 0);
 			entity.getPersistentData().putDouble("RotationB", 0);
+		}
+		if (((entity.getPersistentData().getDouble("powup")) == 1)) {
+			entity.getPersistentData().putDouble("animationrotation", ((entity.getPersistentData().getDouble("animationrotation")) + 1));
+			if (((entity.getPersistentData().getDouble("animationrotation")) == 1)) {
+				entity.rotationYaw = (float) ((entity.rotationYaw));
+				entity.setRenderYawOffset(entity.rotationYaw);
+				entity.prevRotationYaw = entity.rotationYaw;
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+				}
+				entity.rotationPitch = (float) (0.5);
+				entity.getPersistentData().putDouble("animation", ((entity.getPersistentData().getDouble("animation")) + 0.01));
+			}
+			if (((entity.getPersistentData().getDouble("animationrotation")) == 2)) {
+				entity.getPersistentData().putDouble("animation", 0);
+				entity.getPersistentData().putDouble("animationrotation", 0);
+				entity.rotationYaw = (float) ((entity.rotationYaw));
+				entity.setRenderYawOffset(entity.rotationYaw);
+				entity.prevRotationYaw = entity.rotationYaw;
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
+					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
+					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
+				}
+				entity.rotationPitch = (float) (0);
+			}
 		}
 	}
 }

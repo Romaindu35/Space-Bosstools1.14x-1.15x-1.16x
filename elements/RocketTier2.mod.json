@@ -4,7 +4,7 @@
   "definition": {
     "mobName": "Rocket",
     "mobLabel": "",
-    "mobModelName": "Modelrockettiertwo",
+    "mobModelName": "ModelRocketTier2",
     "mobModelTexture": "rockettier2new.png",
     "mobModelGlowTexture": "",
     "modelWidth": 1.0,

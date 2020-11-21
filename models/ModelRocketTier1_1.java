@@ -177,5 +177,7 @@ public static class ModelRocketTier1_1 extends EntityModel<Entity> {
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity e) {
 		super.setRotationAngles(f, f1, f2, f3, f4, f5, e);
+		this.Rocket.rotateAngleY = f3 / (180F / (float) Math.PI);
+		this.Rocket.rotateAngleX = f4 / (180F / (float) Math.PI);
 	}
 }

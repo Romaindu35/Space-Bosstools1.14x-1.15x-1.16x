@@ -88,7 +88,7 @@
       "type": "mob",
       "sortid": 69,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "rocket"
     },
@@ -1213,7 +1213,7 @@
       "type": "mob",
       "sortid": 9,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "rocket_tier_2"
     },
@@ -1254,39 +1254,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "rockethurtentity_2",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RocketonEntitytickUpdate2",
-      "type": "procedure",
-      "sortid": 142,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rocketon_entitytick_update_2",
       "metadata": {
         "dependencies": [
           {
@@ -5815,15 +5782,6 @@
       }
     },
     {
-      "name": "FuelSyncSystem",
-      "type": "potion",
-      "sortid": 343,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "fuel_sync_system"
-    },
-    {
       "name": "RocketTier2GuiFuel",
       "type": "gui",
       "sortid": 344,
@@ -6838,7 +6796,7 @@
       "type": "mob",
       "sortid": 68,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "rocket_tier_3"
     },
@@ -7906,6 +7864,78 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "bullet_generator"
+    },
+    {
+      "name": "AnimationSyncEvent",
+      "type": "procedure",
+      "sortid": 426,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "animation_sync_event",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "PowupSyncEvent",
+      "type": "procedure",
+      "sortid": 427,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "powup_sync_event",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "AnimationRotationSyncEvent",
+      "type": "procedure",
+      "sortid": 428,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "animation_rotation_sync_event",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "PlayerRotations",
+      "type": "procedure",
+      "sortid": 429,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "player_rotations",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "PlayerRotationsTier2",
+      "type": "procedure",
+      "sortid": 430,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "player_rotations_tier_2",
+      "metadata": {
+        "dependencies": []
+      }
+    },
+    {
+      "name": "PlayerRotationsTier3",
+      "type": "procedure",
+      "sortid": 431,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "player_rotations_tier_3",
+      "metadata": {
+        "dependencies": []
+      }
     }
   ],
   "variable_elements": [
@@ -8020,15 +8050,15 @@
       "block.boss_tools.moon_slabe": "Moon Stone Slab",
       "item.minecraft.lingering_potion.effect.rocket_paticle": "Lingering RocketParticle",
       "item.minecraft.potion.effect.rocketpotion": "Rocketpotion",
-      "block.boss_tools.cheese_block": "Cheese Ore",
       "item.minecraft.tipped_arrow.effect.damage_remove": "Arrow of SpaceSuite",
+      "block.boss_tools.cheese_block": "Cheese Ore",
       "item.boss_tools.oxygen_tank": "Oxygen Tank",
       "item.boss_tools.umlaufbahnerde": "Admin Feuerzeug",
       "item.boss_tools.rocket_tier_2": "Rocket Spawn Egg",
       "item.boss_tools.tank_tier_3": "Tier 3 Tank",
       "block.boss_tools.blasting_furnace": "Blast Furnace",
-      "item.boss_tools.space_armor_boots": "Space Boots",
       "item.boss_tools.rocket": "Rocket Spawn Egg",
+      "item.boss_tools.space_armor_boots": "Space Boots",
       "block.boss_tools.glowstone_torch": "Glowstone Torch",
       "item.minecraft.splash_potion.effect.damage_remove": "Splash SpaceSuite",
       "item.boss_tools.fuel_bucked": "Fuel Bucket",
@@ -8038,7 +8068,6 @@
       "biome.boss_tools.mars_biom": "Mars Biom",
       "item.minecraft.potion.effect.damage_remove": "SpaceSuite",
       "block.boss_tools.steahlblock": "Steel Block",
-      "item.minecraft.lingering_potion.effect.fuel_sync_system": "Lingering FuelSyncSystem",
       "itemGroup.tabboss_tools": "Space-BossTools",
       "item.minecraft.potion.effect.rocket_potion_8": "Rocketpotion 8",
       "item.minecraft.splash_potion.effect.landinggear_potion_1": "Splash LandinggearParticle",
@@ -8054,12 +8083,12 @@
       "item.boss_tools.moon": "Admin Feuerzeug",
       "item.boss_tools.landing_gear_spawn_egg": "Landing Gear Spawn Egg",
       "block.boss_tools.rocked_base": "Rocket Launch Pad",
-      "item.minecraft.splash_potion.effect.damage_potion": "Splash space",
       "item.minecraft.splash_potion.effect.rocketpotion": "Splash Rocketpotion",
+      "item.minecraft.splash_potion.effect.damage_potion": "Splash space",
       "item.minecraft.lingering_potion.effect.rocket_potion_9": "Lingering Rocketpotion 9",
       "item.minecraft.tipped_arrow.effect.damage_potion": "Arrow of space",
-      "item.minecraft.potion.effect.bee_potion": "BeePotion",
       "item.minecraft.lingering_potion.effect.rocket_potion_8": "Lingering Rocketpotion 8",
+      "item.minecraft.potion.effect.bee_potion": "BeePotion",
       "key.categories.spacebosstools": "Space-Bosstools",
       "item.boss_tools.hammer": "Hammer",
       "item.boss_tools.fuel_bucket_big": "Big Fuel Bucket",
@@ -8086,8 +8115,8 @@
       "item.minecraft.tipped_arrow.effect.rocketpotion_3": "Arrow of Rocketpotion3",
       "item.minecraft.tipped_arrow.effect.rocketpotion_4": "Arrow of Rocketpotion4",
       "item.minecraft.tipped_arrow.effect.rocketpotion_5": "Arrow of Rocketpotion5",
-      "item.minecraft.lingering_potion.effect.rocket_particle_3": "Lingering RocketParticle3",
       "item.minecraft.lingering_potion.effect.landinggear_potion_1": "Lingering LandinggearParticle",
+      "item.minecraft.lingering_potion.effect.rocket_particle_3": "Lingering RocketParticle3",
       "item.minecraft.potion.effect.landinggear_particle": "LandinggearParticle",
       "item.minecraft.lingering_potion.effect.rocketpotion_7": "Lingering Rocketpotion 7",
       "item.minecraft.lingering_potion.effect.rocketpotion_4": "Lingering Rocketpotion4",
@@ -8133,7 +8162,6 @@
       "block.boss_tools.iron": "Iron Ore",
       "item.boss_tools.mercury": "Admin Feuerzeug",
       "item.boss_tools.tier_1_rocket_item": "§bTier 1 Rocket",
-      "item.minecraft.splash_potion.effect.fuel_sync_system": "Splash FuelSyncSystem",
       "item.minecraft.potion.effect.rocket_paticle_2": "RocketParticle2",
       "item.boss_tools.turbinen_gehause": "Engine Casing",
       "block.boss_tools.greensgreen": "Green Decoration Block",
@@ -8192,7 +8220,6 @@
       "item.boss_tools.compressedsilicon": "Compressed Silicon",
       "item.minecraft.tipped_arrow.effect.rocketpotion": "Arrow of Rocketpotion",
       "block.boss_tools.marsdiamond": "Diamond Ore",
-      "effect.fuel_sync_system": "FuelSyncSystem",
       "item.boss_tools.space_armor_chestplate": "Space Suit",
       "effect.rocketpotion_5": "Rocketpotion5",
       "block.boss_tools.compressor": "Compressor",
@@ -8219,7 +8246,6 @@
       "block.boss_tools.oxygen_machine": "Oxygen Loader",
       "item.minecraft.potion.effect.rocketpotion_7": "Rocketpotion 7",
       "item.boss_tools.landing_gear": "Landing Gear Spawn Egg",
-      "item.minecraft.potion.effect.fuel_sync_system": "FuelSyncSystem",
       "item.minecraft.potion.effect.rocketpotion_2": "Rocketpotion2",
       "item.minecraft.potion.effect.rocketpotion_3": "Rocketpotion3",
       "item.minecraft.splash_potion.effect.rocket_potion_8": "Splash Rocketpotion 8",
@@ -8231,7 +8257,6 @@
       "entity.boss_tools.rocket_tier_2": "Rocket",
       "effect.damage_remove": "SpaceSuite",
       "item.minecraft.tipped_arrow.effect.bullet_generator": "Arrow of BulletGenerator",
-      "item.minecraft.tipped_arrow.effect.fuel_sync_system": "Arrow of FuelSyncSystem",
       "subtitles.rocketfly": "",
       "item.boss_tools.tinplate": "Desh Plate",
       "item.minecraft.potion.effect.damage_potion": "space",
@@ -8251,13 +8276,11 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "geckolib"
-    ],
+    "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
     "credits": "Made by MrScautHD",
     "modElementsPackage": "net.mcreator.boss_tools",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202000543719
+  "mcreatorVersion": 202000546519
 }

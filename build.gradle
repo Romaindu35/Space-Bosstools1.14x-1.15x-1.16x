@@ -18,6 +18,11 @@ repositories {
     url = "https://modmaven.k-4u.nl/"
   }
 }
+repositories {
+    maven {
+        url = "https://www.cursemaven.com"
+    }
+}
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 
@@ -57,6 +62,6 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.15.2-31.2.0'
   compileOnly fg.deobf("mezz.jei:jei-1.15.2:6.0.0.4:api")
   runtimeOnly fg.deobf("mezz.jei:jei-1.15.2:6.0.0.4")
-
+  compile fg.deobf('curse.maven:obfuscate:3043368')
 }
 apply from: 'mcreator.gradle'

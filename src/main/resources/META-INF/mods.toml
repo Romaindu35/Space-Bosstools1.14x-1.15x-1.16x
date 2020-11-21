@@ -18,9 +18,4 @@ authors="MrScautHD"
 
 
 
-[[dependencies.boss_tools]]
-    modId="geckolib"
-    mandatory=false
-    ordering="NONE"
-    side="BOTH"
 
