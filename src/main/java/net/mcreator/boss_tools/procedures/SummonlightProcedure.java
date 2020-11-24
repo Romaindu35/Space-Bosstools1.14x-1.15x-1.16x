@@ -15,7 +15,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class SummonlightProcedure extends BossToolsModElements.ModElement {
 	public SummonlightProcedure(BossToolsModElements instance) {
-		super(instance, 123);
+		super(instance, 124);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

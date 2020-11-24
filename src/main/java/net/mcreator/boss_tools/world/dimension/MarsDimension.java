@@ -72,7 +72,7 @@ public class MarsDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public MarsDimension(BossToolsModElements instance) {
-		super(instance, 72);
+		super(instance, 73);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

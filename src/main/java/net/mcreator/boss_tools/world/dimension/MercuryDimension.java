@@ -72,7 +72,7 @@ public class MercuryDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public MercuryDimension(BossToolsModElements instance) {
-		super(instance, 74);
+		super(instance, 75);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

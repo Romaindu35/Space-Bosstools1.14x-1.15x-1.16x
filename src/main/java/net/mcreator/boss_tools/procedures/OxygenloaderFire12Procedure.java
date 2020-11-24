@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygenloaderFire12Procedure extends BossToolsModElements.ModElement {
 	public OxygenloaderFire12Procedure(BossToolsModElements instance) {
-		super(instance, 357);
+		super(instance, 356);
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {

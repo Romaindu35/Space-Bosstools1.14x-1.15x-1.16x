@@ -7,7 +7,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class MoonPortalTriggerUsedProcedure extends BossToolsModElements.ModElement {
 	public MoonPortalTriggerUsedProcedure(BossToolsModElements instance) {
-		super(instance, 88);
+		super(instance, 89);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

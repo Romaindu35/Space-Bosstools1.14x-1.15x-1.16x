@@ -91,7 +91,7 @@ public class OxygenBulletGeneratorGUIGui extends BossToolsModElements.ModElement
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
 	public OxygenBulletGeneratorGUIGui(BossToolsModElements instance) {
-		super(instance, 359);
+		super(instance, 358);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,

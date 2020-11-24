@@ -28,7 +28,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class OxygenTickProcedure extends BossToolsModElements.ModElement {
 	public OxygenTickProcedure(BossToolsModElements instance) {
-		super(instance, 412);
+		super(instance, 411);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

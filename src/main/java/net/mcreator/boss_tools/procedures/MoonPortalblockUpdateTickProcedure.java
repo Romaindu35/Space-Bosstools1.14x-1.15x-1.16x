@@ -18,7 +18,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class MoonPortalblockUpdateTickProcedure extends BossToolsModElements.ModElement {
 	public MoonPortalblockUpdateTickProcedure(BossToolsModElements instance) {
-		super(instance, 130);
+		super(instance, 131);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

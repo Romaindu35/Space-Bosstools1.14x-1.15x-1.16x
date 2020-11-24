@@ -19,7 +19,7 @@ public class MercurybiomeBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mercurybiome")
 	public static final CustomBiome biome = null;
 	public MercurybiomeBiome(BossToolsModElements instance) {
-		super(instance, 388);
+		super(instance, 387);
 	}
 
 	@Override

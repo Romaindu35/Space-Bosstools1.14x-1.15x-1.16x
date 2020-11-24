@@ -65,7 +65,7 @@ public class OrbitMercuryDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public OrbitMercuryDimension(BossToolsModElements instance) {
-		super(instance, 77);
+		super(instance, 78);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

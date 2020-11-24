@@ -31,7 +31,7 @@ import java.util.Random;
 @BossToolsModElements.ModElement.Tag
 public class MeteorStructure extends BossToolsModElements.ModElement {
 	public MeteorStructure(BossToolsModElements instance) {
-		super(instance, 138);
+		super(instance, 139);
 	}
 
 	@Override
@@ -56,12 +56,12 @@ public class MeteorStructure extends BossToolsModElements.ModElement {
 						j -= 1;
 						Rotation rotation = Rotation.NONE;
 						Mirror mirror = Mirror.NONE;
-						BlockPos spawnTo = new BlockPos(i + 0, j + 1, k + 0);
+						BlockPos spawnTo = new BlockPos(i + 0, j + -5, k + 0);
 						int x = spawnTo.getX();
 						int y = spawnTo.getY();
 						int z = spawnTo.getZ();
 						Template template = ((ServerWorld) world.getWorld()).getSaveHandler().getStructureTemplateManager()
-								.getTemplateDefaulted(new ResourceLocation("boss_tools", "meteor10"));
+								.getTemplateDefaulted(new ResourceLocation("boss_tools", "meteor"));
 						if (template == null)
 							return false;
 						template.addBlocksToWorld(world, spawnTo, new PlacementSettings().setRotation(rotation).setRandom(random).setMirror(mirror)

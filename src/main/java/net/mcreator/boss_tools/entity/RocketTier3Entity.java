@@ -7,7 +7,11 @@ import net.minecraftforge.items.wrapper.EntityArmorInvWrapper;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.fml.network.simple.SimpleChannel;
+import net.minecraftforge.fml.network.PacketDistributor;
+import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.NetworkHooks;
+import net.minecraftforge.fml.network.NetworkEvent;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -47,6 +51,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.boss_tools.procedures.Rockethurtentity3Procedure;
 import net.mcreator.boss_tools.procedures.RocketOnEntityTickTier3Procedure;
@@ -56,6 +61,7 @@ import net.mcreator.boss_tools.BossToolsModElements;
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
+import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -70,6 +76,7 @@ public class RocketTier3Entity extends BossToolsModElements.ModElement {
 	public RocketTier3Entity(BossToolsModElements instance) {
 		super(instance, 68);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
+		NetworkLoader.registerMessages();
 	}
 
 	@Override
@@ -250,6 +257,13 @@ public class RocketTier3Entity extends BossToolsModElements.ModElement {
 				$_dependencies.put("world", world);
 				RocketOnEntityTickTier3Procedure.executeProcedure($_dependencies);
 			}
+			if (!this.world.isRemote)
+				NetworkLoader.INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> this),
+						new RocketSpinPacket(this.getEntityId(), this.getPersistentData().getDouble("Animation")));
+			// new Nbt
+			if (!this.world.isRemote)
+				NetworkLoader.INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> this),
+						new RocketSpin2Packet(this.getEntityId(), this.getPersistentData().getDouble("AnimationPitch")));
 		}
 
 		@Override
@@ -542,11 +556,91 @@ public class RocketTier3Entity extends BossToolsModElements.ModElement {
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
 			this.Rocket.rotateAngleY = f3 / (180F / (float) Math.PI);
-			this.Rocket.rotateAngleX = f4 / (180F / (float) Math.PI);
+			// this.Rocket.rotateAngleX = f4 / (180F / (float) Math.PI);
+			// Animation1
 			this.Rocket.rotateAngleZ = f2 / (180F / (float) Math.PI);
 			if (e instanceof LivingEntity) {
-				this.Rocket.rotateAngleZ = (float) ((LivingEntity) e).getPersistentData().getDouble("animation");
+				this.Rocket.rotateAngleZ = (float) ((LivingEntity) e).getPersistentData().getDouble("Animation");
 			}
+			// Animation2
+			this.Rocket.rotateAngleX = f2 / (180F / (float) Math.PI);
+			if (e instanceof LivingEntity) {
+				this.Rocket.rotateAngleX = (float) ((LivingEntity) e).getPersistentData().getDouble("AnimationPitch");
+			}
+		}
+	}
+
+	// packages System
+	private static class NetworkLoader {
+		public static SimpleChannel INSTANCE;
+		private static int id = 1;
+		public static int nextID() {
+			return id++;
+		}
+
+		public static void registerMessages() {
+			INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation("boss_tools3", "rocket_link3"), () -> "1.0", s -> true, s -> true);
+			INSTANCE.registerMessage(nextID(), RocketSpinPacket.class, RocketSpinPacket::encode, RocketSpinPacket::decode, RocketSpinPacket::handle);
+			// new animationpitch
+			INSTANCE.registerMessage(nextID(), RocketSpin2Packet.class, RocketSpin2Packet::encode, RocketSpin2Packet::decode, RocketSpin2Packet::handle);
+		}
+	}
+
+	// First Animation
+	private static class RocketSpinPacket {
+		private double animation;
+		private int entityId;
+		public RocketSpinPacket(int entityId, double animation) {
+			this.animation = animation;
+			this.entityId = entityId;
+		}
+
+		public static void encode(RocketSpinPacket msg, PacketBuffer buf) {
+			buf.writeInt(msg.entityId);
+			buf.writeDouble(msg.animation);
+		}
+
+		public static RocketSpinPacket decode(PacketBuffer buf) {
+			return new RocketSpinPacket(buf.readInt(), buf.readDouble());
+		}
+
+		public static void handle(RocketSpinPacket msg, Supplier<NetworkEvent.Context> ctx) {
+			ctx.get().enqueueWork(() -> {
+				Entity entity = Minecraft.getInstance().world.getEntityByID(msg.entityId);
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).getPersistentData().putDouble("Animation", msg.animation);
+				}
+			});
+			ctx.get().setPacketHandled(true);
+		}
+	}
+
+	// new animationpitch
+	private static class RocketSpin2Packet {
+		private double animationpitch;
+		private int entityId;
+		public RocketSpin2Packet(int entityId, double animationpitch) {
+			this.animationpitch = animationpitch;
+			this.entityId = entityId;
+		}
+
+		public static void encode(RocketSpin2Packet msg, PacketBuffer buf) {
+			buf.writeInt(msg.entityId);
+			buf.writeDouble(msg.animationpitch);
+		}
+
+		public static RocketSpin2Packet decode(PacketBuffer buf) {
+			return new RocketSpin2Packet(buf.readInt(), buf.readDouble());
+		}
+
+		public static void handle(RocketSpin2Packet msg, Supplier<NetworkEvent.Context> ctx) {
+			ctx.get().enqueueWork(() -> {
+				Entity entity = Minecraft.getInstance().world.getEntityByID(msg.entityId);
+				if (entity instanceof LivingEntity) {
+					((LivingEntity) entity).getPersistentData().putDouble("AnimationPitch", msg.animationpitch);
+				}
+			});
+			ctx.get().setPacketHandled(true);
 		}
 	}
 }

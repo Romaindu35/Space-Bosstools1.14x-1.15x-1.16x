@@ -38,7 +38,7 @@ public class CheeseBlockBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:cheese_block")
 	public static final Block block = null;
 	public CheeseBlockBlock(BossToolsModElements instance) {
-		super(instance, 31);
+		super(instance, 28);
 	}
 
 	@Override

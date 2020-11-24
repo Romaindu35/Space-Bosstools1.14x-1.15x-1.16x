@@ -15,7 +15,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class Timer3Procedure extends BossToolsModElements.ModElement {
 	public Timer3Procedure(BossToolsModElements instance) {
-		super(instance, 127);
+		super(instance, 128);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

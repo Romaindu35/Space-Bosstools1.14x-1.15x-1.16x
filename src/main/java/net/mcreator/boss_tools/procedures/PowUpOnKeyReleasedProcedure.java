@@ -99,7 +99,7 @@ public class PowUpOnKeyReleasedProcedure extends BossToolsModElements.ModElement
 										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 								"/playsound boss_tools:rocketfly neutral @p");
 					}
-					(entity.getRidingEntity()).getPersistentData().putDouble("powup", 1);
+					(entity.getRidingEntity()).getPersistentData().putDouble("Powup", 1);
 				} else {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 						((PlayerEntity) entity).sendStatusMessage(

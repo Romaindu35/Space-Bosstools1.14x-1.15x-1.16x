@@ -580,7 +580,7 @@ public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMa
 		private final IDrawable background;
 		public WorkbenchJeiCategory(IGuiHelper guiHelper) {
 			this.title = "NASA Workbench";
-			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/nasaworkbenchjei.png"), 0, 0, 175, 120);
+			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/nasaworkbenchjei.png"), 0, 0, 176, 122);
 		}
 
 		@Override

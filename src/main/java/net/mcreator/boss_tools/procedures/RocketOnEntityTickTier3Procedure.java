@@ -28,7 +28,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class RocketOnEntityTickTier3Procedure extends BossToolsModElements.ModElement {
 	public RocketOnEntityTickTier3Procedure(BossToolsModElements instance) {
-		super(instance, 381);
+		super(instance, 380);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -389,32 +389,16 @@ public class RocketOnEntityTickTier3Procedure extends BossToolsModElements.ModEl
 			entity.getPersistentData().putDouble("Rotation", 0);
 			entity.getPersistentData().putDouble("RotationB", 0);
 		}
-		if (((entity.getPersistentData().getDouble("powup")) == 1)) {
-			entity.getPersistentData().putDouble("animationrotation", ((entity.getPersistentData().getDouble("animationrotation")) + 1));
-			if (((entity.getPersistentData().getDouble("animationrotation")) == 1)) {
-				entity.rotationYaw = (float) ((entity.rotationYaw));
-				entity.setRenderYawOffset(entity.rotationYaw);
-				entity.prevRotationYaw = entity.rotationYaw;
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-				}
-				entity.rotationPitch = (float) (0.5);
-				entity.getPersistentData().putDouble("animation", ((entity.getPersistentData().getDouble("animation")) + 0.01));
+		if (((entity.getPersistentData().getDouble("Powup")) == 1)) {
+			entity.getPersistentData().putDouble("AnimationRotation", ((entity.getPersistentData().getDouble("AnimationRotation")) + 1));
+			if (((entity.getPersistentData().getDouble("AnimationRotation")) == 1)) {
+				entity.getPersistentData().putDouble("Animation", ((entity.getPersistentData().getDouble("Animation")) + 0.003));
+				entity.getPersistentData().putDouble("AnimationPitch", ((entity.getPersistentData().getDouble("AnimationPitch")) + 0.003));
 			}
-			if (((entity.getPersistentData().getDouble("animationrotation")) == 2)) {
-				entity.getPersistentData().putDouble("animation", 0);
-				entity.getPersistentData().putDouble("animationrotation", 0);
-				entity.rotationYaw = (float) ((entity.rotationYaw));
-				entity.setRenderYawOffset(entity.rotationYaw);
-				entity.prevRotationYaw = entity.rotationYaw;
-				if (entity instanceof LivingEntity) {
-					((LivingEntity) entity).prevRenderYawOffset = entity.rotationYaw;
-					((LivingEntity) entity).rotationYawHead = entity.rotationYaw;
-					((LivingEntity) entity).prevRotationYawHead = entity.rotationYaw;
-				}
-				entity.rotationPitch = (float) (0);
+			if (((entity.getPersistentData().getDouble("AnimationRotation")) == 2)) {
+				entity.getPersistentData().putDouble("Animation", 0);
+				entity.getPersistentData().putDouble("AnimationPitch", 0);
+				entity.getPersistentData().putDouble("AnimationRotation", 0);
 			}
 		}
 	}

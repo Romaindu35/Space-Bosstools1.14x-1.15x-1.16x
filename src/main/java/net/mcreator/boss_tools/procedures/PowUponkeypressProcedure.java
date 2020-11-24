@@ -78,7 +78,6 @@ public class PowUponkeypressProcedure extends BossToolsModElements.ModElement {
 					if ((entity.getRidingEntity()) instanceof LivingEntity)
 						((LivingEntity) (entity.getRidingEntity()))
 								.addPotionEffect(new EffectInstance(RocketpotionPotion.potion, (int) 99999, (int) 13, (false), (false)));
-					entity.getPersistentData().putDouble("powup", 1);
 					if (!world.getWorld().isRemote) {
 						world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("boss_tools:rocketfly")),
@@ -100,6 +99,7 @@ public class PowUponkeypressProcedure extends BossToolsModElements.ModElement {
 										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
 								"/playsound boss_tools:rocketfly neutral @p");
 					}
+					(entity.getRidingEntity()).getPersistentData().putDouble("Powup", 1);
 				} else {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 						((PlayerEntity) entity).sendStatusMessage(

@@ -66,7 +66,7 @@ public class MoonDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public MoonDimension(BossToolsModElements instance) {
-		super(instance, 71);
+		super(instance, 72);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

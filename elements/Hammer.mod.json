@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "hammer",
+    "texture": "hammernew",
     "customModelName": "Normal",
     "name": "Hammer",
     "rarity": "COMMON",
@@ -15,6 +15,9 @@
     "useDuration": 0,
     "toolType": 1.0,
     "damageCount": 3,
+    "recipeRemainder": {
+      "value": ""
+    },
     "destroyAnyBlock": false,
     "stayInGridWhenCrafting": true,
     "damageOnCrafting": true,

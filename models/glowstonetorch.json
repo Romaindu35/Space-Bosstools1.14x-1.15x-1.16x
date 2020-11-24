@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "block/oak_planks",
 		"2": "block/torch",
-		"4": "block/glowstone",
+		"3": "block/texture",
 		"particle": "block/oak_planks"
 	},
 	"elements": [
@@ -26,11 +26,11 @@
 			"to": [9, 10, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [15, 16, 15]},
 			"faces": {
-				"north": {"uv": [0, 5, 3.998, 8.998], "texture": "#4"},
-				"east": {"uv": [8, 7, 12, 10.998], "texture": "#4"},
-				"south": {"uv": [0, 0, 3.998, 3.996], "texture": "#4"},
-				"west": {"uv": [11, 11, 14.999, 14.997], "texture": "#4"},
-				"up": {"uv": [3, 3, 11, 11], "texture": "#4"},
+				"north": {"uv": [4, 5, 6, 7], "texture": "#3"},
+				"east": {"uv": [4, 5, 6, 7], "texture": "#3"},
+				"south": {"uv": [4, 5, 6, 7], "texture": "#3"},
+				"west": {"uv": [4, 5, 6, 7], "texture": "#3"},
+				"up": {"uv": [4, 5, 6, 7], "texture": "#3"},
 				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
 			}
 		}

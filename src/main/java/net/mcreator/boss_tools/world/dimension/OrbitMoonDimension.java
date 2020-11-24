@@ -65,7 +65,7 @@ public class OrbitMoonDimension extends BossToolsModElements.ModElement {
 	public static DimensionType type = null;
 	private static Biome[] dimensionBiomes;
 	public OrbitMoonDimension(BossToolsModElements instance) {
-		super(instance, 75);
+		super(instance, 76);
 		MinecraftForge.EVENT_BUS.register(this);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}

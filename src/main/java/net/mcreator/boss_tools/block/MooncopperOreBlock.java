@@ -44,7 +44,7 @@ public class MooncopperOreBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mooncopper_ore")
 	public static final Block block = null;
 	public MooncopperOreBlock(BossToolsModElements instance) {
-		super(instance, 30);
+		super(instance, 27);
 	}
 
 	@Override

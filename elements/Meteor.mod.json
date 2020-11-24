@@ -2,14 +2,14 @@
   "_fv": 13,
   "_type": "structure",
   "definition": {
-    "structure": "meteor10",
+    "structure": "meteor",
     "randomlyRotateStructure": false,
     "surfaceDetectionType": "First motion blocking block",
     "spawnProbability": 800,
     "minCountPerChunk": 1,
     "maxCountPerChunk": 1,
     "spawnLocation": "Ground",
-    "spawnHeightOffset": 1,
+    "spawnHeightOffset": -5,
     "spawnXOffset": 0,
     "spawnZOffset": 0,
     "spawnWorldTypes": [

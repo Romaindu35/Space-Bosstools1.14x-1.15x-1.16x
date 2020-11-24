@@ -5,7 +5,7 @@
     "particle": "boss_tools:blocks/torch",
     "0": "boss_tools:blocks/oak_planks",
     "2": "boss_tools:blocks/torch",
-    "4": "boss_tools:blocks/glowstone",
+    "3": "boss_tools:blocks/glowstonetorchtexture",
     "missing": "boss_tools:blocks/"
   }
 }

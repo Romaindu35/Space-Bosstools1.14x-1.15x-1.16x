@@ -7,7 +7,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RocketpotionOnPotionActiveTickProcedure extends BossToolsModElements.ModElement {
 	public RocketpotionOnPotionActiveTickProcedure(BossToolsModElements instance) {
-		super(instance, 115);
+		super(instance, 116);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
