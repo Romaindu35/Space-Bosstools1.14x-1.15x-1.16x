@@ -216,7 +216,7 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Oxygen Bullet Generator | 3x6");
+						return new StringTextComponent("Oxygen Bullet Generator");
 					}
 
 					@Override
@@ -351,7 +351,7 @@ public class OxygenGeneratorBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Oxygen Bullet Generator | 3x6");
+			return new StringTextComponent("Oxygen Bullet Generator");
 		}
 
 		@Override

@@ -28,7 +28,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class RocketOnEntityTickTier3Procedure extends BossToolsModElements.ModElement {
 	public RocketOnEntityTickTier3Procedure(BossToolsModElements instance) {
-		super(instance, 380);
+		super(instance, 379);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -392,8 +392,8 @@ public class RocketOnEntityTickTier3Procedure extends BossToolsModElements.ModEl
 		if (((entity.getPersistentData().getDouble("Powup")) == 1)) {
 			entity.getPersistentData().putDouble("AnimationRotation", ((entity.getPersistentData().getDouble("AnimationRotation")) + 1));
 			if (((entity.getPersistentData().getDouble("AnimationRotation")) == 1)) {
-				entity.getPersistentData().putDouble("Animation", ((entity.getPersistentData().getDouble("Animation")) + 0.003));
-				entity.getPersistentData().putDouble("AnimationPitch", ((entity.getPersistentData().getDouble("AnimationPitch")) + 0.003));
+				entity.getPersistentData().putDouble("Animation", ((entity.getPersistentData().getDouble("Animation")) + 0.005));
+				entity.getPersistentData().putDouble("AnimationPitch", ((entity.getPersistentData().getDouble("AnimationPitch")) + 0.005));
 			}
 			if (((entity.getPersistentData().getDouble("AnimationRotation")) == 2)) {
 				entity.getPersistentData().putDouble("Animation", 0);

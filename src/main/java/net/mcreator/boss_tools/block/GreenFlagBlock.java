@@ -41,7 +41,7 @@ public class GreenFlagBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:green_flag")
 	public static final Block block = null;
 	public GreenFlagBlock(BossToolsModElements instance) {
-		super(instance, 64);
+		super(instance, 65);
 	}
 
 	@Override

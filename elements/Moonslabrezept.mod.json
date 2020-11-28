@@ -5,42 +5,42 @@
     "recipeType": "Crafting",
     "xpReward": 0.0,
     "cookingTime": 200,
-    "recipeRetstackSize": 6,
+    "recipeRetstackSize": 1,
     "group": "",
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:IronStick"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "CUSTOM:IronStick"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "Blocks.WOOL#10"
+      },
+      {
+        "value": "CUSTOM:IronStick"
       },
       {
         "value": ""
       },
       {
         "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": ""
-      },
-      {
-        "value": "CUSTOM:MoonStone"
-      },
-      {
-        "value": "CUSTOM:MoonStone"
-      },
-      {
-        "value": "CUSTOM:MoonStone"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:MoonSlabe"
+      "value": "CUSTOM:PurpleFlag"
     },
-    "name": "moonslabrezept",
+    "name": "purple_flag_recpie",
     "namespace": "mod"
   }
 }

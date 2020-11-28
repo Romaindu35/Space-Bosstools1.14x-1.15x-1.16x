@@ -19,7 +19,7 @@ public class MarsBiomBiome extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:mars_biom")
 	public static final CustomBiome biome = null;
 	public MarsBiomBiome(BossToolsModElements instance) {
-		super(instance, 226);
+		super(instance, 225);
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class MarsBiomBiome extends BossToolsModElements.ModElement {
 	static class CustomBiome extends Biome {
 		public CustomBiome() {
 			super(new Biome.Builder().downfall(0f).depth(2f).scale(0f).temperature(0f).precipitation(Biome.RainType.NONE)
-					.category(Biome.Category.NONE).waterColor(-16750900).waterFogColor(-16750900)
+					.category(Biome.Category.NONE).waterColor(-16750849).waterFogColor(-16750849)
 					.surfaceBuilder(SurfaceBuilder.DEFAULT, new SurfaceBuilderConfig(MarssandBlock.block.getDefaultState(),
 							MarsStoneBlock.block.getDefaultState(), MarsStoneBlock.block.getDefaultState())));
 			setRegistryName("mars_biom");

@@ -71,7 +71,7 @@ public class FuelMakerBlock extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:fuel_maker")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 	public FuelMakerBlock(BossToolsModElements instance) {
-		super(instance, 69);
+		super(instance, 59);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
@@ -263,7 +263,7 @@ public class FuelMakerBlock extends BossToolsModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Fuel Maker");
+			return new StringTextComponent("Fuel Refinery");
 		}
 
 		@Override

@@ -3,8 +3,8 @@ package net.mcreator.boss_tools.procedures;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.renderer.entity.model.PlayerModel;
@@ -17,6 +17,12 @@ import net.minecraft.client.renderer.entity.model.PlayerModel;
 
 
 import com.mrcrayfish.obfuscate.client.event.PlayerModelEvent;
+
+import net.mcreator.boss_tools.entity.RocketEntity;
+import net.minecraft.world.World;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.renderer.entity.model.PlayerModel;
 
 import net.mcreator.boss_tools.entity.RocketEntity;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -36,6 +42,7 @@ public class PlayerRotationsProcedure extends BossToolsModElements.ModElement {
 	public static void executeProcedure(Map<String, Object> dependencies) {
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent
 	public void setupPlayerAngles(PlayerModelEvent.SetupAngles.Post event) {
 		PlayerEntity player = event.getPlayer();// Entity entity = (Entity) dependencies.get("entity");
@@ -44,14 +51,12 @@ public class PlayerRotationsProcedure extends BossToolsModElements.ModElement {
 				PlayerModel model = event.getModelPlayer();
 				// model.bipedRightArm.rotateAngleX = (float) Math.toRadians(-60F);
 				// model.bipedRightLeg.rotationPointY = (float) Math.toRadians(0);
-
-				//Legs
+				// Legs
 				model.bipedRightLeg.rotationPointY = (float) Math.toRadians(485F);
 				model.bipedLeftLeg.rotationPointY = (float) Math.toRadians(485F);
 				model.bipedRightLeg.rotateAngleX = (float) Math.toRadians(0F);
 				model.bipedLeftLeg.rotateAngleX = (float) Math.toRadians(0F);
-
-				//Arms
+				// Arms
 				// model.bipedRightArm.rotateAngleX = (float) Math.toRadians(0F); //bugy
 				// model.bipedLeftArm.rotateAngleX = (float) Math.toRadians(0F); //bugy
 				// model.bipedHead.rotationPointX = 0.0F;

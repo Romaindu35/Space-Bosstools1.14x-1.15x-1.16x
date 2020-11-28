@@ -23,28 +23,14 @@
       {
         "type": "button",
         "data": {
-          "text": "Overworld",
-          "onClick": {
-            "name": "RocketTier3OverworldTp"
-          },
-          "width": 97,
-          "height": 20,
-          "name": "Overworld",
-          "x": 133,
-          "y": 54
-        }
-      },
-      {
-        "type": "button",
-        "data": {
-          "text": "orbit",
+          "text": "Orbit",
           "onClick": {
             "name": "RocketTier3OverworldOrbittp"
           },
           "width": 36,
           "height": 20,
-          "name": "orbit",
-          "x": 236,
+          "name": "Orbit",
+          "x": 212,
           "y": 54
         }
       },
@@ -91,57 +77,71 @@
       {
         "type": "button",
         "data": {
-          "text": "orbit",
+          "text": "Orbit",
           "onClick": {
             "name": "RocketTier3OrbitTpMoon"
           },
           "width": 36,
           "height": 20,
-          "name": "orbit",
-          "x": 236,
+          "name": "Orbit",
+          "x": 212,
           "y": 92
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "orbit",
+          "text": "Orbit",
           "onClick": {
             "name": "RocketTier3OrbitTpMars"
           },
           "width": 36,
           "height": 20,
-          "name": "orbit",
-          "x": 236,
+          "name": "Orbit",
+          "x": 212,
           "y": 130
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "orbit",
+          "text": "Orbit",
           "onClick": {
             "name": "RocketTier3OrbitTpMercury"
           },
           "width": 36,
           "height": 20,
-          "name": "orbit",
-          "x": 236,
+          "name": "Orbit",
+          "x": 212,
           "y": 167
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Mars",
+          "text": "Overworld",
           "onClick": {
-            "name": "RocketTier3MarsTp"
+            "name": "RocketTier3OverworldTp"
           },
-          "width": 97,
+          "width": 75,
           "height": 20,
-          "name": "Mars",
+          "name": "Overworld",
           "x": 133,
-          "y": 130
+          "y": 54
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Space Station",
+          "onClick": {
+            "name": "Tier3SpaceStationGuiOpenOverworldOrbit"
+          },
+          "width": 79,
+          "height": 20,
+          "name": "Space Station",
+          "x": 252,
+          "y": 54
         }
       },
       {
@@ -151,7 +151,7 @@
           "onClick": {
             "name": "RocketTier3moonTp"
           },
-          "width": 97,
+          "width": 75,
           "height": 20,
           "name": "Moon",
           "x": 133,
@@ -161,14 +161,70 @@
       {
         "type": "button",
         "data": {
+          "text": "Space Station",
+          "onClick": {
+            "name": "Tier3SpaceStationGuiOpenMoonOrbit"
+          },
+          "width": 79,
+          "height": 20,
+          "name": "Space Station",
+          "x": 252,
+          "y": 92
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Mars",
+          "onClick": {
+            "name": "RocketTier3MarsTp"
+          },
+          "width": 75,
+          "height": 20,
+          "name": "Mars",
+          "x": 133,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Space Station",
+          "onClick": {
+            "name": "Tier3SpaceStationGuiOpenMarsOrbit"
+          },
+          "width": 79,
+          "height": 20,
+          "name": "Space Station",
+          "x": 252,
+          "y": 130
+        }
+      },
+      {
+        "type": "button",
+        "data": {
           "text": "Mercury",
           "onClick": {
             "name": "RocketTier3MerkurTp"
           },
-          "width": 97,
+          "width": 75,
           "height": 20,
           "name": "Mercury",
           "x": 133,
+          "y": 167
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Space Station",
+          "onClick": {
+            "name": "Tier3SpaceStationGuiOpenMercuryOrbit"
+          },
+          "width": 79,
+          "height": 20,
+          "name": "Space Station",
+          "x": 252,
           "y": 167
         }
       }

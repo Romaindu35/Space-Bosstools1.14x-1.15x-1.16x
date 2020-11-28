@@ -17,7 +17,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class LandinggearparticleonProcedure extends BossToolsModElements.ModElement {
 	public LandinggearparticleonProcedure(BossToolsModElements instance) {
-		super(instance, 235);
+		super(instance, 234);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

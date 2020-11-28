@@ -12,7 +12,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class RotationBProcedure extends BossToolsModElements.ModElement {
 	public RotationBProcedure(BossToolsModElements instance) {
-		super(instance, 421);
+		super(instance, 419);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

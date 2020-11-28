@@ -23,7 +23,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class CoalGeneratorTickProcedure extends BossToolsModElements.ModElement {
 	public CoalGeneratorTickProcedure(BossToolsModElements instance) {
-		super(instance, 208);
+		super(instance, 207);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

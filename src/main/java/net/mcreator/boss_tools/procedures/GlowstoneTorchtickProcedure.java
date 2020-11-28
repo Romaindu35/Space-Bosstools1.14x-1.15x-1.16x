@@ -1,9 +1,11 @@
 package net.mcreator.boss_tools.procedures;
 
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.block.Block;
 
+import net.mcreator.boss_tools.particle.GlowstoneTorchParticleParticle;
 import net.mcreator.boss_tools.BossToolsModElements;
 
 import java.util.Map;
@@ -11,7 +13,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class GlowstoneTorchtickProcedure extends BossToolsModElements.ModElement {
 	public GlowstoneTorchtickProcedure(BossToolsModElements instance) {
-		super(instance, 198);
+		super(instance, 197);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -39,9 +41,15 @@ public class GlowstoneTorchtickProcedure extends BossToolsModElements.ModElement
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((world.isAirBlock(new BlockPos((int) x, (int) (y - 1), (int) z)))) {
+		if ((world.isAirBlock(new BlockPos((int) x, (int) (y - 0.1), (int) z)))) {
 			Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) z)), world.getWorld(), new BlockPos((int) x, (int) y, (int) z));
 			world.destroyBlock(new BlockPos((int) x, (int) y, (int) z), false);
+		}
+		if ((Math.random() < 0.3)) {
+			if (world instanceof ServerWorld) {
+				((ServerWorld) world).spawnParticle(GlowstoneTorchParticleParticle.particle, (x + 0.5), (y + 0.6), (z + 0.5), (int) 1, 0, 0, 0,
+						0.0001);
+			}
 		}
 	}
 }

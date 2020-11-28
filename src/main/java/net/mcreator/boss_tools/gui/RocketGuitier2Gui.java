@@ -29,6 +29,9 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.boss_tools.procedures.TierSpaceStationGuiOpenMarsOrbitProcedure;
+import net.mcreator.boss_tools.procedures.Tier2SpaceStationGuiOpenOverworldobitProcedure;
+import net.mcreator.boss_tools.procedures.Tier2SpaceStationGuiOpenMoonorbitProcedure;
 import net.mcreator.boss_tools.procedures.RocketoverworldumlaufbahnProcedure;
 import net.mcreator.boss_tools.procedures.RocketmoonGuiMoonTpProcedure;
 import net.mcreator.boss_tools.procedures.RocketmarsworldtpProcedure;
@@ -166,29 +169,41 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 22, 97, 20, "Overworld", e -> {
+			this.addButton(new Button(this.guiLeft + 127, this.guiTop + 22, 36, 20, "Orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 22, 36, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 127, this.guiTop + 60, 36, 20, "Orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 60, 97, 20, "Moon", e -> {
+			this.addButton(new Button(this.guiLeft + 127, this.guiTop + 98, 36, 20, "Orbit", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 60, 36, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 48, this.guiTop + 22, 75, 20, "Overworld", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
 				handleButtonAction(entity, 3, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 50, this.guiTop + 98, 97, 20, "Mars", e -> {
+			this.addButton(new Button(this.guiLeft + 167, this.guiTop + 22, 76, 20, "Space Station", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(4, x, y, z));
 				handleButtonAction(entity, 4, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 154, this.guiTop + 98, 36, 20, "orbit", e -> {
+			this.addButton(new Button(this.guiLeft + 48, this.guiTop + 60, 75, 20, "Moon", e -> {
 				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(5, x, y, z));
 				handleButtonAction(entity, 5, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 167, this.guiTop + 60, 76, 20, "Space Station", e -> {
+				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(6, x, y, z));
+				handleButtonAction(entity, 6, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 48, this.guiTop + 98, 75, 20, "Mars", e -> {
+				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(7, x, y, z));
+				handleButtonAction(entity, 7, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 167, this.guiTop + 98, 76, 20, "Space Station", e -> {
+				BossToolsMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(8, x, y, z));
+				handleButtonAction(entity, 8, x, y, z);
 			}));
 		}
 	}
@@ -287,7 +302,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketOverworldtpProcedure.executeProcedure($_dependencies);
+				RocketoverworldumlaufbahnProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 1) {
@@ -298,7 +313,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketoverworldumlaufbahnProcedure.executeProcedure($_dependencies);
+				RocketTier2OrbitTpMoonProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 2) {
@@ -309,7 +324,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketmoonGuiMoonTpProcedure.executeProcedure($_dependencies);
+				RocketTier2OrbitTpMarsProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 3) {
@@ -320,7 +335,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier2OrbitTpMoonProcedure.executeProcedure($_dependencies);
+				RocketOverworldtpProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 4) {
@@ -331,7 +346,7 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketmarsworldtpProcedure.executeProcedure($_dependencies);
+				Tier2SpaceStationGuiOpenOverworldobitProcedure.executeProcedure($_dependencies);
 			}
 		}
 		if (buttonID == 5) {
@@ -342,7 +357,40 @@ public class RocketGuitier2Gui extends BossToolsModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				RocketTier2OrbitTpMarsProcedure.executeProcedure($_dependencies);
+				RocketmoonGuiMoonTpProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 6) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				Tier2SpaceStationGuiOpenMoonorbitProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 7) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				RocketmarsworldtpProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 8) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				TierSpaceStationGuiOpenMarsOrbitProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

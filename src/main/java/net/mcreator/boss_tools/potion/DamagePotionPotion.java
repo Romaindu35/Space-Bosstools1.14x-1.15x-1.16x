@@ -25,7 +25,7 @@ public class DamagePotionPotion extends BossToolsModElements.ModElement {
 	@ObjectHolder("boss_tools:damage_potion")
 	public static final Effect potion = null;
 	public DamagePotionPotion(BossToolsModElements instance) {
-		super(instance, 175);
+		super(instance, 174);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 

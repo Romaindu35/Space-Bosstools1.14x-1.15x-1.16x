@@ -2,11 +2,8 @@ package net.mcreator.boss_tools.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
@@ -14,8 +11,6 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.command.ICommandSource;
-import net.minecraft.command.CommandSource;
 
 import net.mcreator.boss_tools.potion.RocketpotionPotion;
 import net.mcreator.boss_tools.entity.RocketTier2Entity;
@@ -27,7 +22,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class PowUponkeypressProcedure extends BossToolsModElements.ModElement {
 	public PowUponkeypressProcedure(BossToolsModElements instance) {
-		super(instance, 174);
+		super(instance, 173);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -81,23 +76,11 @@ public class PowUponkeypressProcedure extends BossToolsModElements.ModElement {
 					if (!world.getWorld().isRemote) {
 						world.playSound(null, new BlockPos((int) x, (int) y, (int) z),
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("boss_tools:rocketfly")),
-								SoundCategory.NEUTRAL, (float) 1, (float) 1);
+								SoundCategory.NEUTRAL, (float) 3, (float) 1);
 					} else {
 						world.getWorld().playSound(x, y, z,
 								(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("boss_tools:rocketfly")),
-								SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
-					}
-					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-						world.getWorld().getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-								"/stopsound @p neutral boss_tools:rocketfly");
-					}
-					if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-						world.getWorld().getServer().getCommandManager().handleCommand(
-								new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-										new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-								"/playsound boss_tools:rocketfly neutral @p");
+								SoundCategory.NEUTRAL, (float) 3, (float) 1, false);
 					}
 					(entity.getRidingEntity()).getPersistentData().putDouble("Powup", 1);
 				} else {

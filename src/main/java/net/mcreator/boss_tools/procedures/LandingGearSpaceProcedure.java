@@ -5,6 +5,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.boss_tools.potion.LandinggearPotion2Potion;
 import net.mcreator.boss_tools.potion.LandinggearPotion1Potion;
 import net.mcreator.boss_tools.entity.LandingGearEntity;
 import net.mcreator.boss_tools.BossToolsModElements;
@@ -14,7 +15,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearSpaceProcedure extends BossToolsModElements.ModElement {
 	public LandingGearSpaceProcedure(BossToolsModElements instance) {
-		super(instance, 232);
+		super(instance, 231);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -31,6 +32,9 @@ public class LandingGearSpaceProcedure extends BossToolsModElements.ModElement {
 			if ((entity.getRidingEntity()) instanceof LivingEntity)
 				((LivingEntity) (entity.getRidingEntity()))
 						.addPotionEffect(new EffectInstance(LandinggearPotion1Potion.potion, (int) 1800, (int) 1, (false), (false)));
+			if ((entity.getRidingEntity()) instanceof LivingEntity)
+				((LivingEntity) (entity.getRidingEntity()))
+						.addPotionEffect(new EffectInstance(LandinggearPotion2Potion.potion, (int) 99999, (int) 1, (false), (false)));
 		}
 	}
 }

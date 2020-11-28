@@ -11,7 +11,7 @@ import java.util.Map;
 @BossToolsModElements.ModElement.Tag
 public class TorchUpdateTickProcedure extends BossToolsModElements.ModElement {
 	public TorchUpdateTickProcedure(BossToolsModElements instance) {
-		super(instance, 197);
+		super(instance, 196);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {

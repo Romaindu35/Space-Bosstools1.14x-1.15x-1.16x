@@ -19,7 +19,7 @@ import java.util.HashMap;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearProduceProcedure extends BossToolsModElements.ModElement {
 	public LandingGearProduceProcedure(BossToolsModElements instance) {
-		super(instance, 230);
+		super(instance, 229);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

@@ -1,10 +1,14 @@
 package net.mcreator.boss_tools.procedures;
 
+import net.minecraftforge.registries.ForgeRegistries;
+
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec2f;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -20,7 +24,7 @@ import java.util.Collection;
 @BossToolsModElements.ModElement.Tag
 public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements.ModElement {
 	public LandingGearOnEntityTickUpdateProcedure(BossToolsModElements instance) {
-		super(instance, 229);
+		super(instance, 228);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -110,6 +114,13 @@ public class LandingGearOnEntityTickUpdateProcedure extends BossToolsModElements
 			if (((entity.isBeingRidden()) == (false))) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).clearActivePotions();
+			}
+		}
+		if ((ForgeRegistries.BIOMES.getKey(world.getBiome(new BlockPos((int) x, (int) y, (int) z)))
+				.equals(new ResourceLocation("boss_tools:orbit_overworld_biom")))) {
+			if (((entity.getPosY()) < (-10))) {
+				if (!entity.world.isRemote)
+					entity.remove();
 			}
 		}
 	}
