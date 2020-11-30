@@ -74,7 +74,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 public class RocketTier3Entity extends BossToolsModElements.ModElement {
 	public static EntityType entity = null;
 	public RocketTier3Entity(BossToolsModElements instance) {
-		super(instance, 68);
+		super(instance, 69);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 		NetworkLoader.registerMessages();
 	}
@@ -162,6 +162,8 @@ public class RocketTier3Entity extends BossToolsModElements.ModElement {
 				$_dependencies.put("world", world);
 				Rockethurtentity3Procedure.executeProcedure($_dependencies);
 			}
+			if (source.getImmediateSource() instanceof PlayerEntity)
+				return false;
 			return super.attackEntityFrom(source, amount);
 		}
 		private final ItemStackHandler inventory = new ItemStackHandler(9) {

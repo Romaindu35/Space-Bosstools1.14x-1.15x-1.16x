@@ -75,7 +75,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 public class RocketEntity extends BossToolsModElements.ModElement {
 	public static EntityType entity = null;
 	public RocketEntity(BossToolsModElements instance) {
-		super(instance, 69);
+		super(instance, 70);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 		NetworkLoader.registerMessages();
 	}
@@ -163,6 +163,8 @@ public class RocketEntity extends BossToolsModElements.ModElement {
 				$_dependencies.put("world", world);
 				RocketEntityIsHurt1Procedure.executeProcedure($_dependencies);
 			}
+			if (source.getImmediateSource() instanceof PlayerEntity)
+				return false;
 			return super.attackEntityFrom(source, amount);
 		}
 		private final ItemStackHandler inventory = new ItemStackHandler(9) {
@@ -488,7 +490,7 @@ public class RocketEntity extends BossToolsModElements.ModElement {
 			INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation("boss_tools", "rocket_link"), () -> "1.0", s -> true, s -> true);
 			INSTANCE.registerMessage(nextID(), RocketSpinPacket.class, RocketSpinPacket::encode, RocketSpinPacket::decode, RocketSpinPacket::handle);
 			// new animationpitch
-			INSTANCE.registerMessage(nextID(), RocketSpin2Packet.class, RocketSpin2Packet::encode, RocketSpin2Packet::decode,RocketSpin2Packet::handle);
+			INSTANCE.registerMessage(nextID(), RocketSpin2Packet.class, RocketSpin2Packet::encode, RocketSpin2Packet::decode, RocketSpin2Packet::handle);
 		}
 	}
 

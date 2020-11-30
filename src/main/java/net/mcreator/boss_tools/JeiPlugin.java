@@ -34,6 +34,8 @@ import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 //workbench
 import net.mcreator.boss_tools.block.WorkbenchBlock;
+//FuelMaker
+import net.mcreator.boss_tools.block.FuelMakerBlock;
 //Generator
 import net.mcreator.boss_tools.block.GeneratorBlock;
 //New maschine
@@ -135,6 +137,10 @@ public class JeiPlugin implements IModPlugin {
         registration.addRecipeCategories(new Tier3RocketItemItemJeiCategory(jeiHelper.getGuiHelper()));
         //Compressor
         registration.addRecipeCategories(new CompressorJeiCategory(jeiHelper.getGuiHelper()));
+        //Fuel Maker
+        registration.addRecipeCategories(new FuelMakerJeiCategory(jeiHelper.getGuiHelper()));
+        //Fuel Maker Recpie 2
+        registration.addRecipeCategories(new FuelMaker2JeiCategory(jeiHelper.getGuiHelper()));
     }
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
@@ -163,6 +169,10 @@ public class JeiPlugin implements IModPlugin {
         registration.addRecipes(generateCompressorRecipes2(), CompressorJeiCategory.Uid);
         //Compressor 3 Recpie
         registration.addRecipes(generateCompressorRecipes3(), CompressorJeiCategory.Uid);
+        //Fuel Maker
+        registration.addRecipes(generateFuelMakerRecipes(), FuelMakerJeiCategory.Uid);
+        //fuel Maker 2 Recpie
+        registration.addRecipes(generateFuelMakerRecipes2(), FuelMaker2JeiCategory.Uid);
         // ...
     }
 
@@ -311,6 +321,29 @@ public class JeiPlugin implements IModPlugin {
         recipes.add(new CompressorJeiCategory.CompressorRecipeWrapper(inputs, outputs));
         return recipes;
     }
+        //Fuel Maker
+        private List<FuelMakerJeiCategory.FuelMakerRecipeWrapper> generateFuelMakerRecipes() {
+        List<FuelMakerJeiCategory.FuelMakerRecipeWrapper> recipes = new ArrayList<>();
+        ArrayList<ItemStack> inputs = new ArrayList<>();
+        ArrayList<ItemStack> outputs = new ArrayList<>();
+		inputs.add(new ItemStack(Items.LAVA_BUCKET));
+        outputs.add(new ItemStack(FuelBuckedItem.block));
+        // ...
+        recipes.add(new FuelMakerJeiCategory.FuelMakerRecipeWrapper(inputs, outputs));
+        return recipes;
+    }
+
+         //Fuel Maker Recpie 2
+        private List<FuelMaker2JeiCategory.FuelMakerRecipeWrapper> generateFuelMakerRecipes2() {
+        List<FuelMaker2JeiCategory.FuelMakerRecipeWrapper> recipes = new ArrayList<>();
+        ArrayList<ItemStack> inputs = new ArrayList<>();
+        ArrayList<ItemStack> outputs = new ArrayList<>();
+		inputs.add(new ItemStack(Items.LAVA_BUCKET));
+        outputs.add(new ItemStack(FuelBucketBigItem.block));
+        // ...
+        recipes.add(new FuelMaker2JeiCategory.FuelMakerRecipeWrapper(inputs, outputs));
+        return recipes;
+    }
 		//Rockettier1Gui 
         private List<Tier1RocketItemItemJeiCategory.Tier1RocketItemItemRecipeWrapper> generateTier1RocketItemItemRecipes() {
         List<Tier1RocketItemItemJeiCategory.Tier1RocketItemItemRecipeWrapper> recipes = new ArrayList<>();
@@ -356,7 +389,11 @@ public class JeiPlugin implements IModPlugin {
         //RocketTier3Gui
         registration.addRecipeCatalyst(new ItemStack(Tier3RocketItemItem.block), Tier3RocketItemItemJeiCategory.Uid);
         //Compressor
-        registration.addRecipeCatalyst(new ItemStack(CompressorBlock.block), CompressorJeiCategory.Uid);
+        registration.addRecipeCatalyst(new ItemStack(CompressorBlock.block), CompressorJeiCategory.Uid); 
+        //FuelMaker
+        registration.addRecipeCatalyst(new ItemStack(FuelMakerBlock.block), FuelMakerJeiCategory.Uid);
+        //fuel Maker Recpie 2
+        registration.addRecipeCatalyst(new ItemStack(FuelMakerBlock.block), FuelMaker2JeiCategory.Uid);
     }
 public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMachineJeiCategory.OxygenMachineRecipeWrapper> {
 		private static ResourceLocation Uid = new ResourceLocation("boss_tools", "oxygenmachinecategory");
@@ -1010,6 +1047,154 @@ public static class OxygenMachineJeiCategory implements IRecipeCategory<OxygenMa
 
             public ArrayList getInput() {
                 return input;
+            }
+        }
+	}
+	//FuelMaker
+		public static class FuelMakerJeiCategory implements IRecipeCategory<FuelMakerJeiCategory.FuelMakerRecipeWrapper> {
+		private static ResourceLocation Uid = new ResourceLocation("boss_tools", "fuelmakercategory");
+		private static final int input1 = 0; // THE NUMBER = SLOTID
+		private static final int output1 = 2; // THE NUMBER = SLOTID
+		// ...
+		private final String title;
+		private final IDrawable background;
+		public FuelMakerJeiCategory(IGuiHelper guiHelper) {
+			this.title = "Fuel Refinery";
+			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/fuel_refinery_jei_1.png"), 0, 0, 144, 84);
+		}
+
+		@Override
+		public ResourceLocation getUid() {
+			return Uid;
+		}
+
+		@Override
+		public Class<? extends FuelMakerRecipeWrapper> getRecipeClass() {
+			return FuelMakerJeiCategory.FuelMakerRecipeWrapper.class;
+		}
+
+		@Override
+		public String getTitle() {
+			return title;
+		}
+
+		@Override
+		public IDrawable getBackground() {
+			return background;
+		}
+
+		@Override
+		public IDrawable getIcon() {
+			return null;
+		}
+
+		@Override
+		public void setIngredients(FuelMakerRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            iIngredients.setInputs(VanillaTypes.ITEM, recipeWrapper.getInput());
+            iIngredients.setOutputs(VanillaTypes.ITEM, recipeWrapper.getOutput());
+		}
+
+        @Override
+        public void setRecipe(IRecipeLayout iRecipeLayout, FuelMakerRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            IGuiItemStackGroup stacks = iRecipeLayout.getItemStacks();
+            stacks.init(input1, true, 52, 34);
+            stacks.init(output1, false, 7, 56);// 64, 10
+            // ...
+
+            stacks.set(input1, iIngredients.getInputs(VanillaTypes.ITEM).get(0));
+            stacks.set(output1, iIngredients.getOutputs(VanillaTypes.ITEM).get(0));
+            // ...
+        }
+		public static class FuelMakerRecipeWrapper {
+            private ArrayList input;
+            private ArrayList output;
+
+            public FuelMakerRecipeWrapper(ArrayList input, ArrayList output) {
+                this.input = input;
+                this.output = output;
+            }
+
+
+            public ArrayList getInput() {
+                return input;
+            }
+
+            public ArrayList getOutput() {
+                return output;
+            }
+        }
+	}
+		//FuelMaker Recpie 2
+		public static class FuelMaker2JeiCategory implements IRecipeCategory<FuelMaker2JeiCategory.FuelMakerRecipeWrapper> {
+		private static ResourceLocation Uid = new ResourceLocation("boss_tools", "fuelmaker2category");
+		private static final int input1 = 0; // THE NUMBER = SLOTID
+		private static final int output1 = 2; // THE NUMBER = SLOTID
+		// ...
+		private final String title;
+		private final IDrawable background;
+		public FuelMaker2JeiCategory(IGuiHelper guiHelper) {
+			this.title = "Fuel Refinery";
+			this.background = guiHelper.createDrawable(new ResourceLocation("boss_tools", "textures/fuel_refinery_jei_2.png"), 0, 0, 144, 84);
+		}
+
+		@Override
+		public ResourceLocation getUid() {
+			return Uid;
+		}
+
+		@Override
+		public Class<? extends FuelMakerRecipeWrapper> getRecipeClass() {
+			return FuelMaker2JeiCategory.FuelMakerRecipeWrapper.class;
+		}
+
+		@Override
+		public String getTitle() {
+			return title;
+		}
+
+		@Override
+		public IDrawable getBackground() {
+			return background;
+		}
+
+		@Override
+		public IDrawable getIcon() {
+			return null;
+		}
+
+		@Override
+		public void setIngredients(FuelMakerRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            iIngredients.setInputs(VanillaTypes.ITEM, recipeWrapper.getInput());
+            iIngredients.setOutputs(VanillaTypes.ITEM, recipeWrapper.getOutput());
+		}
+
+        @Override
+        public void setRecipe(IRecipeLayout iRecipeLayout, FuelMakerRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            IGuiItemStackGroup stacks = iRecipeLayout.getItemStacks();
+            stacks.init(input1, true, 52, 34);
+            stacks.init(output1, false, 7, 56);// 64, 10
+            // ...
+
+            stacks.set(input1, iIngredients.getInputs(VanillaTypes.ITEM).get(0));
+            stacks.set(output1, iIngredients.getOutputs(VanillaTypes.ITEM).get(0));
+            // ...
+        }
+		public static class FuelMakerRecipeWrapper {
+            private ArrayList input;
+            private ArrayList output;
+
+            public FuelMakerRecipeWrapper(ArrayList input, ArrayList output) {
+                this.input = input;
+                this.output = output;
+            }
+
+
+            public ArrayList getInput() {
+                return input;
+            }
+
+            public ArrayList getOutput() {
+                return output;
             }
         }
 	}

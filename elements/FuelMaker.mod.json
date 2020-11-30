@@ -76,9 +76,9 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
+    "guiBoundTo": "FuelRefineryGUI",
     "openGUIOnRightClick": true,
-    "inventorySize": 9,
+    "inventorySize": 3,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -89,9 +89,19 @@
     "energyCapacity": 9000,
     "energyMaxReceive": 200,
     "energyMaxExtract": 200,
-    "isFluidTank": false,
-    "fluidCapacity": 8000,
-    "fluidRestrictions": [],
+    "isFluidTank": true,
+    "fluidCapacity": 300,
+    "fluidRestrictions": [
+      {
+        "value": "CUSTOM:Fuel"
+      },
+      {
+        "value": "CUSTOM:Fuel:Flowing"
+      }
+    ],
+    "onTickUpdate": {
+      "name": "FuelRefineryTick"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [],

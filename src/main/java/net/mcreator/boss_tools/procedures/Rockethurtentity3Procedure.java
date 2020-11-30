@@ -60,69 +60,70 @@ public class Rockethurtentity3Procedure extends BossToolsModElements.ModElement 
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (((new Object() {
-			public ItemStack getItemStack(int sltid, Entity entity) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					_retval.set(capability.getStackInSlot(sltid).copy());
-				});
-				return _retval.get();
+		if ((!(entity.isBeingRidden()))) {
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (0);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
+				}
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay((int) 10);
+					world.addEntity(entityToSpawn);
+				}
 			}
-		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(FuelBucketBigItem.block, (int) (1)).getItem())) {
-			{
-				final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
-				final int _sltid = (int) (0);
-				_setstack.setCount((int) 1);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable) {
-						((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-					}
-				});
+			if (((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (0), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
+				{
+					final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
+					final int _sltid = (int) (0);
+					_setstack.setCount((int) 1);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
+				}
+				if (!world.getWorld().isRemote) {
+					ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
+					entityToSpawn.setPickupDelay((int) 10);
+					world.addEntity(entityToSpawn);
+				}
 			}
+			if (!entity.world.isRemote)
+				entity.remove();
 			if (!world.getWorld().isRemote) {
-				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(FuelBucketBigItem.block, (int) (1)));
+				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Tier3RocketItemItem.block, (int) (1)));
 				entityToSpawn.setPickupDelay((int) 10);
 				world.addEntity(entityToSpawn);
 			}
-		}
-		if (((new Object() {
-			public ItemStack getItemStack(int sltid, Entity entity) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					_retval.set(capability.getStackInSlot(sltid).copy());
-				});
-				return _retval.get();
+			if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
+				world.getWorld().getServer().getCommandManager().handleCommand(
+						new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
+								new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
+						"/stopsound @p neutral boss_tools:rocketfly");
 			}
-		}.getItemStack((int) (0), entity)).getItem() == new ItemStack(BucketBigItem.block, (int) (1)).getItem())) {
-			{
-				final ItemStack _setstack = new ItemStack(Blocks.AIR, (int) (1));
-				final int _sltid = (int) (0);
-				_setstack.setCount((int) 1);
-				entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-					if (capability instanceof IItemHandlerModifiable) {
-						((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
-					}
-				});
-			}
-			if (!world.getWorld().isRemote) {
-				ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(BucketBigItem.block, (int) (1)));
-				entityToSpawn.setPickupDelay((int) 10);
-				world.addEntity(entityToSpawn);
-			}
-		}
-		if (!entity.world.isRemote)
-			entity.remove();
-		if (!world.getWorld().isRemote) {
-			ItemEntity entityToSpawn = new ItemEntity(world.getWorld(), x, y, z, new ItemStack(Tier3RocketItemItem.block, (int) (1)));
-			entityToSpawn.setPickupDelay((int) 10);
-			world.addEntity(entityToSpawn);
-		}
-		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
-			world.getWorld().getServer().getCommandManager()
-					.handleCommand(
-							new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "",
-									new StringTextComponent(""), world.getWorld().getServer(), null).withFeedbackDisabled(),
-							"/stopsound @p neutral boss_tools:rocketfly");
 		}
 	}
 }

@@ -77,7 +77,6 @@ public class RocketTier2Entity extends BossToolsModElements.ModElement {
 	public RocketTier2Entity(BossToolsModElements instance) {
 		super(instance, 9);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
-		//Sync System
 		NetworkLoader.registerMessages();
 	}
 
@@ -164,6 +163,8 @@ public class RocketTier2Entity extends BossToolsModElements.ModElement {
 				$_dependencies.put("world", world);
 				Rockethurtentity2Procedure.executeProcedure($_dependencies);
 			}
+			if (source.getImmediateSource() instanceof PlayerEntity)
+				return false;
 			return super.attackEntityFrom(source, amount);
 		}
 		private final ItemStackHandler inventory = new ItemStackHandler(9) {
@@ -543,7 +544,7 @@ public class RocketTier2Entity extends BossToolsModElements.ModElement {
 			INSTANCE = NetworkRegistry.newSimpleChannel(new ResourceLocation("boss_tools2", "rocket_link2"), () -> "1.0", s -> true, s -> true);
 			INSTANCE.registerMessage(nextID(), RocketSpinPacket.class, RocketSpinPacket::encode, RocketSpinPacket::decode, RocketSpinPacket::handle);
 			// new animationpitch
-			INSTANCE.registerMessage(nextID(), RocketSpin2Packet.class, RocketSpin2Packet::encode, RocketSpin2Packet::decode, RocketSpin2Packet::handle);
+			INSTANCE.registerMessage(nextID(), RocketSpin2Packet.class, RocketSpin2Packet::encode, RocketSpin2Packet::decode, RocketSpin2Packet::handle);
 		}
 	}
 

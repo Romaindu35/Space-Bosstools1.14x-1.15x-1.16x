@@ -70,7 +70,7 @@
     "immuneToDrowning": false,
     "immuneToLightning": false,
     "immuneToPotions": false,
-    "immuneToPlayer": false,
+    "immuneToPlayer": true,
     "mobDrop": {
       "value": ""
     },
